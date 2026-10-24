@@ -1,1 +1,2206 @@
-{ "combos": [], "replays": [] }
+{
+ "combos": [
+  {
+   "id": "H4_27uQFHWg",
+   "title": "KUMA/PANDA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "yHeSPqlRRsI",
+   "title": "SHAHEEN Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "B9WAC93KE7g",
+   "title": "ZAFINA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "ENqBIFECoA4",
+   "title": "BOB Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "UrVZ0A4_YLc",
+   "title": "JACK-8 Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "Wzg_mPYCvFE",
+   "title": "AZUCENA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "kOFww_gdayM",
+   "title": "RAVEN Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "MAidG5fdsbI",
+   "title": "MIARY ZO Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "y9a4nq-m4nw",
+   "title": "CLIVE ROSFIELD Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "3tqdHjcWUnE",
+   "title": "CLAUDIO SERAFINO Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "A51M5wxLOiI",
+   "title": "ALISA BOSCONOVITCH Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "cYCZWV95zKg",
+   "title": "VICTOR CHEVALIER Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "dtO5RgN1Y80",
+   "title": "NINA WILLIAMS Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "0eKO_2O-BaQ",
+   "title": "LEROY SMITH Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "hgcYdKwunEw",
+   "title": "JUN KAZAMA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "s8nD1GWBLW0",
+   "title": "PAUL PHOENIX Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "cVSLwAh1FAw",
+   "title": "MARSHALL LAW Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "TBk8s7dcRGY",
+   "title": "FENG WEI Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "udvAa3o_MCc",
+   "title": "LEO KLIESEN Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "IKaAPbrhZxo",
+   "title": "ANNA WILLIAMS Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "j-KckCppYz8",
+   "title": "FAHKUMRAM Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "Oogc_SUmFjo",
+   "title": "ARMOR KING Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "uHgLbpdH-OY",
+   "title": "LING XIAOYU Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "uL2cfy23FkU",
+   "title": "KUNIMITSU Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "EPeqqn4QPqs",
+   "title": "ASUKA KAZAMA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "tJrPIcIBv1M",
+   "title": "LILI Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "t1zIuYLcjVE",
+   "title": "BRYAN FURY Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "mxoXJJDPTCo",
+   "title": "LIDIA SOBIESKA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "3giF9GPmHQs",
+   "title": "EDDY GORDO Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "WJNuY6M2WwI",
+   "title": "YOSHIMITSU Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "1pwoCyuxZRM",
+   "title": "LEE CHAOLAN Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "NS1qOGeP0J8",
+   "title": "SERGEI DRAGUNOV Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "gczHYUpuqCU",
+   "title": "LARS ALEXANDERSSON Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "XVqeD_8wadc",
+   "title": "KING Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "sr5x_7onq84",
+   "title": "HWOARANG Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "rEV_OBvENoI",
+   "title": "STEVE FOX Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "-xmNLCL6UZ8",
+   "title": "REINA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "bakVBHqOg2g",
+   "title": "HEIHACHI MISHIMA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "jrtsBvNjYmk",
+   "title": "DEVIL JIN Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "lcR2xrTmPqQ",
+   "title": "KAZUYA MISHIMA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "2NXRwdDEfkg",
+   "title": "JIN KAZAMA Combo Guide (Season 3) | TEKKEN 8"
+  },
+  {
+   "id": "FJlJBdnHpTo",
+   "title": "SEASON 3 Punish Guide | TEKKEN 8"
+  },
+  {
+   "id": "czi567ryKmc",
+   "title": "SEASON 3 New Combos (All Characters) | TEKKEN 8"
+  },
+  {
+   "id": "SLBxxbrUemw",
+   "title": "Armor King WALL CARRY | TEKKEN 8 Combos"
+  },
+  {
+   "id": "3Rc50UwJxpE",
+   "title": "Miary Zo WALL CARRY | TEKKEN 8 Combos"
+  },
+  {
+   "id": "huXIcVARhVQ",
+   "title": "MIARY ZO Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "dFJS8TA2wjY",
+   "title": "Premium Performance | Haute42 M-UItra Gen 2"
+  },
+  {
+   "id": "73Lm9iQte4I",
+   "title": "ARMOR KING Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "mWyNeKrOshk",
+   "title": "ARMOR KING Basic Combo Breakdown | TEKKEN 8"
+  },
+  {
+   "id": "40H1pjkD1wM",
+   "title": "Perfect Precision Custom Leverless | Haute42 C16"
+  },
+  {
+   "id": "GFmlxnlNQms",
+   "title": "ZAFINA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "EKmDHulUAEc",
+   "title": "KUMA/PANDA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "Hx1bHZELD8g",
+   "title": "JACK-8 Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "jecmRGrohi0",
+   "title": "ALISA BOSCONOVITCH Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "3T45df10NRA",
+   "title": "HEIHACHI MISHIMA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "I7D2D_was4Q",
+   "title": "RAVEN Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "tuzJ-5uY6QY",
+   "title": "SHAHEEN Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "_TMMK0G4tVA",
+   "title": "EDDY GORDO Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "MlFUkcFZCHA",
+   "title": "NINA WILLIAMS Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "Ot9zzdFzv6A",
+   "title": "HWOARANG Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "yIRZppVh2cw",
+   "title": "LEO KLIESEN Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "M6vOuveApjk",
+   "title": "LING XIAOYU Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "eqgrXnVdumk",
+   "title": "FAHKUMRAM Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "7sn5a9SzruU",
+   "title": "LEROY SMITH Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "XMW3RWTR3xU",
+   "title": "AZUCENA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "jcawwdBFjsc",
+   "title": "YOSHIMITSU Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "oqFK9F91zzc",
+   "title": "JUN KAZAMA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "9rNYFym64cM",
+   "title": "ASUKA KAZAMA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "Ioc5VgM6r_A",
+   "title": "CLAUDIO SERAFINO Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "BPtVWbRwjtQ",
+   "title": "CLIVE ROSFIELD Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "Z8SIDFHMMvg",
+   "title": "FENG WEI Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "SUqwj8W5Knw",
+   "title": "LEE CHAOLAN Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "mw1ypmC5SU8",
+   "title": "LILI Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "0gEJPk4SUVY",
+   "title": "VICTOR CHEVALIER Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "sX-9aQIDIUA",
+   "title": "LIDIA SOBIESKA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "dg68nbT9S9A",
+   "title": "PAUL PHOENIX Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "UyR7Msq0vw8",
+   "title": "MARSHALL LAW Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "p8LCzxz3ArE",
+   "title": "SERGEI DRAGUNOV Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "ouv3GnC_VmM",
+   "title": "KING Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "AZEI7pV_xog",
+   "title": "BRYAN FURY Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "8Lgt3ENor0Y",
+   "title": "STEVE FOX Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "C8yjW9x_1vI",
+   "title": "REINA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "HubdNzZpcAk",
+   "title": "DEVIL JIN Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "W3gdMnMZaRY",
+   "title": "LARS ALEXANDERSSON Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "FRSskgTDJok",
+   "title": "KAZUYA MISHIMA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "HO1yPWZ1xCY",
+   "title": "JIN KAZAMA Combo Guide (Season 2) | TEKKEN 8"
+  },
+  {
+   "id": "AiqHAQAyyZU",
+   "title": "EMERGENCY Patch Universal Changes | TEKKEN 8"
+  },
+  {
+   "id": "TX2ukksVv2I",
+   "title": "SEASON 2 New Combos (All Characters) | TEKKEN 8"
+  },
+  {
+   "id": "xMm6zlOJXEk",
+   "title": "ANNA WILLIAMS Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "T1FyUH7e6ac",
+   "title": "Season 2 NEW Moves Showcase | TEKKEN 8"
+  },
+  {
+   "id": "vQfgLvkzHug",
+   "title": "IMPROVE Your Throw Breaking | TEKKEN Tips"
+  },
+  {
+   "id": "dMev6BAx-OE",
+   "title": "Patch 1.11 Balance Changes | TEKKEN 8"
+  },
+  {
+   "id": "F2rv2kd_C1Q",
+   "title": "Master TORNADO In Wall Combos | TEKKEN Tips"
+  },
+  {
+   "id": "e9Vqn-ifzIw",
+   "title": "CLIVE ROSFIELD Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "T0hjdzYnffA",
+   "title": "LEE CHAOLAN Combo Guide V2 | TEKKEN 8"
+  },
+  {
+   "id": "QaZjWWHoDBk",
+   "title": "Definitive Leverless King | Varmilo FK2"
+  },
+  {
+   "id": "XY_Ixgrt5eo",
+   "title": "Multi-Platform Budget Leverless | GuileKeys GK-16"
+  },
+  {
+   "id": "Jy_NT-6FkkU",
+   "title": "TEKKEN Fundamental Technical Skills (On Stick)"
+  },
+  {
+   "id": "txgaCyG8lnI",
+   "title": "The ENDGAME Leverless | Mixbox Universal"
+  },
+  {
+   "id": "yrhEP6fWcPk",
+   "title": "HWOARANG Combo Guide V2 | TEKKEN 8"
+  },
+  {
+   "id": "dPdpOXkFKBE",
+   "title": "Patch 1.09 Overview | TEKKEN 8"
+  },
+  {
+   "id": "AQ64qFc_3vY",
+   "title": "DEVIL JIN Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "Bj1_drrHPLc",
+   "title": "Patch 1.08 NEW Combos | TEKKEN 8"
+  },
+  {
+   "id": "OdLc_4JFGno",
+   "title": "HEIHACHI MISHIMA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "4RloNENzMic",
+   "title": "Heihachi BASIC Combo Breakdown | TEKKEN 8"
+  },
+  {
+   "id": "OoQioQvSKQU",
+   "title": "HEIHACHI Gameplay Showcase | TEKKEN 8"
+  },
+  {
+   "id": "lIhVafHYpqo",
+   "title": "JIN KAZAMA Combo Guide V2 | TEKKEN 8"
+  },
+  {
+   "id": "i6VRFqwtIBk",
+   "title": "BRYAN FURY Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "TcFHkKvopWo",
+   "title": "DRAGUNOV Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "Um3TuihmsZY",
+   "title": "LIDIA SOBIESKA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "olvtqSqxAtM",
+   "title": "The BEST Wireless Hitbox | QRD MAESTRO S3"
+  },
+  {
+   "id": "G6c3nATxN54",
+   "title": "Patch 1.05 NEW Combos | TEKKEN 8"
+  },
+  {
+   "id": "hwNOVmJuaOo",
+   "title": "VICTOR CHEVALIER Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "y1UG_SVjfqU",
+   "title": "REINA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "HqoozRglG7I",
+   "title": "KAZUYA MISHIMA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "WvJBm65F3qc",
+   "title": "AZUCENA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "znlxLB_9Npo",
+   "title": "RAVEN Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "XKjigZNIeYM",
+   "title": "FENG WEI Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "LPaz-18gAD4",
+   "title": "KUMA/PANDA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "6ektJ7k3u8w",
+   "title": "LEROY SMITH Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "gL05fkhq5Ns",
+   "title": "JACK-8 Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "2yMmOqwTGYs",
+   "title": "NINA WILLIAMS Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "uGUFH1CyDyY",
+   "title": "EDDY GORDO Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "pKjY1bLLQOM",
+   "title": "ZAFINA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "Izj6cgtDQi4",
+   "title": "LING XIAOYU Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "F9GyUg68IiY",
+   "title": "ASUKA KAZAMA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "GhBABmaP7hY",
+   "title": "CLAUDIO SERAFINO Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "XkfuLcwi1X0",
+   "title": "MARSHALL LAW Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "og1bdp-kxPg",
+   "title": "LARS ALEXANDERSSON Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "YBcqTzfLmI8",
+   "title": "JUN KAZAMA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "GZrVy4ys6OY",
+   "title": "PAUL PHOENIX Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "prCkFWAyJN8",
+   "title": "LILI Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "W6cfdDeW0mY",
+   "title": "ALISA BOSCONOVITCH Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "FIVDKWrXSQ8",
+   "title": "HWOARANG Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "i7cIX7teBAc",
+   "title": "LEO KLIESEN Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "V6LKPtokMBc",
+   "title": "YOSHIMITSU Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "sQJsbzzNyVA",
+   "title": "JIN KAZAMA Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "UOpGEdVuq0c",
+   "title": "KING Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "yv7lD4N2Fzc",
+   "title": "LEE CHAOLAN Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "3C9C5FczvXs",
+   "title": "SHAHEEN Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "0zOq2GXkl94",
+   "title": "STEVE FOX Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "87LpKQQawxA",
+   "title": "BRYAN FURY Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "zSSmwA74SpE",
+   "title": "DEVIL JIN Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "fzuBsIZ30hA",
+   "title": "DRAGUNOV Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "5MG0ugAsHE8",
+   "title": "VICTOR CHEVALIER Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "kmwM2M2O2KM",
+   "title": "Return of LEGENDS & NEW Characters | TEKKEN 8 Combo Exhibition"
+  },
+  {
+   "id": "-c0vVGfxQ4k",
+   "title": "REINA Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "gD_LEzZ3tZc",
+   "title": "KAZUYA MISHIMA Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "wR-P32hLhOE",
+   "title": "NEW Gameplay Combo Highlights | TEKKEN 8"
+  },
+  {
+   "id": "03K8xEXeLww",
+   "title": "JIN KAZAMA Wall Carry Combos | TEKKEN 8"
+  },
+  {
+   "id": "amlfCGKMk-w",
+   "title": "DEVIL JIN Special Combos | TEKKEN 8"
+  },
+  {
+   "id": "6THA3EgxfSc",
+   "title": "THE DARK AWAKENS | TEKKEN 8 Story Mode"
+  },
+  {
+   "id": "WjSFUpqBmvY",
+   "title": "SERGEI DRAGUNOV Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "Crav1IiKS4Y",
+   "title": "What If Kazuya’s TEKKEN 8 Moves Were in TEKKEN 7?"
+  },
+  {
+   "id": "cm2VR0mc2Qg",
+   "title": "FENG WEI Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "ka5IJSfET5M",
+   "title": "RAVEN Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "k73LIAZUEkY",
+   "title": "AZUCENA Basic Combo Guide | TEKKEN 8"
+  },
+  {
+   "id": "DkRGqg-t_uk",
+   "title": "ALL CHARACTER Combo Exhibition | TEKKEN 8 CBT"
+  },
+  {
+   "id": "_F-G6YqpL_Y",
+   "title": "KAZUYA MISHIMA Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "yqJpmvczdWY",
+   "title": "LING XIAOYU Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "mVpFCugjXAU",
+   "title": "CLAUDIO SERAFINO Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "6y19kbQ7ybo",
+   "title": "JUN KAZAMA Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "OqW9vNJJBro",
+   "title": "LILI Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "3ku6j1rKLv4",
+   "title": "ASUKA KAZAMA Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "Zjiq5oCP1kA",
+   "title": "LEROY SMITH Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "6adAinatoBU",
+   "title": "JACK-8 Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "P2daTb2olvM",
+   "title": "LARS ALEXANDERSSON Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "gkd3FAByIH0",
+   "title": "NINA WILLIAMS Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "xNwGf5I1qh8",
+   "title": "PAUL PHOENIX Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "wXpnknLkyqw",
+   "title": "MARSHALL LAW Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "DvitDP1IVPI",
+   "title": "BRYAN FURY Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "WaFsljDClJo",
+   "title": "HWOARANG Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "vov4CC-OlhM",
+   "title": "KING Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "wV3GTKQda6s",
+   "title": "JIN KAZAMA Sample Combos | TEKKEN 8 CNT"
+  },
+  {
+   "id": "YEE00L0_WBM",
+   "title": "KAZUYA Combo Exhibition | TEKKEN 8 CNT"
+  },
+  {
+   "id": "wdgd2N7Li9M",
+   "title": "ALL Rage Arts & Heat Smash | TEKKEN 8"
+  },
+  {
+   "id": "iHift-SSuFE",
+   "title": "ALL Character Combo Exhibition | TEKKEN 8 CNT"
+  },
+  {
+   "id": "OikWOWuFHAo",
+   "title": "CLAUDIO SERAFINO Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "JmGkovWlGe8",
+   "title": "NEW Gameplay Clips From Tekken Talk | TEKKEN 8"
+  },
+  {
+   "id": "PgNA0Tc5b0Y",
+   "title": "Leroy Smith RISING DRAGONS Combos | TEKKEN 7"
+  },
+  {
+   "id": "IE_4RatnveE",
+   "title": "Claudio Serafino SKY SLASH NOVA Combos | TEKKEN 7"
+  },
+  {
+   "id": "mdEFhvGUbnU",
+   "title": "NEW Gameplay Clips | TEKKEN 8"
+  },
+  {
+   "id": "msFqbBAi25U",
+   "title": "Bryan Fury JET UPPERCUT Combos | TEKKEN 7"
+  },
+  {
+   "id": "l__riIc868Y",
+   "title": "NEW Combo Trailer | TEKKEN 8"
+  },
+  {
+   "id": "D9AttdNefRU",
+   "title": "BRYAN FURY Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "JjAzEIZBGww",
+   "title": "Lars Alexandersson STORM AXLE Combos | TEKKEN 7"
+  },
+  {
+   "id": "WkStLYgASZs",
+   "title": "Hwoarang LEFT PLASMA BLADE Combos | TEKKEN 7"
+  },
+  {
+   "id": "ihUDqdG3o1U",
+   "title": "HWOARANG Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "rv83BFTdwSY",
+   "title": "Marshall Law DRAGON UPPERCUT Combos | TEKKEN 7"
+  },
+  {
+   "id": "4fCJezjRHy0",
+   "title": "Ling Xiaoyu CROSS LIFTING PALMS Combos | TEKKEN 7"
+  },
+  {
+   "id": "betp2DIHQZk",
+   "title": "Asuka Kazama DEMON SLAYER Combos | TEKKEN 7"
+  },
+  {
+   "id": "50uoMhRS698",
+   "title": "Lili CAPRICORN KICK Combos | TEKKEN 7"
+  },
+  {
+   "id": "ChwHwog8kwU",
+   "title": "LILI Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "R3AtPFvKCow",
+   "title": "Lee Chaolan Combos In TEKKEN 8 Be Like..."
+  },
+  {
+   "id": "QXRX_9xWoUM",
+   "title": "ALL 12 Matches | TEKKEN 8 Alpha Test Gameplay"
+  },
+  {
+   "id": "Ns0D5pmfsxc",
+   "title": "KAZUYA MISHIMA Combos In TEKKEN 8 Be Like..."
+  },
+  {
+   "id": "BkVy1h_MOE8",
+   "title": "LEROY SMITH Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "ZYC4bsNrINI",
+   "title": "ASUKA KAZAMA Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "3g-qXRAxp94",
+   "title": "All Character COMBOS | TEKKEN 8 Alpha Test Gameplay"
+  },
+  {
+   "id": "Qqv2xFGY-zA",
+   "title": "JUN Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "msKTUCBoNM8",
+   "title": "JACK-8 Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "pgFJnWu0Pxc",
+   "title": "LARS Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "SjBWPawNdm4",
+   "title": "KING Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "u3EdwrC9mZ0",
+   "title": "LAW Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "Lfy-slhb30Q",
+   "title": "PAUL Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "nWRozC5CDA8",
+   "title": "JIN Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "2_4cS3tvIjo",
+   "title": "KAZUYA Gameplay Trailer Moves in Tekken 7 | TEKKEN 8 Recreated"
+  },
+  {
+   "id": "Hdjn3imHK4I",
+   "title": "KAZUYA MISHIMA Graphics Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "jv3_atD1R7g",
+   "title": "Jack-7 SAVAGE UPPERCUT | TEKKEN 7 Combos"
+  },
+  {
+   "id": "cNFaMTLydUY",
+   "title": "Nina Williams REVERSE IVORY CUTTER | TEKKEN 7 Combos"
+  },
+  {
+   "id": "d57b4VsHUUc",
+   "title": "TEKKEN 8 Paul COMBOS in Tekken 7"
+  },
+  {
+   "id": "sBQdVCkY9Oo",
+   "title": "NINA WILLIAMS Gameplay Comparison | TEKKEN 8 VS Tekken 7"
+  },
+  {
+   "id": "qkLhVmO7RIo",
+   "title": "All RAGE ARTS So Far | TEKKEN 8 Alpha"
+  },
+  {
+   "id": "o4AQkrY4adw",
+   "title": "Paul Phoenix RIGHT UPPERCUT | TEKKEN 7 Combos"
+  },
+  {
+   "id": "cpwzjzPKDFU",
+   "title": "The Return of Jun Kazama | TEKKEN 8 Concept"
+  },
+  {
+   "id": "eM9YBgL7ca0",
+   "title": "King ATLAS' HAMMER Combos | TEKKEN 7"
+  },
+  {
+   "id": "3waEs-EZGLs",
+   "title": "Kazuya Mishima EWGF Combos | TEKKEN 7"
+  },
+  {
+   "id": "Qd-pCWffi58",
+   "title": "Jin Kazama EHWF Combos | TEKKEN 7"
+  },
+  {
+   "id": "N7if4yrmkAQ",
+   "title": "Kazuya Mishima Heat Dash Combos | TEKKEN 7 Mod"
+  },
+  {
+   "id": "ZHEqkONb7Zs",
+   "title": "Lars Alexandersson Heat Dash Combos | TEKKEN 7 Mod"
+  },
+  {
+   "id": "YmEclwsFQos",
+   "title": "Jin Kazama Heat Dash Combos | TEKKEN 7 Mod"
+  },
+  {
+   "id": "3LWCxNsEpYk",
+   "title": "Paul Phoenix's NEW RAGE ART VS The OLD | TEKKEN 8 Alpha"
+  },
+  {
+   "id": "kMyZmxzIv_I",
+   "title": "Leroy Smith Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "8W8p34RPPgE",
+   "title": "Jin Kazama Low Parry Combos | TEKKEN 7"
+  },
+  {
+   "id": "OYuY99wab-o",
+   "title": "Paul Phoenix Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "wBtBpjlTQZY",
+   "title": "I'M NOT GONNA SUGARCOAT IT. (Armor King Edition)"
+  },
+  {
+   "id": "BPGObOn-xd4",
+   "title": "PATCH 5.01 Breakdown | TEKKEN 7"
+  },
+  {
+   "id": "R9x_9HzOnw4",
+   "title": "Jin Kazama's Zen Cancel | TEKKEN Tips"
+  },
+  {
+   "id": "w9vKIKzsGyQ",
+   "title": "TEKKEN 8 Trailer vs. TEKKEN 7"
+  },
+  {
+   "id": "ZcmoSBPXkTE",
+   "title": "TOP 10 HARDEST MOVES IN TEKKEN 7"
+  },
+  {
+   "id": "qLdz0rrpt9g",
+   "title": "Lee Chaolan Wall Crush Tactics | TEKKEN 7"
+  },
+  {
+   "id": "IluvLzQVQUs",
+   "title": "TEKKEN: Bloodline vs. TEKKEN 7 | Moves Comparison"
+  },
+  {
+   "id": "CkLfJWKFhIE",
+   "title": "Devil Jin Wall Combo Options (Patch 5.00) | TEKKEN 7"
+  },
+  {
+   "id": "HeSTitjoEAE",
+   "title": "NEW Combos (Patch 5.00) | TEKKEN 7"
+  },
+  {
+   "id": "Vp8FUFEFrCc",
+   "title": "NEW Wall Crush Moves (All Characters) | TEKKEN 7"
+  },
+  {
+   "id": "6RPap80XeyQ",
+   "title": "How To Wavedash | TEKKEN Tips"
+  },
+  {
+   "id": "tKMjUJLinfE",
+   "title": "How To Korean Backdash | TEKKEN Tips"
+  },
+  {
+   "id": "FqCkguvh_Fs",
+   "title": "Battle Update NEW vs. OLD Comparison | TEKKEN 7"
+  },
+  {
+   "id": "QIVA-NcozIw",
+   "title": "Leo Kliesen Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "1Kg7IKtXm1k",
+   "title": "Kazuya Mishima Wall Carry Combos Ft. Perfect God Fist | TEKKEN 7"
+  },
+  {
+   "id": "SsmXGJM7IS8",
+   "title": "King Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "bXgn079k8N0",
+   "title": "Josie Rizal Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "ikqTPOK3854",
+   "title": "Jin Kazama Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "k3ho_Ej-hQ0",
+   "title": "Noctis Lucis Caelum Wall Carry Combos Ft. Momo-Dog | TEKKEN 7"
+  },
+  {
+   "id": "gubdHLj06uU",
+   "title": "Craig Marduk Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "0IhRuX2k01Y",
+   "title": "Bryan Fury Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "mjoL5pifH1c",
+   "title": "Hwoarang Wall Carry Ft. Basuka | TEKKEN 7 Combos"
+  },
+  {
+   "id": "zSXZPrcow1g",
+   "title": "Original Fahkumram Hit Like A Truck!"
+  },
+  {
+   "id": "9MdVW9C-3_o",
+   "title": "Feng Wei Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "Y7TfkRA8p0I",
+   "title": "Heera Malik's Favorite Steve Combo 🥊"
+  },
+  {
+   "id": "Cxj_vc1ye8Y",
+   "title": "Lars Alexandersson Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "5_vfQ36oTrQ",
+   "title": "How To Do Instant While Running | TEKKEN Tips"
+  },
+  {
+   "id": "e1ZzXhfJGTk",
+   "title": "Lee Chaolan Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "jBaIru_1RYc",
+   "title": "Knee's Balcony Break Combo vs. JDCR | Recreated"
+  },
+  {
+   "id": "KT5bfsPVrP4",
+   "title": "Sergei Dragunov Wall Carry Combos | TEKKEN 7"
+  },
+  {
+   "id": "nCOwva0ui8E",
+   "title": "Paul Phoenix's QCF+1 Combo | TEKKEN Tips"
+  },
+  {
+   "id": "v0UldI0qHsk",
+   "title": "King's Jaguar Hook into Screw | TEKKEN Tips"
+  },
+  {
+   "id": "sZz4Xrg5kpw",
+   "title": "BRUCE IRVIN - King of Muay Thai | TEKKEN 7 Concept"
+  },
+  {
+   "id": "8aXCQTijiFA",
+   "title": "Nina Williams's Butterfly Loop | TEKKEN Tips"
+  },
+  {
+   "id": "utdK1dPjGMU",
+   "title": "Lidia Sobieska Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "jriSm4qVGjk",
+   "title": "Kunimitsu Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "FJ2v3j7DhVM",
+   "title": "Miguel Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "8LJMwoTgbZI",
+   "title": "Bryan Fury's Instant Full Crouch | TEKKEN Tips"
+  },
+  {
+   "id": "z9asbD9S4pk",
+   "title": "Paul Phoenix Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "ZXHo4eL_VyI",
+   "title": "Armor King Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "UvW7yTqm3b4",
+   "title": "Sergei Dragunov Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "5kwVix-wIY0",
+   "title": "Lars Alexandersson Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "v64IH_HiCTs",
+   "title": "Craig Marduk's Vale Tudo Stance Cancel | TEKKEN Tips"
+  },
+  {
+   "id": "BxFI5DXl5jg",
+   "title": "Kazuya Mishima Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "hoOjm-fXxr4",
+   "title": "Devil Jin Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "8Tf8Daakia4",
+   "title": "Jin Kazama Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "NOX9bhcEI2o",
+   "title": "Sergei Dragunov's Sneak Cancel | TEKKEN Tips"
+  },
+  {
+   "id": "-5hZsCrP9pI",
+   "title": "Marshall Law's DSS Cancel | TEKKEN Tips"
+  },
+  {
+   "id": "S37pQheABrQ",
+   "title": "Leo Kliesen's Kinkei Crouch Cancel | TEKKEN Tips"
+  },
+  {
+   "id": "226E20rJ_CM",
+   "title": "Kazuya Mishima's PERFECT ELECTRIC | TEKKEN Tips"
+  },
+  {
+   "id": "ElG4w3qzDsU",
+   "title": "Steve Fox's Shiro Combo | TEKKEN Tips"
+  },
+  {
+   "id": "YASzQ5LREH4",
+   "title": "Lee Chaolan's B2 Loop | TEKKEN Tips"
+  },
+  {
+   "id": "59qx24UBCOY",
+   "title": "Paul's Rage Art Cancel Is Fun!"
+  },
+  {
+   "id": "ZqghpbzSK64",
+   "title": "Side Walls Are Your Friend"
+  },
+  {
+   "id": "dHVMP1B4mKs",
+   "title": "Takedown Denied!"
+  },
+  {
+   "id": "lDPnAlNhD84",
+   "title": "Lucky Chloe Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "JJzxIMTF_u8",
+   "title": "Kazumi Mishima Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "pMMcRBMpQ3Q",
+   "title": "Eliza Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "SM2NqkwFdrY",
+   "title": "Master Raven Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "TjTFUrZX0S8",
+   "title": "Eddy Gordo Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "ulP6KPvCoZI",
+   "title": "Alisa Bosconovitch Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "G39asfdMxSg",
+   "title": "Lidia Sobieska Combo Guide | TEKKEN 7"
+  },
+  {
+   "id": "JiXIFqY6t2c",
+   "title": "Ganryu Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "rhide8oNCcQ",
+   "title": "Katarina Alves Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "rM0WB7-ekBg",
+   "title": "Lee Chaolan Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "h9gXoB8Df44",
+   "title": "Claudio Serafino Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "H92NCpNqtXI",
+   "title": "Kuma & Panda Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "IcTmSloiR8E",
+   "title": "Ling Xiaoyu Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "k7PbQISHyXo",
+   "title": "Nina Williams Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "EkM0sQnMlS4",
+   "title": "Tifa Lockhart | TEKKEN 7 Mod"
+  },
+  {
+   "id": "n1SRmuVKkLU",
+   "title": "Leo Kliesen Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "lXFmXWJ3WTg",
+   "title": "Shaheen Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "w2levjTstcY",
+   "title": "Zafina Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "aB0Sw0NUfvo",
+   "title": "Lili Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "k8t63kqF4Kk",
+   "title": "Julia Chang Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "img9BH_iHzs",
+   "title": "Heihachi Mishima Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "dNACrBDc9Lk",
+   "title": "Noctis Lucis Caelum Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "gqZlu2EsjJU",
+   "title": "Negan Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "zskWIaB59TY",
+   "title": "Lei Wulong Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "00HZEf2GYd4",
+   "title": "Akuma Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "6G_CoB5N79Y",
+   "title": "Josie Rizal Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "9mzv0cVNcgA",
+   "title": "Steve Fox Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "8Ssl0nluge4",
+   "title": "King Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "QPxFEndJdPE",
+   "title": "Leroy Smith Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "RyWanj6xjc8",
+   "title": "Asuka Kazama Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "qImQXs2m7z4",
+   "title": "Fahkumram Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "g_DlpoMDh14",
+   "title": "Geese Howard Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "a0Nof2bMwak",
+   "title": "Marshall Law Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "CeFJv7CY82s",
+   "title": "Craig Marduk Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "DCBm3Ss24sQ",
+   "title": "Gigas Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "jxaZb3dcrqE",
+   "title": "Hwoarang Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "6VGD-2vXbG4",
+   "title": "TEKKEN 7 | Feng Wei Season 4 New Combos"
+  },
+  {
+   "id": "f0S1g9UE6P8",
+   "title": "Yoshimitsu Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "sFhpRtnjays",
+   "title": "Bob Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "KrkwoSUXMzs",
+   "title": "Anna Williams Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "PSvyG5foCgE",
+   "title": "Bryan Fury Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "N-8X8yHxb48",
+   "title": "Jack-7 Combo Guide (Season 4) | TEKKEN 7"
+  },
+  {
+   "id": "cI6W_PSgyzw",
+   "title": "TEKKEN 7 | Armor King Season 4 New Combos"
+  },
+  {
+   "id": "j78LPFt9fiY",
+   "title": "TEKKEN 7 | Miguel Season 4 New Combos"
+  },
+  {
+   "id": "yvuHygYZlyY",
+   "title": "TEKKEN 7 | Paul Phoenix Season 4 New Combos"
+  },
+  {
+   "id": "OVYepbR9Ul8",
+   "title": "TEKKEN 7 | Devil Jin Season 4 New Combos"
+  },
+  {
+   "id": "gK0nkLOBGXQ",
+   "title": "TEKKEN 7 | Lars Alexandersson New Season 4 Combos"
+  },
+  {
+   "id": "8q9mDi0lfIY",
+   "title": "TEKKEN 7 | Sergei Dragunov Season 4 New Combos"
+  },
+  {
+   "id": "OtNSLyntpNU",
+   "title": "TEKKEN 7 | Kazuya Mishima Season 4 New Combos"
+  },
+  {
+   "id": "ASNT49PS1sI",
+   "title": "TEKKEN 7 | Jin Kazama Season 4 New Combos"
+  },
+  {
+   "id": "grazbUEJBLE",
+   "title": "Kunimitsu Combo Guide | TEKKEN 7"
+  },
+  {
+   "id": "tlpGCzrFFbs",
+   "title": "TEKKEN 7 | Hwoarang Advanced Combos ft. @basuka93"
+  },
+  {
+   "id": "KUvO4Kz5yTU",
+   "title": "Initial D Zero Ver.1.3 | Time Attack - Akina Downhill [Platinum]"
+  },
+  {
+   "id": "JqWjTbYIUk8",
+   "title": "TEKKEN 7 | Master Raven Combos (Season 3)"
+  },
+  {
+   "id": "OqT0VqWqFNc",
+   "title": "TEKKEN 7 | Hwoarang Combos (Season 3)"
+  },
+  {
+   "id": "48lEHNFv_50",
+   "title": "TEKKEN 7 | Bryan Fury Combos (Season 3)"
+  },
+  {
+   "id": "zped7XPXI8s",
+   "title": "TEKKEN 7 | King Combos (Season 3)"
+  },
+  {
+   "id": "wKmazqmkgYI",
+   "title": "TEKKEN 7 | Lee Chaolan Combos (Season 3)"
+  },
+  {
+   "id": "geDadvey7rw",
+   "title": "TEKKEN 7 | Steve Fox Combos (Season 3)"
+  },
+  {
+   "id": "swjZcmLEMbA",
+   "title": "TEKKEN 7 | Eliza Combos (Season 3)"
+  },
+  {
+   "id": "pyTVayXwB_k",
+   "title": "TEKKEN 7 / Fahkumram Combos (Season 3)"
+  },
+  {
+   "id": "PVmzLDNFpvc",
+   "title": "Initial D Zero Ver.1.3 / Time Attack - Gunsai Touge [Platinum]"
+  },
+  {
+   "id": "GEU1NORuDnY",
+   "title": "Initial D Zero Ver.1.3 / Time Attack - Myogi Downhill (No Brakes & God Hand) [Specialist]"
+  },
+  {
+   "id": "ao3ihmFnS9g",
+   "title": "Initial D Zero Ver.1.3 / Time Attack - Akagi Downhill [Platinum]"
+  },
+  {
+   "id": "ZCiuPew_GDE",
+   "title": "Initial D Zero / First Gameplay"
+  },
+  {
+   "id": "rZmnZI2KqVE",
+   "title": "TEKKEN 7 / Ganryu Combos (Season 3)"
+  },
+  {
+   "id": "bGMJQCk2zQ0",
+   "title": "TEKKEN 7 / Leroy Smith Combos (Ver. 3.00)"
+  },
+  {
+   "id": "Er_S0C9IWpw",
+   "title": "TEKKEN 7 / Devil Jin Combos (Season 3)"
+  },
+  {
+   "id": "29fp_cJYyFQ",
+   "title": "TEKKEN 7 / Miguel Combos (Season 3)"
+  },
+  {
+   "id": "dnM9RVFRtps",
+   "title": "TEKKEN 7 / Noctis Lucis Caelum Combos (Season 3)"
+  },
+  {
+   "id": "iLJhp9wCJfw",
+   "title": "Dragunov's $50 Combo Breakdown (Ver. 3.00) / TEKKEN 7 Tutorial"
+  },
+  {
+   "id": "-IyFciaWZ40",
+   "title": "TEKKEN 7 / Jin Kazama Combos (Season 3)"
+  },
+  {
+   "id": "zCYNhWNPjaE",
+   "title": "TEKKEN 7 / Dragunov Combos (Season 3, Ver. 3.00)"
+  },
+  {
+   "id": "Q3jimr5az6Y",
+   "title": "TEKKEN 7 / Zafina Combos (Season 2)"
+  },
+  {
+   "id": "mwdMhRfK2F4",
+   "title": "TEKKEN 7 / Quest For Vanquisher, Claudio Ranked"
+  },
+  {
+   "id": "bB1-1fksYJA",
+   "title": "How To Drift In Initial D Arcade Stage 8∞"
+  },
+  {
+   "id": "zBZCpfIxA5A",
+   "title": "Initial D 8∞ / Time Attack - Tsukuba Outbound [Specialist]"
+  },
+  {
+   "id": "Za-v85LtxmA",
+   "title": "Initial D 8∞ / Time Attack - Tsukuba Inbound [Platinum]"
+  },
+  {
+   "id": "jzcq94dIiic",
+   "title": "Initial D 8∞ / Time Attack - Tsuchisaka Inbound [Platinum]"
+  },
+  {
+   "id": "xiiX0pHNVU4",
+   "title": "TEKKEN 7 / Julia Chang Combos (Season 2)"
+  },
+  {
+   "id": "iaLoP6Sa2F8",
+   "title": "TEKKEN 7 / Negan Combos (Season 2)"
+  },
+  {
+   "id": "l8Zmz_aBWv4",
+   "title": "Black Ops 4 Emblem Tutorial / Super Saiyan Blue Gogeta"
+  },
+  {
+   "id": "-_K0RWmseb0",
+   "title": "Initial D 8∞ / Time Attack - Usui Clockwise [Platinum]"
+  },
+  {
+   "id": "4-XF7ifbrsI",
+   "title": "Black Ops 4 Emblem Tutorial / Cheelai"
+  },
+  {
+   "id": "qJPnHfECDDs",
+   "title": "Initial D 8∞ / Time Attack - Akagi Uphill [Platinum]"
+  },
+  {
+   "id": "62CVNK7MT0o",
+   "title": "Initial D 8∞ / Time Attack - Akina Snow Uphill [Platinum]"
+  },
+  {
+   "id": "cckl0EQmCB0",
+   "title": "TEKKEN 7 60 Second Challenge / CH D/F+2 PEWGF"
+  },
+  {
+   "id": "4AIwQu-E_xM",
+   "title": "TEKKEN 7 / Noctis Gets Juggernaut!"
+  },
+  {
+   "id": "i3wJkUt8HJw",
+   "title": "Initial D 8∞ / Time Attack - Akina Snow Downhill [Platinum]"
+  },
+  {
+   "id": "8FUwtdHNx0Y",
+   "title": "Black Ops 4 Emblem Tutorial / Mizore Shirayuki"
+  },
+  {
+   "id": "inM13TRrnFk",
+   "title": "Black Ops 4 Emblem Tutorial / Ultra Instinct Goku"
+  },
+  {
+   "id": "KpzOmKLwFls",
+   "title": "TEKKEN 7 / Craig Marduk Combos (Season 2)"
+  },
+  {
+   "id": "8uT0hPMWe7U",
+   "title": "TEKKEN 7 / Armor King Combos (Season 2)"
+  },
+  {
+   "id": "aX2drC0xjsw",
+   "title": "TEKKEN 7 / Lei Wulong Combos (Season 2)"
+  },
+  {
+   "id": "El1xvJNfKIw",
+   "title": "Logitech Steering Wheel Swap & Sequential Shifter Mod"
+  },
+  {
+   "id": "iIKIIJJvanM",
+   "title": "Initial D 8∞ / Time Attack - Tsubaki Line Downhill [Platinum]"
+  },
+  {
+   "id": "474Yp9mjNbU",
+   "title": "Initial D 8∞ / Time Attack - Nagao Downhill [Platinum]"
+  },
+  {
+   "id": "LawjWdvRIdQ",
+   "title": "Initial D 8∞ / Time Attack - Nanamagari Downhill [Platinum]"
+  },
+  {
+   "id": "JJBG48gXEIY",
+   "title": "Initial D 8∞ / Time Attack - Happogahara Outbound [Platinum]"
+  },
+  {
+   "id": "Imxum_tV4Gc",
+   "title": "Initial D 8∞ / Time Attack - Momiji Line DH [Platinum]"
+  },
+  {
+   "id": "Zv7mBOxYcyA",
+   "title": "Initial D 8∞ / Time Attack - Lake Akina Counterclockwise [Platinum]"
+  },
+  {
+   "id": "cZsE9_XF6MM",
+   "title": "TEKKEN 7 / Online Combo Montage"
+  },
+  {
+   "id": "9VTCMKv6iGs",
+   "title": "Initial D 8∞ / Time Attack - Tsuchisaka Outbound [Platinum]"
+  },
+  {
+   "id": "MCVsH-eG8_s",
+   "title": "Initial D 8∞ / Time Attack - Sadamine Downhill [Platinum]"
+  },
+  {
+   "id": "kkD0pGQ_jjU",
+   "title": "Initial D 8∞ / Time Attack - Tsukuba OB [Platinum]"
+  },
+  {
+   "id": "hQ_DS8BLA-M",
+   "title": "Initial D 8∞ / Time Attack - Irohazaka Downhill [Platinum]"
+  },
+  {
+   "id": "LFFpcS7Yr5I",
+   "title": "Initial D Arcade Stage 8∞ / Bunta's Challenge at Akina Snow DH"
+  },
+  {
+   "id": "YnqTQbJ_TTU",
+   "title": "Initial D Arcade Stage 8∞ / InfinitySide - Blind Attack Nobuhiko"
+  },
+  {
+   "id": "oyFUiGwWUoo",
+   "title": "Initial D 8∞ / Time Attack - Hakone Downhill [Platinum]"
+  },
+  {
+   "id": "8PXurZZIgUg",
+   "title": "Initial D 8∞ / Time Attack - Usui Counterclockwise [Platinum]"
+  },
+  {
+   "id": "xLpjD8pWt6c",
+   "title": "Initial D 8∞ / Time Attack - Myogi Downhill [Platinum]"
+  },
+  {
+   "id": "fXti1z1z1Oo",
+   "title": "Initial D 8∞ / Time Attack - Akina Downhill [Platinum]"
+  },
+  {
+   "id": "5drBAYPN8FU",
+   "title": "Initial D 8∞ / Time Attack - Akagi Downhill [Platinum]"
+  },
+  {
+   "id": "_JlmhU6HcJ0",
+   "title": "Initial D Arcade Stage 8∞ / Bunta's Challenge at Nagao Uphill"
+  },
+  {
+   "id": "xjK7TL4yDNY",
+   "title": "Initial D Arcade Stage 8∞ / InfinitySide - Day Battle Tomoyuki"
+  },
+  {
+   "id": "jnQNQ_dBYFU",
+   "title": "Initial D Arcade Stage 8∞ / InfinitySide - Seiji's Return"
+  },
+  {
+   "id": "AqAPD4_cd9U",
+   "title": "Initial D Arcade Stage 8∞ / Ryzing Gets A New Car!"
+  },
+  {
+   "id": "P_ON-aeA0Ng",
+   "title": "Initial D Arcade Stage 8∞ / Bunta's Challenge at Akagi Uphill"
+  },
+  {
+   "id": "6Pa5bkjzV0s",
+   "title": "Initial D Arcade Stage 8∞ / InfinitySide - Joyride With Mika"
+  },
+  {
+   "id": "oPuPlcwRCpQ",
+   "title": "Initial D Arcade Stage 8∞ / InfinitySide - No Braking ft. The Tokyo Guys"
+  }
+ ],
+ "replays": [
+  {
+   "id": "PdQoIOLco8Q",
+   "title": "T8 🔥 KEISUKE (#5 Ranked Kazuya) vs MATSUBA (Anna) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "97Bkx38Nm4k",
+   "title": "T8 🔥 CRESCENT (#1 Ranked Clive) vs MONGKOL (#7 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "arhgxnuaa5Y",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs AYORICHIE (Leo) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "An29wFqXFtA",
+   "title": "T8 🔥 HENDO (#1 Ranked Jin) vs UNCQUALIZER (#2 Ranked Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ikl9ge3Gfw0",
+   "title": "T8 🔥 YAGAMI (#3 Ranked Reina) vs SUBJECT (Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "cr_tJsCifAk",
+   "title": "T8 🔥 KNEE (Kazuya) vs LINIA PACIFICA (Jin) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "hGT_--tq5FM",
+   "title": "T8 🔥 JDCR (#8 Ranked Armor King) vs CHIKURIN (Lili) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "RmLrVgK7m0w",
+   "title": "T8 🔥 JDCR (Dragunov) vs MULGOLD (Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "-fZ1aJe_cqE",
+   "title": "T8 🔥 DADDYKING (Devil Jin) vs MULGOLD (#8 Ranked Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "OktLKgImcqA",
+   "title": "T8 🔥 CRESCENT (#1 Ranked Clive) vs DADDYKING (Lars) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "KQJotEeGOAs",
+   "title": "T8 🔥 MULGOLD (#2 Ranked Alisa) vs JDCR (#7 Ranked Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "PuKN6bfkJ0U",
+   "title": "T8 🔥 NOBI (Anna) vs JDCR (#7 Ranked Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "amMfxItLmXw",
+   "title": "T8 🔥 LOWHIGH (#5 Ranked Bryan) vs DOMA (#9 Ranked Armor King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "hx8ZwxYzgdg",
+   "title": "T8 🔥 JOE CRUSH (#1 Ranked Jack-8) vs PLING (#2 Ranked Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "vniudMtsKwo",
+   "title": "T8 🔥 RANGCHU (Fahkumram) vs CRESCENT (#4 Ranked Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "V8CqDBSZz8Y",
+   "title": "T8 🔥 YAGAMI (Bob) vs NICKROMANCER (Nina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "AQC0L1qI9ck",
+   "title": "T8 🔥 SEPHIBLACK (#4 Ranked Shaheen) vs EVIL46 (#2 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "PYnM221V8qU",
+   "title": "T8 🔥 ARSLAN ASH (#8 Ranked Nina) vs KEISUKE (#3 Ranked Kazuya) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "LCuQFe1xU_M",
+   "title": "T8 🔥 CRESCENT (#1 Ranked Clive) vs DOMA (Armor King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "zkMjdRz57Bc",
+   "title": "T8 🔥 CRESCENT (#1 Ranked Clive) vs MULGOLD (#1 Ranked Claudio) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "C8GwTkUwDpQ",
+   "title": "T8 🔥 JOEY FURY (#4 Ranked Jack-8) vs PLING (#2 Ranked Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "R1mHYTnAJGc",
+   "title": "T8 🔥 RANGCHU (Kuma) vs KAGEMARU (#2 Ranked Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "uMR8agoZCyw",
+   "title": "T8 🔥 KAGEMARU (#2 Ranked Zafina) vs OSENEW (Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "o-3kiwX4__Y",
+   "title": "T8 🔥 M-D-LUFFY (#7 Ranked Paul) vs RAEF (Fahkumram) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "dswuCJahrmk",
+   "title": "T8 🔥 MULGOLD (Bryan) vs CRESCENT (#4 Ranked Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "HsiwKUQMTeo",
+   "title": "T8 🔥 LOWHIGH (Dragunov) vs CRESCENT (#4 Ranked Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "FuwT-uXsbpY",
+   "title": "T8 🔥 ARSLAN ASH (#8 Ranked Nina) vs DOMA (#8 Ranked Armor King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "tyvhbTmLJko",
+   "title": "T8 🔥 SHINE (Lili) vs VOYY (Paul) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "fcm4Bmzg0Zw",
+   "title": "T8 🔥 CHIKURIN (Kunimitsu) vs AOYAMA (Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Nc6j2u1ZQ5s",
+   "title": "T8 🔥 XCC (Kunimitsu) vs JDCR (#5 Ranked Armor King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ohbUvgjasDk",
+   "title": "T8 🔥 DHOME50HBK (Feng) vs RAEF (Jin) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "eMzW_HT89fo",
+   "title": "T8 🔥 BITTERS (#3 Ranked Kunimitsu) vs LMG MOB (#4 Ranked Lars) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "eQ19yh2mgc0",
+   "title": "T8 🔥 CACHALON (#1 Ranked Asuka) vs LEEMISHIMA (#1 Ranked Lidia) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "3AK8Y_SPZzQ",
+   "title": "T8 🔥 LOWHIGH (Dragunov) vs MULGOLD (#5 Ranked Alisa) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "gNpLr-QSswA",
+   "title": "T8 🔥 JDCR (#3 Ranked Armor King) vs MANGJA (#6 Ranked Law) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "z5jwymS8jGA",
+   "title": "T8 🔥 JDCR (#3 Ranked Armor King) vs OSENEW (Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "bxC6FVXR3a8",
+   "title": "T8 🔥 KEISUKE (#2 Ranked Kazuya) vs ARSLAN ASH (Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "qHhgDZen6NU",
+   "title": "T8 🔥 KEISUKE (#3 Ranked Kazuya) vs AOYAMA (#9 Ranked Lars) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "b2EaqpdZbzc",
+   "title": "T8 🔥 JDCR (#3 Ranked Armor King) vs CRESCENT (#9 Ranked Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "yhP4T9eEcWY",
+   "title": "T8 🔥 ULSAN (#8 Ranked Armor King) vs XCC (Kunimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "meBto5k2Pxs",
+   "title": "T8 🔥 TETSU (#2 Ranked Lidia) vs STACK (#1 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "KSj4pz5BMq0",
+   "title": "T8 🔥 CHIKURIN (Kunimitsu) vs AOYAMA (Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "fGvwWxSYIis",
+   "title": "T8 🔥 LOWHIGH (#3 Ranked Bryan) vs CRESCENT (#7 Ranked Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "O5bMxLPSqBc",
+   "title": "T8 🔥 KKOKKOMA (#3 Ranked Feng) vs KAREI (#9 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "qQb4Vvzrp3U",
+   "title": "T8 🔥 NAB DO (#9 Ranked Yoshimitsu) vs DOMA (Bryan) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "4KT1yKcRum0",
+   "title": "T8 🔥 CHIKURIN (Kunimitsu) vs GENYA (Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "iji4-NGWOtU",
+   "title": "T8 🔥 NICKROMANCER (Lili) vs SUBJECT (Bryan) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "1J-eVTyD5v4",
+   "title": "T8 🔥 CRESCENT (#9 Ranked Shaheen) vs GENYA (Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "reaTJCgigZ8",
+   "title": "T8 🔥 KANEANDTRENCH (#3 Ranked Yoshimitsu) vs STARBREAKER (#6 Ranked Bryan) 🔥 T8 High Level Gameplay"
+  },
+  {
+   "id": "J9GR6VcEBro",
+   "title": "T8 🔥 KEI (#7 Ranked Lee) vs HARU (Jack-8) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "_szbidEljRk",
+   "title": "T8 🔥 JDCR (#9 Ranked Armor King) vs XCC (Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "gHKW1luWVO4",
+   "title": "T8 🔥 YAZEED (Yoshimitsu) vs REDA (#5 Ranked Hwoarang) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "upgr5VSkV64",
+   "title": "T8 🔥 YAGAMI (Lili) vs SUBJECT (Bryan) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "0PDK4YeaWZE",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs GORAN (Jun) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "GkeZeCee_ho",
+   "title": "T8 🔥 LMG MOB (#1 Ranked Lars) vs SHADOE (#6 Ranked Raven) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "NuNexx4y2dc",
+   "title": "T8 🔥 SHADOE (#1 Ranked Raven) vs KANEANDTRENCH (#1 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Ip-g4Ia-V0Y",
+   "title": "T8 🔥 YOREDZ (#1 Ranked Xiaoyu) vs DHOME (#2 Ranked Leo) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "doIo5SESPC0",
+   "title": "T8 🔥 BREADMAN (#4 Ranked Leroy) vs WECKA (#9 Ranked Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "GFc3yDZZn38",
+   "title": "T8 🔥 KAIZOKULARS (#4 Ranked Lars) vs ADELANTE (Paul) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "dmJeU1T8y74",
+   "title": "T8 🔥 JDCR (Armor King) vs XCC (Kunimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "JEM4UAiMv44",
+   "title": "T8 🔥 JDCR (Dragunov) vs TOSHITOSHI (Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "xtoR0EGPGoE",
+   "title": "T8 🔥 JOE CRUSH (Kazuya) vs SHADOW 20Z (Bob) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "nK4nv0Yi0CI",
+   "title": "T8 🔥 TETSU (#1 Ranked Lidia) vs STACK (#3 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "HibcqyBqYFI",
+   "title": "T8 🔥 PINYA (#9 Ranked Kuma) vs MATSUBA (#4 Ranked Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "3j5Su4jrcUQ",
+   "title": "T8 🔥 NINJAKILLA (Heihachi) vs ISHAN (#9 Ranked Kazuya) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "OwWt8WOtAwA",
+   "title": "T8 🔥 JOKA (#1 Ranked Heihachi) vs SEF (#2 Ranked Jin) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "3rJKenLv-j8",
+   "title": "T8 🔥 MULGOLD (#2 Ranked Alisa) vs CRESCENT (Kunimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "BywOOJUIyic",
+   "title": "T8 🔥 MULGOLD (#6 Ranked Clive) vs CRESCENT (#5 Ranked Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "M5e479pOQ7s",
+   "title": "T8 🔥 STROG (#1 Ranked Steve) vs TETSU (#1 Ranked Lidia) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "D9V4slnMgWU",
+   "title": "T8 🔥 MULGOLD (Bryan) vs CRESCENT (Kunimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "8ULEfE-xQIs",
+   "title": "T8 🔥 IKARI (Kazuya) vs WECKA (Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Pw-uEZqULHk",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs TETSU (#3 Ranked Lidia) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "kBdd3-Ome1Y",
+   "title": "T8 🔥 ARSLAN ASH (Kunimitsu) vs MULGOLD (#9 Ranked Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "I77h9X4E72w",
+   "title": "T8 🔥 BREADMAN (#4 Ranked Leroy) vs WECKA (Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Cfy4j4IqG8E",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs EVIL46 (#3 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "B9voW0BJXYQ",
+   "title": "T8 🔥 REDA (#5 Ranked Hwoarang) vs FAHF F (#7 Ranked Leo) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "qG5hK4IxSoE",
+   "title": "T8 🔥 ILIAS (Lili) vs KANEANDTRENCH (#2 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "tWx_7Y5P7p0",
+   "title": "T8 🔥 KEISUKE (Kazuya) vs MULGOLD (#1 Ranked Claudio) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "hpKjsbeufEY",
+   "title": "T8 🔥 JDCR (Fahkumram) vs MULGOLD (#1 Ranked Claudio) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ckhjesNmTxQ",
+   "title": "T8 🔥 PLING (#3 Ranked Xiaoyu) vs ZATCH (#7 Ranked Asuka) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "JpVXlHasA1I",
+   "title": "T8 🔥 STROG (#2 Ranked Steve) vs NINO (#1 Ranked Kuma) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "zRnY_lc-BBg",
+   "title": "T8 🔥 TAKATAKA (#2 Ranked Bryan) vs RAGE (#9 Ranked Raven) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "BvlKhJQjLkc",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs JOKA (Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "1UsoMeoa7lU",
+   "title": "T8 🔥 TETSU (#3 Ranked Lidia) vs EVIL46 (#2 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "PsBfj05jKIQ",
+   "title": "T8 🔥 JDCR (Fahkumram) vs WECKA (Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "tq1qb2AT-D0",
+   "title": "T8 🔥 JDCR (Fahkumram) vs KKOKKOMA (Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Q79QqMQkf2w",
+   "title": "T8 🔥 SHADOW 20Z (#2 Ranked Zafina) vs CUDDLE CORE (#2 Ranked Alisa) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "T11mv59bf8I",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs ZAKA (#4 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "TiYUtKAngGs",
+   "title": "T8 🔥 ARSLAN ASH (Zafina) vs HAKAIOH (Armor King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "kB825ywXy2Y",
+   "title": "T8 🔥 LOWHIGH (#4 Ranked Bryan) vs NAB DO (#7 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "GE6XV2JM_Xw",
+   "title": "T8 🔥 IKARI (Kazuya) vs LOWHIGH (#4 Ranked Bryan) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "VLupkjKeQ0Q",
+   "title": "T8 🔥 YOREDZ (#1 Ranked Xiaoyu) vs DHOME (#9 Ranked Kuma) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "B4Up0ZYVdfY",
+   "title": "T8 🔥 GLACIATING (Bob) vs SENPAI RELAX (#8 Ranked Nina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "M1OB-B9L2fk",
+   "title": "T8 🔥 KNEE (#6 Ranked Fahkumram) vs MULGOLD (#9 Ranked Leroy) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "QB860EotqYY",
+   "title": "T8 🔥 RAGE (#9 Ranked Raven) vs KKOKKOMA (Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "y1cdftGgQ-I",
+   "title": "T8 🔥 QUDANS (Heihachi) vs KKOKKOMA (Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "tQSs2zUPvo0",
+   "title": "T8 🔥 ULSAN (#5 Ranked Bob) vs MULGOLD (#8 Ranked Claudio) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "gx_OMt4kUn0",
+   "title": "T8 🔥 IKARI (Kazuya) vs CRESCENT (Bob) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "u7JthoOYXcU",
+   "title": "T8 🔥 JOKA (#1 Ranked Heihachi) vs JACOB KAAS (#7 Ranked Raven) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ztiE4GAm8z8",
+   "title": "T8 🔥 BREADMAN (#7 Ranked Leroy) vs FRANCE MANIA (#5 Ranked Jack-8) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "BS_9WDqRv7I",
+   "title": "T8 🔥 MULGOLD (Feng) vs CRESCENT (Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "BaBsS8TGOl4",
+   "title": "T8 🔥 ULSAN (#5 Ranked Bob) vs DADDYKING (Steve) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "270dfP8iW8k",
+   "title": "T8 🔥 LOWHIGH (Dragunov) vs BREADMAN (Claudio) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "VQThV14PUeA",
+   "title": "T8 🔥 STEVEPI (#3 Ranked Lidia) vs HEXMARK (#7 Ranked Paul) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "k0ErzXBwfgU",
+   "title": "T8 🔥 SEF (Fahkumram) vs ZAKA (#1 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "CDLYFQ_xJc8",
+   "title": "T8 🔥 DOMA (#7 Ranked Kunimitsu) vs VOYY (Paul) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "vOnulU_pVnU",
+   "title": "T8 🔥 MULGOLD (#1 Ranked Kunimitsu) vs CRESCENT (Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "X8eRxqnMqaE",
+   "title": "T8 🔥 EDGE (Victor) vs KKOKKOMA (Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "GqqKRlIqDIk",
+   "title": "T8 🔥 EDGE (Victor) vs NAB DO (#2 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "s4J3OItYwq4",
+   "title": "T8 🔥 JOKA (#3 Ranked Heihachi) vs SEF (#2 Ranked Jin) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ah7dkjguCsQ",
+   "title": "T8 🔥 JOKA (Feng) vs MOMODOG (#1 Ranked Devil Jin) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "K5SKJeYjhBw",
+   "title": "T8 🔥 MOMODOG (#1 Ranked Devil Jin) vs SHADOE (#4 Ranked Raven) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "SjJKoJzMdMI",
+   "title": "T8 🔥 JDCR (Armor King) vs GALGONGE (#8 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "m30gRU-ajnI",
+   "title": "T8 🔥 SHADOE (#4 Ranked Raven) vs KANEANDTRENCH (#1 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "b7jg6MAxnhE",
+   "title": "T8 🔥 STARBREAKER (#7 Ranked Bryan) vs ADELANTE (#5 Ranked Paul) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "3Y5o1Y0BGds",
+   "title": "T8 🔥 STEVEPI (#1 Ranked Lidia) vs ZAKA (#1 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "DVucQV2jZ-w",
+   "title": "T8 🔥 RANGCHU (Victor) vs DOMA (#8 Ranked Kunimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "83-iOT5rpEI",
+   "title": "T8 🔥 DOMA (#8 Ranked Kunimitsu) vs WECKA (Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "hNmi6FBx_jM",
+   "title": "T8 🔥 RANGCHU (Victor) vs WECKA (Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "NA4UlrJxRAE",
+   "title": "T8 🔥 SENPAI RELAX (#1 Ranked Miary Zo) vs UNCQUALIZER (#2 Ranked Dragunov) 🔥 T8 High Level Gameplay"
+  },
+  {
+   "id": "to3hIuOD5A4",
+   "title": "T8 🔥 YAGAMI (#1 Ranked Bob) vs SUBJECT (#7 Ranked Dragunov) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "j0vyr9QOG1U",
+   "title": "T8 🔥 CRESCENT (Bob) vs MULGOLD (#9 Ranked Clive) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Lu38tNG7Xyg",
+   "title": "T8 🔥 HEXMARK (#4 Ranked Paul) vs EVIL46 (#9 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "EJ_ZkvsoZus",
+   "title": "T8 🔥 LOWHIGH (#6 Ranked Dragunov) vs GKEN (#5 Ranked Lidia) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "SShvS85zDbw",
+   "title": "T8 🔥 ILIAS (#4 Ranked Eddy) vs KANEANDTRENCH (#1 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ILR_0otLyG8",
+   "title": "T8 🔥 MULGOLD (#9 Ranked Leroy) vs EDGE (Law) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "GJWt0Kqtr8w",
+   "title": "T8 🔥 YOREDZ (#1 Ranked Xiaoyu) vs FEDERER (#6 Ranked King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "8NeQJggK4KU",
+   "title": "T8 🔥 NOBI (Bryan) vs MONGKOL (#3 Ranked Lee) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "14tReSSChEo",
+   "title": "T8 🔥 DHOME50HBK (#2 Ranked Leo) vs REDA (#2 Ranked Hwoarang) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "2X86t62_OsA",
+   "title": "T8 🔥 JOKA (#4 Ranked Feng) vs TETSU (#6 Ranked Lidia) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "XDGcvODJlOQ",
+   "title": "T8 🔥 LOWHIGH (#4 Ranked Bryan) vs CRESCENT (Shaheen) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "tYkqQreDoAg",
+   "title": "T8 🔥 JOE CRUSH (#1 Ranked Jack-8) vs CUDDLE CORE (#9 Ranked Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "YtOXhhMFm9c",
+   "title": "T8 🔥 X C C (Bob) vs KKOKKOMA (Feng) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "8fnop0bur0M",
+   "title": "T8 🔥 EDGE (#2 Ranked Hwoarang) vs CRESCENT (Bob) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "yRKGpWO0Kxg",
+   "title": "T8 🔥 EDGE (#1 Ranked Hwoarang) vs KKOKKOMA (#5 Ranked Kunimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "WyEMKkuEm0E",
+   "title": "T8 🔥 TETSU (#2 Ranked Lidia) vs EVIL46 (#2 Ranked Azucena) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "syiGRSjwRZk",
+   "title": "T8 🔥 EDGE (#1 Ranked Hwoarang) vs KAGEMARU (#3 Ranked Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "f4SNFz5ahCs",
+   "title": "T8 🔥 TETSU (#3 Ranked Feng) vs HIGEM (#7 Ranked Yoshimitsu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "WhLnonjPS3o",
+   "title": "T8 🔥 SEF (Dragunov) vs HEXMARK (#5 Ranked Paul) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "DF8_8xa3loQ",
+   "title": "T8 🔥 KNEE (#4 Ranked Nina) vs DOUBLE (#4 Ranked Law) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "ORPUxjI4bIM",
+   "title": "T8 🔥 HANNI (#4 Ranked Lidia) vs DAPPER (#6 Ranked Leo) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Q5c4TKr_3FM",
+   "title": "T8 🔥 LOWHIGH (#6 Ranked Bryan) vs CRESCENT (Armor King) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "-uQ0E5WEVgM",
+   "title": "T8 🔥 KNEE (#6 Ranked Victor) vs SHINE (Lili) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "RtKb6d-fhYI",
+   "title": "T8 🔥 NINJAKILLA (#1 Ranked Paul) vs JAKEMAN (Bryan) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "kYH8Arfn9gs",
+   "title": "T8 🔥 CLOUD (#2 Ranked Reina) vs CHANEL (#7 Ranked Zafina) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "lOad_eFazBg",
+   "title": "T8 🔥 LOWHIGH (#5 Ranked Bryan) vs DEOKSIK (Jack-8) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "nvh1DXbNqvI",
+   "title": "T8 🔥 JOKA (#8 Ranked Feng) vs STEVEPI (#6 Ranked Lidia) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "wBiIQp063X4",
+   "title": "T8 🔥 LOWHIGH (#5 Ranked Bryan) vs WECKA (#3 Ranked Xiaoyu) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "CTRyG23PUK0",
+   "title": "T8 🔥 MOMO-DOG (#1 Ranked Devil Jin) vs DOUBLE (#3 Ranked Law) 🔥 Tekken 8 High Level Gameplay"
+  },
+  {
+   "id": "Ah8bPE6VFTA",
+   "title": "T8 🔥 DOUBLE (#3 Ranked Law) vs PIYOHIKO (Claudio) 🔥 Tekken 8 High Level Gameplay"
+  }
+ ]
+}
