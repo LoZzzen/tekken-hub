@@ -1,0 +1,1 @@
+Dépose ici tes modèles .glb autorisés, puis déclare-les dans data/models.json

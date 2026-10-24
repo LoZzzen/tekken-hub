@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="fr"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tekken Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: menu principal façon Tekken 8. Titre + onglets fins en haut, liste verticale à gauche, contenu au centre, cartes de chaînes à droite, icônes et aide en bas. */
+:root {
+  --bg: #070a12;
+  --bg-2: #141a33;
+  --panel: rgba(12, 16, 30, .72);
+  --panel-solid: #0f1424;
+  --line: rgba(255, 255, 255, .14);
+  --fg: #f1f3f9;
+  --mute: #98a1b8;
+  --dim: #5d667e;
+  --red: #e0213f;
+  --red-2: #8c1630;
+  --cyan: #6fd6ff;
+  --amber: #ffb224;
+  --ok: #3ddc97;
+  --ui: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --display: "Oxanium", "Arial Narrow", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { margin: 0; }
+body {
+  background:
+    radial-gradient(ellipse 60% 70% at 62% 38%, rgba(111, 118, 214, .30), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 12% 100%, rgba(224, 33, 63, .16), transparent 70%),
+    linear-gradient(160deg, var(--bg-2), var(--bg) 60%);
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--ui);
+  font-size: 16px;
+  line-height: 1.45;
+  min-height: 100vh;
+  padding-block: 18px 22px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 14px; }
+
+/* Titre + onglets */
+.title { font-family: var(--ui); font-weight: 600; font-size: 28px; letter-spacing: .01em; margin: 4px 0 0; }
+.navrow { display: flex; align-items: center; gap: 10px; }
+.cap { flex: none; min-width: 30px; height: 22px; padding: 0 7px; display: inline-grid; place-items: center; background: #e9ecf4; color: #0b0e18; font-family: var(--mono); font-weight: 700; font-size: 11px; border-radius: 4px; border: 0; }
+.tabs-scroll { overflow-x: auto; flex: 1; min-width: 0; scrollbar-width: none; }
+.tabs { display: flex; align-items: stretch; min-width: max-content; }
+.tab { background: none; border: 0; padding: 8px 22px 10px; font-size: 16px; font-weight: 500; color: var(--fg); position: relative; white-space: nowrap; }
+.tab + .tab::before { content: ""; position: absolute; left: 0; top: 30%; bottom: 30%; width: 1px; background: var(--line); }
+.tab:hover { color: #fff; }
+.tab[aria-selected="true"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 0; height: 3px; background: var(--red); box-shadow: 0 0 12px 1px rgba(224, 33, 63, .8); }
+.tab .ico { display: inline-block; width: 18px; height: 18px; vertical-align: -3px; }
+
+/* Zone principale */
+.main { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 22px; min-height: 480px; align-items: start; }
+.list { display: grid; gap: 2px; align-content: start; max-height: 62vh; overflow-y: auto; padding-right: 2px; scrollbar-width: thin; scrollbar-color: var(--dim) transparent; }
+.item { text-align: left; background: none; border: 0; padding: 7px 12px; font-size: 16px; font-weight: 500; color: var(--fg); display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.item:hover { background: rgba(255, 255, 255, .06); }
+.item[aria-current="true"] { background: linear-gradient(90deg, var(--red), var(--red-2)); font-weight: 600; box-shadow: 0 4px 16px rgba(224, 33, 63, .28); }
+.item .star { color: var(--amber); font-size: 13px; }
+.item .sm { font-family: var(--mono); font-size: 11px; color: var(--mute); }
+.item[aria-current="true"] .sm { color: #ffd6de; }
+
+.center { min-width: 0; display: grid; gap: 16px; align-content: start; }
+.hero { font-family: var(--display); font-weight: 800; font-size: clamp(40px, 7vw, 92px); line-height: .92; letter-spacing: .02em; text-transform: uppercase; color: rgba(255, 255, 255, .08); margin: 6px 0 0; user-select: none; }
+.hero b { color: rgba(224, 33, 63, .35); }
+h2 { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 4vw, 40px); text-transform: uppercase; letter-spacing: .02em; margin: 0; line-height: 1; text-wrap: balance; }
+.kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); }
+.lead { color: var(--mute); max-width: 60ch; margin: 0; }
+.panel { background: var(--panel); border: 1px solid var(--line); padding: 16px; backdrop-filter: blur(6px); }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin: 0 0 8px; }
+
+/* Cartes à droite */
+.side { display: grid; gap: 12px; align-content: start; }
+.tile { display: grid; gap: 6px; padding: 12px 14px; text-decoration: none; border: 1px solid var(--line); background: var(--panel); position: relative; overflow: hidden; }
+.tile:hover { border-color: var(--cyan); }
+.tile .t { font-weight: 600; font-size: 15px; }
+.tile .d { color: var(--mute); font-size: 13px; }
+.tile.purple { background: linear-gradient(120deg, rgba(120, 70, 220, .55), rgba(30, 20, 70, .8)); }
+.tile.crimson { background: linear-gradient(120deg, rgba(224, 33, 63, .5), rgba(50, 10, 25, .85)); }
+.tile .go { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
+.logo { display: grid; place-items: center; height: 96px; border: 1px solid var(--line); background: linear-gradient(135deg, #1b2030, #0b0e18); }
+.logo span { font-family: var(--display); font-weight: 800; font-size: 28px; font-style: italic; letter-spacing: .04em; }
+.logo b { color: var(--red); }
+
+/* Notation */
+.seq { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.key { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 8px; font-family: var(--mono); font-weight: 700; font-size: 14px; background: #1a2036; border: 1px solid var(--line); border-bottom: 3px solid var(--cyan); border-radius: 3px; color: var(--cyan); }
+.key.atk { border-bottom-color: var(--red); color: #fff; }
+.sep { color: var(--mute); font-family: var(--mono); padding: 0 1px; }
+
+/* Combos / replays */
+.vid { display: grid; gap: 10px; }
+.thumb { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; max-width: 100%; text-decoration: none; background: linear-gradient(135deg, #1c2442, #0c1020 70%); border: 1px solid var(--line); overflow: hidden; }
+.thumb::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(255, 255, 255, .03) 22px 23px); }
+.thumb .play { width: 58px; height: 58px; border-radius: 50%; background: var(--red); display: grid; place-items: center; box-shadow: 0 0 24px rgba(224, 33, 63, .6); position: relative; }
+.thumb .play::after { content: ""; border-left: 16px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
+.thumb .src { position: absolute; left: 10px; bottom: 8px; font-family: var(--mono); font-size: 11px; color: var(--mute); letter-spacing: .06em; }
+.thumb:hover { border-color: var(--cyan); }
+.thumb .facade { position: absolute; inset: 0; border: 0; padding: 0; background: none; display: grid; place-items: center; }
+.thumb .facade img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.thumb.ph .src { position: relative; left: auto; bottom: auto; text-align: center; padding: 0 16px; font-size: 12px; }
+.entry { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--red); }
+.entry h3 { margin: 0; font-size: 18px; font-weight: 600; }
+.entry p { margin: 0; color: var(--mute); font-size: 14px; }
+.entry .meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn { background: var(--red); border: 0; color: #fff; padding: 9px 18px; font-weight: 600; letter-spacing: .03em; text-decoration: none; display: inline-block; font-size: 14px; }
+.btn.ghost { background: transparent; border: 1px solid var(--line); }
+.btn.sm { padding: 5px 12px; font-size: 12px; }
+.btn:hover { filter: brightness(1.12); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+form.add { display: grid; gap: 10px; }
+form.add label { display: grid; gap: 4px; font-size: 13px; color: var(--mute); }
+form.add input { background: rgba(255, 255, 255, .06); border: 1px solid var(--line); padding: 9px 10px; color: var(--fg); width: 100%; }
+form.add input::placeholder { color: var(--dim); }
+details > summary { cursor: pointer; font-weight: 600; list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before { content: "+ "; color: var(--red); font-family: var(--mono); }
+details[open] > summary::before { content: "– "; }
+.err { color: #ff8095; font-size: 13px; min-height: 1em; }
+
+/* Stats */
+.bar { display: grid; grid-template-columns: 92px minmax(0, 1fr) 26px; gap: 10px; align-items: center; margin: 9px 0; font-size: 14px; }
+.track { height: 8px; background: rgba(255, 255, 255, .1); }
+.fill { height: 100%; background: linear-gradient(90deg, var(--red), var(--amber)); }
+.v { font-family: var(--mono); font-size: 13px; text-align: right; }
+.note { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .03em; }
+
+/* Perso / custo */
+.stage { background: radial-gradient(ellipse at 50% 90%, rgba(224, 33, 63, .28), transparent 62%), var(--panel); border: 1px solid var(--line); display: grid; place-items: center; padding: 10px; }
+.stage svg { width: 100%; max-width: 300px; height: auto; display: block; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
+.sw { height: 40px; border: 2px solid var(--line); background: none; padding: 0; position: relative; }
+.sw span { position: absolute; inset: 2px; }
+.sw[aria-pressed="true"] { border-color: #fff; box-shadow: 0 0 0 2px var(--red); }
+
+/* Visionneuse 3D */
+.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.vwrap { min-width: 0; }
+.viewer { position: relative; height: min(66vh, 580px); min-height: 380px; background: radial-gradient(ellipse at 50% 88%, rgba(224, 33, 63, .28), transparent 62%), var(--panel); border: 1px solid var(--line); overflow: hidden; }
+.viewer canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+.viewer canvas:active { cursor: grabbing; }
+.vcap { position: absolute; left: 12px; right: 12px; bottom: 8px; font-family: var(--mono); font-size: 11px; color: var(--mute); pointer-events: none; }
+.viewer-msg { padding: 24px; color: var(--mute); margin: 0; }
+.stack { display: grid; gap: 14px; min-width: 0; align-content: start; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: transparent; border: 1px solid var(--line); padding: 6px 14px; font-size: 14px; color: var(--mute); }
+.chip:hover { color: var(--fg); border-color: var(--mute); }
+.chip[aria-pressed="true"] { border-color: var(--red); color: #fff; background: rgba(224, 33, 63, .22); }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
+.sw { height: 40px; border: 2px solid var(--line); background: none; padding: 0; position: relative; }
+.sw span { position: absolute; inset: 2px; }
+.sw[aria-pressed="true"] { border-color: #fff; box-shadow: 0 0 0 2px var(--red); }
+
+/* Bas d'écran */
+.bottom { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; padding-top: 6px; }
+.icons { display: flex; gap: 20px; flex-wrap: wrap; }
+.icon { display: grid; justify-items: center; gap: 6px; background: none; border: 0; text-decoration: none; font-size: 12px; font-weight: 600; width: 74px; color: var(--fg); }
+.icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.icon:hover { color: var(--cyan); }
+.hint { flex: 1 1 100%; color: var(--cyan); font-size: 14px; border-bottom: 1px solid rgba(111, 214, 255, .35); padding-bottom: 5px; min-height: 1.6em; }
+.prompts { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; color: var(--mute); width: 100%; }
+.prompts button { background: none; border: 0; padding: 0; display: inline-flex; gap: 7px; align-items: center; color: var(--mute); font-size: 13px; }
+.prompts button:hover { color: var(--fg); }
+.btnc { display: inline-grid; place-items: center; min-width: 20px; height: 20px; border-radius: 10px; border: 1.5px solid var(--mute); font-family: var(--mono); font-size: 10px; font-weight: 700; padding: 0 4px; }
+.foot { font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.restore { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 5; }
+body.hide-ui .wrap { visibility: hidden; }
+
+@media (max-width: 980px) {
+  .main, .split { grid-template-columns: minmax(0, 1fr); }
+  .viewer { height: 62vh; min-height: 340px; }
+  .list { max-height: 220px; grid-auto-flow: row; }
+  .title { font-size: 24px; }
+  .tab { padding: 8px 14px 10px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .center > * { animation: in .25s ease-out both; }
+  @keyframes in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+<div class="wrap" id="app">
+  <h1 class="title" id="title">Menu principal</h1>
+  <div class="navrow">
+    <button class="cap" id="prev" aria-label="Onglet précédent">L1</button>
+    <div class="tabs-scroll"><div class="tabs" id="tabs" role="tablist" aria-label="Sections"></div></div>
+    <button class="cap" id="next" aria-label="Onglet suivant">R1</button>
+  </div>
+
+  <div class="main">
+    <div class="list" id="list" role="listbox" aria-label="Liste"></div>
+    <div class="center" id="center" aria-live="polite"></div>
+  </div>
+
+  <div class="bottom">
+    <div class="icons" id="icons"></div>
+    <div class="hint" id="hint"></div>
+    <div class="prompts">
+      <button id="b-ok"><span class="btnc">↵</span>Valider</button>
+      <button id="b-fav"><span class="btnc">F</span>Favori</button>
+      <button id="b-tab"><span class="btnc">Q</span><span class="btnc">E</span>Changer d'onglet</button>
+      <button id="b-hide"><span class="btnc">H</span>Masquer l'interface</button>
+    </div>
+    <div class="foot">Site de fans. Vidéos de combos : RyzingSol. Replays : Tekken8Replays. Tekken est une marque de Bandai Namco. Les personnages 3D affichés sont des mannequins génériques.</div>
+  </div>
+</div>
+<button class="btn restore" id="restore" hidden>Afficher l'interface</button>
+
+<script>
+(function () {
+  /* ---------- Utilitaires ---------- */
+  var $ = function (s) { return document.querySelector(s); };
+  function h(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function add(parent) { for (var i = 1; i < arguments.length; i++) if (arguments[i]) parent.appendChild(arguments[i]); return parent; }
+  function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
+  function ytOk(u) { try { var x = new URL(u); return x.protocol === 'https:' && ['www.youtube.com', 'youtube.com', 'm.youtube.com', 'youtu.be'].indexOf(x.hostname) >= 0; } catch (e) { return false; } }
+  /* EMBED = true sur un vrai site (GitHub Pages, etc.) : les vidéos se lisent dans la page, sans jamais renvoyer vers YouTube. */
+  var EMBED = true;
+  /* Vidéos récupérées par scripts/update_videos.py (data/videos.json) */
+  var vids = { combos: [], replays: [] };
+  function vidUrl(v) { return 'https://www.youtube.com/watch?v=' + v.id; }
+  function ytId(u) { try { var x = new URL(u); var id = x.hostname === 'youtu.be' ? x.pathname.slice(1) : (x.searchParams.get('v') || ''); return /^[\w-]{11}$/.test(id) ? id : ''; } catch (e) { return ''; } }
+
+  function keyRow(str) {
+    var row = h('div', 'seq');
+    String(str).split(',').forEach(function (step, i) {
+      if (i) add(row, h('span', 'sep', '›'));
+      step.trim().split('+').forEach(function (k, j) {
+        k = k.trim(); if (!k) return;
+        if (j) add(row, h('span', 'sep', '+'));
+        add(row, h('span', 'key' + (/^[1-4]$/.test(k) ? ' atk' : ''), k));
+      });
+    });
+    return row;
+  }
+  function thumb(url, label) {
+    var vid = EMBED ? ytId(url) : '';
+    if (vid) {
+      var box = h('div', 'thumb');
+      var fr = document.createElement('iframe');
+      fr.src = 'https://www.youtube-nocookie.com/embed/' + vid;
+      fr.title = label; fr.loading = 'lazy'; fr.allowFullscreen = true;
+      fr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      fr.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      box.appendChild(fr); return box;
+    }
+    var ph = h('div', 'thumb ph');
+    add(ph, h('span', 'src', EMBED ? 'Vidéo à venir pour ce combo' : 'Le lecteur vidéo s\'active sur la version hébergée du site'));
+    return ph;
+  }
+
+  /* ---------- Données ---------- */
+  var fighters = [
+    ['Jin', 'Karaté Mishima', [8, 9, 6, 6, 9]], ['Kazuya', 'Karaté Mishima', [9, 8, 6, 6, 9]],
+    ['Paul', 'Judo', [10, 5, 6, 7, 5]], ['King', 'Catch', [8, 5, 5, 6, 9]],
+    ['Law', 'Kung-fu', [6, 9, 6, 5, 7]], ['Jun', 'Aïkido', [6, 7, 6, 7, 7]],
+    ['Reina', 'Mishima', [8, 8, 6, 6, 8]], ['Lars', 'Alliance', [6, 9, 6, 6, 7]],
+    ['Asuka', 'Kazama', [6, 7, 5, 8, 8]], ['Lili', 'Acrobate', [5, 9, 7, 5, 8]],
+    ['Nina', 'Assassin', [7, 7, 5, 7, 8]], ['Hwoarang', 'Taekwondo', [7, 9, 7, 5, 9]],
+    ['Xiaoyu', 'Piqua', [5, 9, 5, 6, 9]], ['Jack-8', 'Cyborg', [9, 4, 6, 8, 4]],
+    ['Bryan', 'Kickboxing', [8, 7, 7, 6, 9]], ['Yoshimitsu', 'Sabre', [6, 8, 5, 6, 10]],
+    ['Leroy', 'Maître de kung-fu', [7, 7, 7, 7, 8]], ['Zafina', 'Mystique', [6, 8, 6, 5, 9]],
+    ['Steve', 'Boxe', [6, 8, 5, 7, 6]], ['Dragunov', 'Sambo', [8, 6, 6, 7, 6]],
+    ['Azucena', 'Capoeira', [6, 8, 6, 6, 8]], ['Victor', 'Escrime', [7, 7, 8, 6, 7]]
+  ];
+  var statNames = ['Puissance', 'Vitesse', 'Portée', 'Défense', 'Difficulté'];
+  var seedCombos = {
+    'Jin': [{ title: 'Combos de mur (9 enchaînements)', url: 'https://www.youtube.com/watch?v=03K8xEXeLww', keys: '', note: 'Vidéo de RyzingSol. Les touches sont affichées dans la vidéo : à saisir ici une fois relevées.' }, { title: 'Wavedash', keys: 'f, n, d, d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f, n, d, d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }],
+    'Kazuya': [{ title: 'Wavedash', keys: 'f, n, d, d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f, n, d, d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }]
+  };
+  var news = [
+    ['Patch', 'Notes de patch : équilibrage', 'Le résumé des changements de chaque mise à jour, personnage par personnage.'],
+    ['Nouveau personnage', 'Un combattant rejoint le roster', 'Présentation du style, des coups signatures et d\'un premier guide.'],
+    ['Événement', 'Calendrier des tournois', 'Dates, lieux et formats des compétitions à suivre.'],
+    ['Communauté', 'Clips de la semaine', 'Une sélection de combos et de retournements envoyés par les joueurs.']
+  ];
+  var seedReplays = [
+    { title: 'Finale de tournoi', who: 'Joueur A (Jin) contre Joueur B (Paul)', score: '3 – 1', example: true },
+    { title: 'Demi-finale', who: 'Joueur C (Law) contre Joueur D (Bryan)', score: '2 – 3', example: true },
+    { title: 'Quart de finale', who: 'Joueur E (Reina) contre Joueur F (Lars)', score: '3 – 0', example: true }
+  ];
+  /* Pièces génériques (aucun objet officiel du jeu) : [slot, nom, [[id, nom], ...]] */
+  var slotsDef = [
+    ['jacket', 'Haut', [['basic', 'Veste'], ['long', 'Manteau long'], ['sleeveless', 'Débardeur']]],
+    ['pants', 'Bas', [['long', 'Pantalon'], ['shorts', 'Short']]],
+    ['gloves', 'Mains', [['boxing', 'Gants de boxe'], ['wraps', 'Bandages'], ['none', 'Aucun']]],
+    ['shoes', 'Chaussures', [['sneakers', 'Baskets'], ['boots', 'Bottes']]],
+    ['hair', 'Cheveux', [['short', 'Courts'], ['mohawk', 'Crête'], ['long', 'Longs'], ['bald', 'Aucun']]],
+    ['acc', 'Accessoire', [['none', 'Aucun'], ['headband', 'Bandeau'], ['shades', 'Lunettes']]],
+    ['aura', 'Aura', [['glow', 'Halo']]]
+  ];
+  var palette = ['#e0213f', '#ffb224', '#f4f4f0', '#1c1f2b', '#5ea9ff', '#3ddc97', '#a066ff', '#ff6fb1', '#7a4b2a', '#2b6b5e'];
+  var defaults = { jacket: '#e0213f', pants: '#1c1f2b', gloves: '#f4f4f0', shoes: '#ffb224', hair: '#1c1f2b', acc: '#ffb224', aura: '#5ea9ff' };
+  var defItems = { jacket: 'basic', pants: 'long', gloves: 'boxing', shoes: 'sneakers', hair: 'short', acc: 'none', aura: 'glow' };
+
+  var tabs = [
+    { id: 'home', label: '', icon: true },
+    { id: 'combos', label: 'Guides combos' },
+    { id: 'persos', label: 'Personnages' },
+    { id: 'actus', label: 'Actus' },
+    { id: 'pro', label: 'Replays pro' },
+    { id: 'custo', label: 'Personnalisation' }
+  ];
+  var state = {
+    tab: 'home',
+    sel: { home: 0, combos: 0, persos: 0, actus: 0, pro: 0, custo: 0 },
+    favs: store('th-favs') || [],
+    userCombos: store('th-combos') || {},
+    userReplays: store('th-replays') || [],
+    looks: store('th-looks') || {},
+    slot: 'jacket'
+  };
+
+  /* ---------- Listes par onglet ---------- */
+  var homeItems = [
+    ['Guides combos', 'combos', 'Les vidéos de combos lues sur le site, avec les touches affichées en dessous, personnage par personnage.'],
+    ['Personnages', 'persos', 'Choisis un combattant : modèle 3D à gauche, stats et style de jeu à droite.'],
+    ['Actus', 'actus', 'Patchs, nouveaux personnages et événements.'],
+    ['Replays pro', 'pro', 'Les matchs de haut niveau, à regarder directement sur le site.'],
+    ['Personnalisation', 'custo', 'Choisis un personnage, puis habille son modèle 3D pièce par pièce.']
+  ];
+  function replays() {
+    var fetched = vids.replays.map(function (v) { return { title: v.title, who: 'Tekken8Replays', score: '', url: vidUrl(v), fetched: true }; });
+    return state.userReplays.concat(fetched.length ? fetched : seedReplays);
+  }
+  function items() {
+    var t = state.tab;
+    if (t === 'home') return homeItems.map(function (x) { return { label: x[0], desc: x[2] }; });
+    if (t === 'combos' || t === 'persos' || t === 'custo') {
+      var arr = fighters.map(function (f) { return { label: f[0], fav: state.favs.indexOf(f[0]) >= 0, desc: t === 'combos' ? 'Combos de ' + f[0] + ' : vidéos et touches à saisir.' : t === 'custo' ? 'Personnaliser ' + f[0] + ' : ' + f[1] + '.' : 'Fiche de ' + f[0] + ' : ' + f[1] + '.' }; });
+      var favs = arr.filter(function (x) { return x.fav; }), rest = arr.filter(function (x) { return !x.fav; });
+      return favs.concat(rest);
+    }
+    if (t === 'actus') return news.map(function (n) { return { label: n[1], desc: n[0] + ' : ' + n[2] }; });
+    if (t === 'pro') return replays().map(function (r) { return { label: r.title, sm: r.score, desc: 'Replay : ' + r.who }; });
+    return [];
+  }
+
+  /* ---------- Rendu ---------- */
+  function renderTabs() {
+    var box = $('#tabs'); box.innerHTML = '';
+    tabs.forEach(function (t) {
+      var b = h('button', 'tab'); b.setAttribute('role', 'tab');
+      b.setAttribute('aria-selected', t.id === state.tab ? 'true' : 'false');
+      if (t.icon) {
+        b.setAttribute('aria-label', 'Accueil');
+        b.innerHTML = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/></svg>';
+      } else b.textContent = t.label;
+      b.addEventListener('click', function () { go(t.id); });
+      box.appendChild(b);
+    });
+  }
+  function renderList() {
+    var box = $('#list'); box.innerHTML = '';
+    var its = items(), s = state.sel[state.tab];
+    its.forEach(function (it, i) {
+      var b = h('button', 'item'); b.setAttribute('role', 'option');
+      b.setAttribute('aria-current', i === s ? 'true' : 'false');
+      add(b, h('span', '', it.label));
+      if (it.fav) add(b, h('span', 'star', '★'));
+      else if (it.sm) add(b, h('span', 'sm', it.sm));
+      b.addEventListener('click', function () {
+        if (state.tab === 'home') { go(homeItems[i][1]); return; }
+        state.sel[state.tab] = i; render();
+      });
+      box.appendChild(b);
+    });
+    var cur = box.querySelector('[aria-current="true"]');
+    if (cur && cur.scrollIntoView) { try { cur.scrollIntoView({ block: 'nearest' }); } catch (e) {} }
+    $('#hint').textContent = its[s] ? its[s].desc : '';
+  }
+
+  function currentFighter() {
+    var it = items()[state.sel[state.tab]];
+    return fighters.filter(function (f) { return f[0] === it.label; })[0];
+  }
+
+  function centerHome() {
+    var c = $('#center');
+    add(c, h('div', 'hero', 'TEKKEN'), h('div', 'kicker', 'Guides · Stats · Actus · Replays'),
+      h('p', 'lead', 'Tout ce qu\'il faut pour progresser : les combos en vidéo avec les touches dessous, les fiches de personnages et les matchs de pros.'));
+    c.firstChild.innerHTML = 'TEKKEN<br><b>HUB</b>';
+  }
+
+  function comboEntry(f, e, custom, idx) {
+    var d = h('article', 'entry');
+    add(d, h('h3', '', e.title));
+    var url = e.url && ytOk(e.url) ? e.url : '';
+    add(d, add(h('div', 'vid'), thumb(url, 'Lire la vidéo : ' + e.title), e.keys ? keyRow(e.keys) : null));
+    if (e.note) add(d, h('p', '', e.note));
+    if (custom) {
+      var m = h('div', 'meta');
+      var del = h('button', 'btn ghost sm', 'Supprimer');
+      del.addEventListener('click', function () {
+        var list = state.userCombos[f[0]] || []; list.splice(idx, 1); state.userCombos[f[0]] = list; store('th-combos', state.userCombos); render();
+      });
+      add(m, h('span', 'note', 'Ajouté par toi'), del); add(d, m);
+    }
+    return d;
+  }
+  function centerCombos() {
+    var f = currentFighter(), c = $('#center');
+    add(c, h('div', 'kicker', f[1]), h('h2', '', f[0]));
+    var user = state.userCombos[f[0]] || [], seed = seedCombos[f[0]] || [];
+    user.forEach(function (e, i) { add(c, comboEntry(f, e, true, i)); });
+    var found = vids.combos.filter(function (v) { return v.title.toLowerCase().indexOf(f[0].toLowerCase()) >= 0; });
+    found.forEach(function (v) { add(c, comboEntry(f, { title: v.title, url: vidUrl(v), keys: v.keys || '' }, false)); });
+    seed.forEach(function (e) { add(c, comboEntry(f, e, false)); });
+    if (!user.length && !seed.length && !found.length) add(c, add(h('div', 'panel'), h('p', 'lead', 'Aucun combo enregistré pour ' + f[0] + '. Ajoute le premier ci-dessous avec le lien de la vidéo et les touches.')));
+
+    var det = h('details', 'panel'); det.id = 'add-combo';
+    add(det, h('summary', '', 'Ajouter un combo'));
+    var form = h('form', 'add');
+    form.innerHTML =
+      '<label for="c-title">Nom du combo<input id="c-title" required maxlength="80" placeholder="Combo après un lance-air"></label>' +
+      '<label for="c-url">Lien de la vidéo YouTube<input id="c-url" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>' +
+      '<label for="c-keys">Touches (séparées par des virgules, « + » pour simultané)<input id="c-keys" required maxlength="120" placeholder="d/f+1, 2, f+3+4"></label>' +
+      '<div class="err" id="c-err"></div><div class="row"><button class="btn" type="submit">Enregistrer</button><span class="note">Enregistré dans ce navigateur uniquement.</span></div>';
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var url = $('#c-url').value.trim();
+      if (url && !ytOk(url)) { $('#c-err').textContent = 'Le lien doit venir de youtube.com ou youtu.be.'; return; }
+      var list = state.userCombos[f[0]] || [];
+      list.unshift({ title: $('#c-title').value.trim(), url: url, keys: $('#c-keys').value.trim() });
+      state.userCombos[f[0]] = list; store('th-combos', state.userCombos); render();
+    });
+    add(det, form); add(c, det);
+  }
+
+  function centerPersos() {
+    var f = currentFighter(), c = $('#center');
+    add(c, h('div', 'kicker', f[1]), h('h2', '', f[0]));
+    var split = h('div', 'split'), left = h('div', 'vwrap'), right = h('div', 'stack');
+    mountViewer(left); showModel(f, getLook(f[0]));
+    var p = h('div', 'panel');
+    add(p, h('p', 'label', 'Stats'));
+    f[2].forEach(function (v, i) {
+      var r = h('div', 'bar');
+      var tr = h('div', 'track'), fl = h('div', 'fill'); fl.style.width = (v * 10) + '%'; add(tr, fl);
+      add(r, h('span', '', statNames[i]), tr, h('span', 'v', String(v))); add(p, r);
+    });
+    add(p, h('p', 'note', 'Notes sur 10 données à titre d\'exemple, à remplacer par les vraies stats.'));
+    var g = h('button', 'btn', 'Voir les combos'); g.addEventListener('click', function () { go('combos', f[0]); });
+    var k = h('button', 'btn ghost', 'Personnaliser'); k.addEventListener('click', function () { go('custo', f[0]); });
+    add(right, p, add(h('div', 'row'), g, k));
+    add(split, left, right); add(c, split);
+  }
+
+  function centerActus() {
+    var n = news[state.sel.actus], c = $('#center');
+    add(c, h('div', 'kicker', n[0]), h('h2', '', n[1]), h('p', 'lead', n[2]),
+      add(h('div', 'panel'), h('p', 'note', 'Actualité d\'exemple : la mise en page est prête, le contenu viendra du site officiel et de la communauté.')));
+  }
+
+  function centerPro() {
+    var all = replays(), r = all[state.sel.pro] || all[0], c = $('#center');
+    add(c, h('div', 'kicker', r.example ? 'Exemple de présentation' : 'Replay'), h('h2', '', r.title));
+    add(c, h('p', 'lead', r.who + (r.score ? ' · ' + r.score : '')));
+    var url = r.url && ytOk(r.url) ? r.url : '';
+    add(c, thumb(url, 'Lire le replay : ' + r.title));
+    var row = h('div', 'row');
+    if (!r.example && !r.fetched) {
+      var del = h('button', 'btn ghost', 'Supprimer');
+      del.addEventListener('click', function () { state.userReplays.splice(state.sel.pro, 1); state.sel.pro = 0; store('th-replays', state.userReplays); render(); });
+      add(row, del);
+    }
+    add(c, row);
+    var det = h('details', 'panel');
+    add(det, h('summary', '', 'Ajouter un replay'));
+    var form = h('form', 'add');
+    form.innerHTML =
+      '<label for="r-title">Titre<input id="r-title" required maxlength="80" placeholder="Finale du tournoi"></label>' +
+      '<label for="r-who">Joueurs et personnages<input id="r-who" required maxlength="100" placeholder="Joueur A (Jin) contre Joueur B (Paul)"></label>' +
+      '<label for="r-score">Score<input id="r-score" maxlength="12" placeholder="3 – 1"></label>' +
+      '<label for="r-url">Lien de la vidéo YouTube<input id="r-url" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>' +
+      '<div class="err" id="r-err"></div><div class="row"><button class="btn" type="submit">Enregistrer</button><span class="note">Enregistré dans ce navigateur uniquement.</span></div>';
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var url = $('#r-url').value.trim();
+      if (url && !ytOk(url)) { $('#r-err').textContent = 'Le lien doit venir de youtube.com ou youtu.be.'; return; }
+      state.userReplays.unshift({ title: $('#r-title').value.trim(), who: $('#r-who').value.trim(), score: $('#r-score').value.trim() || '–', url: url });
+      state.sel.pro = 0; store('th-replays', state.userReplays); render();
+    });
+    add(det, form); add(c, det);
+  }
+
+  /* ---------- Visionneuse 3D ---------- */
+  var models = {};
+  var V = null;
+  function clone(o) { return JSON.parse(JSON.stringify(o)); }
+  function getLook(name) {
+    var l = state.looks[name] || {};
+    l.colors = Object.assign(clone(defaults), l.colors || {});
+    l.items = Object.assign(clone(defItems), l.items || {});
+    state.looks[name] = l;
+    return l;
+  }
+  function mat(color, o) {
+    var m = new THREE.MeshStandardMaterial(Object.assign({ roughness: .62, metalness: .05 }, o || {}));
+    m.color = new THREE.Color(color).convertSRGBToLinear();
+    return m;
+  }
+  function initViewer() {
+    if (V) return V;
+    var el = h('div', 'viewer');
+    if (typeof THREE === 'undefined' || !THREE.OrbitControls) {
+      add(el, h('p', 'viewer-msg', 'Aperçu 3D indisponible : la bibliothèque 3D n\'a pas pu se charger.'));
+      V = { el: el, ok: false }; return V;
+    }
+    var renderer;
+    try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); }
+    catch (e) { add(el, h('p', 'viewer-msg', 'Aperçu 3D indisponible : WebGL n\'est pas activé sur cet appareil.')); V = { el: el, ok: false }; return V; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    el.appendChild(renderer.domElement);
+    var cap = h('div', 'vcap'); el.appendChild(cap);
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(30, 1, .1, 50); camera.position.set(0, 1.25, 4.7);
+    var controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.target.set(0, .95, 0); controls.enablePan = false; controls.enableDamping = true;
+    controls.minDistance = 2.4; controls.maxDistance = 7; controls.maxPolarAngle = Math.PI * .52; controls.update();
+    scene.add(new THREE.HemisphereLight(0xbfd2ff, 0x1a1020, .95));
+    var key = new THREE.DirectionalLight(0xffffff, 1.15); key.position.set(2, 4, 3); scene.add(key);
+    var rim = new THREE.PointLight(0x5ea9ff, 1.4, 0); rim.position.set(-2, 2.2, -2.2); scene.add(rim);
+    var floor = new THREE.Mesh(new THREE.CircleGeometry(1.15, 48), new THREE.MeshBasicMaterial({ color: 0x0b0e18, transparent: true, opacity: .9 }));
+    floor.rotation.x = -Math.PI / 2; floor.position.y = -.002; scene.add(floor);
+    var ring = new THREE.Mesh(new THREE.RingGeometry(1.02, 1.1, 64), new THREE.MeshBasicMaterial({ color: 0x5ea9ff, side: THREE.DoubleSide }));
+    ring.rotation.x = -Math.PI / 2; scene.add(ring);
+    var holder = new THREE.Group(); scene.add(holder);
+    V = { el: el, ok: true, cap: cap, holder: holder, ring: ring, rim: rim, anim: null, tok: 0, w: 0, h: 0, t: 0 };
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, last = 0;
+    function loop(ts) {
+      requestAnimationFrame(loop);
+      var dt = Math.min((ts - last) / 1000, .1); last = ts;
+      if (!el.isConnected || document.hidden || !el.clientWidth) return;
+      if (el.clientWidth !== V.w || el.clientHeight !== V.h) {
+        V.w = el.clientWidth; V.h = el.clientHeight;
+        renderer.setSize(V.w, V.h, false); camera.aspect = V.w / V.h; camera.updateProjectionMatrix();
+      }
+      V.t += dt;
+      if (V.anim && !reduce) V.anim(V.t);
+      controls.update(); renderer.render(scene, camera);
+    }
+    requestAnimationFrame(loop);
+    return V;
+  }
+  function mountViewer(parent) { parent.appendChild(initViewer().el); }
+
+  /* Mannequin générique : proportions légèrement différentes selon le personnage, pièces interchangeables. */
+  function buildMannequin(look, f) {
+    var C = look.colors, I = look.items, T = THREE;
+    var g = new T.Group(), body = new T.Group(); g.add(body);
+    var sx = .9 + f[2][0] * .026, sy = .97 + f[2][2] * .011;
+    body.scale.set(sx, sy, sx);
+    var skin = mat(0xd9a77c, { roughness: .8 }), dark = mat(0x15110e);
+    var jm = mat(C.jacket), pm = mat(C.pants), gm = mat(C.gloves), sm = mat(C.shoes), hm = mat(C.hair, { roughness: .9 }), am = mat(C.acc, { roughness: .35 });
+    function cyl(rt, rb, hh, m, y) { var o = new T.Mesh(new T.CylinderGeometry(rt, rb, hh, 22), m); o.position.y = y || 0; return o; }
+    function sph(r, m) { return new T.Mesh(new T.SphereGeometry(r, 24, 18), m); }
+    function box(w, hh, d, m) { return new T.Mesh(new T.BoxGeometry(w, hh, d), m); }
+
+    var torso = cyl(.2, .165, .58, jm, 1.22); torso.scale.z = .64; body.add(torso);
+    if (I.jacket === 'long') { var coat = cyl(.19, .27, .56, jm, .78); coat.scale.z = .72; body.add(coat); }
+    var pel = cyl(.165, .17, .18, pm, .93); pel.scale.z = .66; body.add(pel);
+    body.add(cyl(.05, .055, .12, skin, 1.55));
+    var head = sph(.115, skin); head.position.y = 1.7; head.scale.set(1, 1.12, 1.06); body.add(head);
+    [-1, 1].forEach(function (s) { var e = sph(.013, dark); e.position.set(s * .04, 1.72, .112); body.add(e); });
+
+    if (I.hair === 'short' || I.hair === 'long') {
+      var cap = new T.Mesh(new T.SphereGeometry(.123, 24, 16, 0, Math.PI * 2, 0, Math.PI * .56), hm);
+      cap.position.set(0, 1.71, -.004); cap.scale.set(1, 1.12, 1.07); body.add(cap);
+      if (I.hair === 'long') { var back = cyl(.105, .085, .3, hm, 1.6); back.position.z = -.07; body.add(back); }
+    } else if (I.hair === 'mohawk') {
+      var mo = box(.045, .11, .24, hm); mo.position.set(0, 1.82, -.01); body.add(mo);
+    }
+    if (I.acc === 'headband') { var hb = new T.Mesh(new T.TorusGeometry(.121, .014, 8, 32), am); hb.rotation.x = Math.PI / 2; hb.position.y = 1.76; body.add(hb); }
+    if (I.acc === 'shades') { var sh0 = box(.2, .035, .04, am); sh0.position.set(0, 1.725, .108); body.add(sh0); }
+
+    var arms = [];
+    [-1, 1].forEach(function (s) {
+      var sh = new T.Group(); sh.position.set(s * .265, 1.45, 0);
+      sh.rotation.set(s < 0 ? -.95 : -.55, 0, -s * .18); sh.userData.r = sh.rotation.x;
+      var sl = I.jacket === 'sleeveless' ? skin : jm;
+      sh.add(sph(.062, sl)); sh.add(cyl(.052, .046, .3, sl, -.15));
+      var el = new T.Group(); el.position.y = -.3; el.rotation.x = -1.5;
+      el.add(sph(.046, sl)); el.add(cyl(.044, .037, .27, sl, -.135));
+      if (I.gloves === 'wraps') el.add(cyl(.048, .048, .13, gm, -.215));
+      var hand = I.gloves === 'boxing' ? sph(.088, gm) : sph(.05, skin);
+      hand.position.y = -.31; el.add(hand);
+      sh.add(el); body.add(sh); arms.push(sh);
+    });
+
+    [-1, 1].forEach(function (s) {
+      var hip = new T.Group(); hip.position.set(s * .1, .93, 0);
+      var hipRot = s < 0 ? -.32 : .3, kneeRot = s < 0 ? .25 : .5;
+      hip.rotation.set(hipRot, 0, s * .08);
+      var plen = I.pants === 'shorts' ? .28 : .46;
+      hip.add(cyl(.074, .06, .46, skin, -.23));
+      hip.add(cyl(.083, I.pants === 'shorts' ? .077 : .067, plen, pm, -plen / 2));
+      var knee = new T.Group(); knee.position.y = -.46; knee.rotation.x = kneeRot;
+      knee.add(cyl(.056, .04, .44, skin, -.22));
+      if (I.pants !== 'shorts') knee.add(cyl(.063, .047, .44, pm, -.22));
+      var foot = new T.Group(); foot.position.y = -.44; foot.rotation.x = -(hipRot + kneeRot);
+      var shoe = box(.11, .07, .27, sm); shoe.position.set(0, -.035, .06); foot.add(shoe);
+      if (I.shoes === 'boots') foot.add(cyl(.068, .064, .22, sm, .07));
+      knee.add(foot); hip.add(knee); body.add(hip);
+    });
+
+    g.rotation.y = .35; g.updateMatrixWorld(true);
+    var bb = new T.Box3().setFromObject(g); g.position.y = -bb.min.y;
+    return {
+      group: g,
+      anim: function (t) {
+        body.position.y = Math.sin(t * 2.4) * .012; torso.scale.y = 1 + Math.sin(t * 2.4) * .012;
+        arms.forEach(function (a, i) { a.rotation.x = a.userData.r + Math.sin(t * 2.4 + i * 1.3) * .035; });
+      }
+    };
+  }
+
+  function showModel(f, look) {
+    var v = initViewer(); if (!v.ok) return;
+    var tok = ++v.tok;
+    while (v.holder.children.length) v.holder.remove(v.holder.children[0]);
+    v.ring.material.color.set(look.colors.aura); v.rim.color.set(look.colors.aura);
+    function generic() {
+      var m = buildMannequin(look, f); v.holder.add(m.group); v.anim = m.anim;
+      v.cap.textContent = 'Mannequin générique · glisse pour tourner, molette pour zoomer';
+    }
+    var url = models[f[0]];
+    if (!url || !THREE.GLTFLoader) { generic(); return; }
+    v.anim = null; v.cap.textContent = 'Chargement du modèle 3D…';
+    new THREE.GLTFLoader().load(url, function (gl) {
+      if (tok !== v.tok) return;
+      var m = gl.scene, b = new THREE.Box3().setFromObject(m);
+      var size = b.getSize(new THREE.Vector3()), ctr = b.getCenter(new THREE.Vector3()), k = 1.8 / (size.y || 1);
+      m.scale.setScalar(k); m.position.set(-ctr.x * k, -b.min.y * k, -ctr.z * k);
+      m.traverse(function (o) {
+        if (!o.isMesh) return;
+        var arr = Array.isArray(o.material) ? o.material : [o.material];
+        var out = arr.map(function (mt) {
+          var nm = (mt.name || '').toLowerCase();
+          var key = ['jacket', 'pants', 'gloves', 'shoes', 'hair'].filter(function (s) { return nm.indexOf(s) >= 0; })[0];
+          if (!key) return mt;
+          var c2 = mt.clone(); c2.color = new THREE.Color(look.colors[key]).convertSRGBToLinear(); return c2;
+        });
+        o.material = Array.isArray(o.material) ? out : out[0];
+      });
+      v.holder.add(m); v.cap.textContent = 'Modèle 3D de ' + f[0] + ' · glisse pour tourner, molette pour zoomer';
+    }, undefined, function () { if (tok === v.tok) generic(); });
+  }
+
+  /* ---------- Personnalisation ---------- */
+  function chip(parent, label, on, fn) {
+    var b = h('button', 'chip', label); b.type = 'button'; b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.addEventListener('click', fn); add(parent, b);
+  }
+  function centerCusto() {
+    var f = currentFighter(), c = $('#center'), look = getLook(f[0]);
+    add(c, h('div', 'kicker', 'Personnalisation'), h('h2', '', f[0]));
+    var split = h('div', 'split'), left = h('div', 'vwrap'), right = h('div', 'stack');
+    mountViewer(left);
+    function refresh() { store('th-looks', state.looks); showModel(f, look); draw(); }
+    function draw() {
+      right.innerHTML = '';
+      var def = slotsDef.filter(function (x) { return x[0] === state.slot; })[0];
+      var p = h('div', 'panel');
+      add(p, h('p', 'label', 'Pièce'));
+      var row = h('div', 'chips');
+      slotsDef.forEach(function (s) { chip(row, s[1], state.slot === s[0], function () { state.slot = s[0]; draw(); }); });
+      add(p, row);
+      if (def[2].length > 1) {
+        var l2 = h('p', 'label', 'Modèle'); l2.style.marginTop = '16px'; add(p, l2);
+        var r2 = h('div', 'chips');
+        def[2].forEach(function (it) { chip(r2, it[1], look.items[def[0]] === it[0], function () { look.items[def[0]] = it[0]; refresh(); }); });
+        add(p, r2);
+      }
+      var l3 = h('p', 'label', 'Couleur'); l3.style.marginTop = '16px'; add(p, l3);
+      var grid = h('div', 'swatches');
+      palette.forEach(function (col) {
+        var b = h('button', 'sw'); b.type = 'button'; b.setAttribute('aria-label', 'Couleur ' + col);
+        b.setAttribute('aria-pressed', look.colors[def[0]] === col ? 'true' : 'false');
+        var sp = h('span'); sp.style.background = col; add(b, sp);
+        b.addEventListener('click', function () { look.colors[def[0]] = col; refresh(); });
+        add(grid, b);
+      });
+      add(p, grid);
+      var act = h('div', 'row'); act.style.marginTop = '16px';
+      var rnd = h('button', 'btn', 'Aléatoire'), rst = h('button', 'btn ghost', 'Réinitialiser');
+      rnd.addEventListener('click', function () {
+        slotsDef.forEach(function (s) {
+          look.colors[s[0]] = palette[Math.floor(Math.random() * palette.length)];
+          look.items[s[0]] = s[2][Math.floor(Math.random() * s[2].length)][0];
+        });
+        refresh();
+      });
+      rst.addEventListener('click', function () { look.colors = clone(defaults); look.items = clone(defItems); refresh(); });
+      add(act, rnd, rst); add(p, act);
+      add(right, p, h('p', 'note', 'Pièces génériques en attendant les objets du jeu. Ton look est enregistré dans ce navigateur.'));
+    }
+    showModel(f, look); draw();
+    add(split, left, right); add(c, split);
+  }
+
+  function render() {
+    renderTabs(); renderList();
+    var c = $('#center'); c.innerHTML = '';
+    var t = state.tab;
+    if (t === 'home') centerHome(); else if (t === 'combos') centerCombos(); else if (t === 'persos') centerPersos();
+    else if (t === 'actus') centerActus(); else if (t === 'pro') centerPro(); else centerCusto();
+    var cur = tabs.filter(function (x) { return x.id === t; })[0];
+    $('#title').textContent = t === 'home' ? 'Menu principal' : cur.label;
+  }
+  function go(tab, fighterName) {
+    state.tab = tab;
+    if (fighterName) { var i = items().map(function (x) { return x.label; }).indexOf(fighterName); if (i >= 0) state.sel[tab] = i; }
+    try { history.replaceState(null, '', '#' + tab); } catch (e) {}
+    render();
+  }
+  function step(d) { var i = tabs.map(function (t) { return t.id; }).indexOf(state.tab); go(tabs[(i + d + tabs.length) % tabs.length].id); }
+  function move(d) { var n = items().length; state.sel[state.tab] = (state.sel[state.tab] + d + n) % n; render(); }
+  function fav() {
+    if (state.tab !== 'combos' && state.tab !== 'persos' && state.tab !== 'custo') return;
+    var name = items()[state.sel[state.tab]].label, i = state.favs.indexOf(name);
+    if (i >= 0) state.favs.splice(i, 1); else state.favs.push(name);
+    store('th-favs', state.favs);
+    state.sel[state.tab] = items().map(function (x) { return x.label; }).indexOf(name);
+    render();
+  }
+  function hideUi(on) { document.body.classList.toggle('hide-ui', on); $('#restore').hidden = !on; }
+
+  /* ---------- Bas d'écran ---------- */
+  var ic = {
+    play: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M13 11l8 5-8 5z"/></svg>',
+    news: '<svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="20" rx="2"/><path d="M10 12h12M10 17h12M10 22h7"/></svg>',
+    palette: '<svg viewBox="0 0 32 32"><path d="M16 5a11 11 0 1 0 0 22c2 0 3-1 3-2.500 0-2-2-2-2-4s1.500-3 3.500-3H25a3 3 0 0 0 3-3C28 9 22.500 5 16 5z"/><circle cx="10.500" cy="14" r="1.200"/><circle cx="15" cy="10" r="1.200"/><circle cx="21" cy="11" r="1.200"/></svg>',
+    users: '<svg viewBox="0 0 32 32"><circle cx="16" cy="12" r="4.500"/><path d="M7 26c1-5 4-8 9-8s8 3 9 8"/></svg>'
+  };
+  [['Combos', ic.play, 'tab', 'combos'], ['Replays', ic.play, 'tab', 'pro'], ['Personnages', ic.users, 'tab', 'persos'], ['Actus', ic.news, 'tab', 'actus'], ['Custo', ic.palette, 'tab', 'custo']].forEach(function (x) {
+    var e = h('button', 'icon'); e.type = 'button'; e.addEventListener('click', function () { go(x[3]); });
+    e.innerHTML = x[1] + '<span>' + x[0] + '</span>';
+    $('#icons').appendChild(e);
+  });
+
+  $('#prev').addEventListener('click', function () { step(-1); });
+  $('#next').addEventListener('click', function () { step(1); });
+  $('#b-ok').addEventListener('click', function () { if (state.tab === 'home') go(homeItems[state.sel.home][1]); else if (state.tab === 'persos') go('combos', items()[state.sel.persos].label); });
+  $('#b-fav').addEventListener('click', fav);
+  $('#b-tab').addEventListener('click', function () { step(1); });
+  $('#b-hide').addEventListener('click', function () { hideUi(true); });
+  $('#restore').addEventListener('click', function () { hideUi(false); });
+  document.addEventListener('keydown', function (ev) {
+    var t = ev.target && ev.target.tagName;
+    if (t === 'INPUT' || t === 'TEXTAREA' || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    if (document.body.classList.contains('hide-ui')) { hideUi(false); return; }
+    var k = ev.key;
+    if (k === 'ArrowDown') { ev.preventDefault(); move(1); }
+    else if (k === 'ArrowUp') { ev.preventDefault(); move(-1); }
+    else if (k === 'q' || k === 'Q') step(-1);
+    else if (k === 'e' || k === 'E') step(1);
+    else if (k === 'f' || k === 'F') fav();
+    else if (k === 'h' || k === 'H') hideUi(true);
+    else if (k === 'Enter' && t !== 'BUTTON' && t !== 'A') $('#b-ok').click();
+  });
+
+  var start = (location.hash || '').replace('#', '');
+  state.tab = tabs.some(function (x) { return x.id === start; }) ? start : 'home';
+  render();
+  try {
+    /* data/models.json : { "Jin": "models/jin.glb", ... } (modèles 3D autorisés que tu ajoutes) */
+    fetch('data/models.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && typeof d === 'object') { models = d; render(); }
+    }).catch(function () {});
+    fetch('data/videos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.combos && d.replays) { vids = d; render(); }
+    }).catch(function () {});
+  } catch (e) {}
+})();
+</script>
+</html>
