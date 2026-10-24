@@ -5,12 +5,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@600;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-/* Layout: menu principal façon Tekken 8. Titre + onglets fins en haut, liste verticale à gauche, contenu au centre, cartes de chaînes à droite, icônes et aide en bas. */
+/* Layout: menu principal façon Tekken 8. Titre + onglets fins en haut, liste verticale à gauche, contenu à droite, icônes et aide en bas. */
 :root {
   --bg: #070a12;
   --bg-2: #141a33;
   --panel: rgba(12, 16, 30, .72);
-  --panel-solid: #0f1424;
   --line: rgba(255, 255, 255, .14);
   --fg: #f1f3f9;
   --mute: #98a1b8;
@@ -19,7 +18,7 @@
   --red-2: #8c1630;
   --cyan: #6fd6ff;
   --amber: #ffb224;
-  --ok: #3ddc97;
+  --lit: #3de0b0;
   --ui: "Barlow", "Segoe UI", system-ui, sans-serif;
   --display: "Oxanium", "Arial Narrow", sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
@@ -45,7 +44,6 @@ body {
 }
 button, input, select { font: inherit; color: inherit; }
 button { cursor: pointer; }
-a { color: inherit; }
 :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
 .wrap { max-width: 1240px; margin: 0 auto; display: grid; gap: 14px; }
 
@@ -62,65 +60,52 @@ a { color: inherit; }
 .tab .ico { display: inline-block; width: 18px; height: 18px; vertical-align: -3px; }
 
 /* Zone principale */
-.main { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 22px; min-height: 480px; align-items: start; }
-.list { display: grid; gap: 2px; align-content: start; max-height: 62vh; overflow-y: auto; padding-right: 2px; scrollbar-width: thin; scrollbar-color: var(--dim) transparent; }
-.item { text-align: left; background: none; border: 0; padding: 7px 12px; font-size: 16px; font-weight: 500; color: var(--fg); display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.main { display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 22px; min-height: 480px; align-items: start; }
+.list { display: grid; gap: 2px; align-content: start; max-height: 70vh; overflow-y: auto; padding-right: 2px; scrollbar-width: thin; scrollbar-color: var(--dim) transparent; }
+.item { text-align: left; background: none; border: 0; padding: 7px 12px; font-size: 15px; font-weight: 500; color: var(--fg); display: flex; justify-content: space-between; gap: 8px; align-items: center; line-height: 1.3; }
 .item:hover { background: rgba(255, 255, 255, .06); }
 .item[aria-current="true"] { background: linear-gradient(90deg, var(--red), var(--red-2)); font-weight: 600; box-shadow: 0 4px 16px rgba(224, 33, 63, .28); }
 .item .star { color: var(--amber); font-size: 13px; }
-.item .sm { font-family: var(--mono); font-size: 11px; color: var(--mute); }
+.item .sm { font-family: var(--mono); font-size: 11px; color: var(--mute); flex: none; }
 .item[aria-current="true"] .sm { color: #ffd6de; }
+.item-empty { padding: 8px 12px; color: var(--mute); font-size: 14px; }
 
 .center { min-width: 0; display: grid; gap: 16px; align-content: start; }
 .hero { font-family: var(--display); font-weight: 800; font-size: clamp(40px, 7vw, 92px); line-height: .92; letter-spacing: .02em; text-transform: uppercase; color: rgba(255, 255, 255, .08); margin: 6px 0 0; user-select: none; }
 .hero b { color: rgba(224, 33, 63, .35); }
-h2 { font-family: var(--display); font-weight: 800; font-size: clamp(26px, 4vw, 40px); text-transform: uppercase; letter-spacing: .02em; margin: 0; line-height: 1; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 3.6vw, 36px); text-transform: uppercase; letter-spacing: .02em; margin: 0; line-height: 1.05; text-wrap: balance; overflow-wrap: anywhere; }
 .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); }
 .lead { color: var(--mute); max-width: 60ch; margin: 0; }
 .panel { background: var(--panel); border: 1px solid var(--line); padding: 16px; backdrop-filter: blur(6px); }
 .label { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin: 0 0 8px; }
+.note { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .03em; margin: 0; }
 
-/* Cartes à droite */
-.side { display: grid; gap: 12px; align-content: start; }
-.tile { display: grid; gap: 6px; padding: 12px 14px; text-decoration: none; border: 1px solid var(--line); background: var(--panel); position: relative; overflow: hidden; }
-.tile:hover { border-color: var(--cyan); }
-.tile .t { font-weight: 600; font-size: 15px; }
-.tile .d { color: var(--mute); font-size: 13px; }
-.tile.purple { background: linear-gradient(120deg, rgba(120, 70, 220, .55), rgba(30, 20, 70, .8)); }
-.tile.crimson { background: linear-gradient(120deg, rgba(224, 33, 63, .5), rgba(50, 10, 25, .85)); }
-.tile .go { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
-.logo { display: grid; place-items: center; height: 96px; border: 1px solid var(--line); background: linear-gradient(135deg, #1b2030, #0b0e18); }
-.logo span { font-family: var(--display); font-weight: 800; font-size: 28px; font-style: italic; letter-spacing: .04em; }
-.logo b { color: var(--red); }
+/* Notation en icônes */
+.nt { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 5px; padding: 9px 12px; background: rgba(0, 0, 0, .38); border: 1px solid var(--line); min-width: 0; }
+.nt .step { display: inline-flex; align-items: center; gap: 2px; }
+.nt svg { display: block; flex: none; }
+.nt svg.ar { width: 26px; height: 26px; }
+.nt svg.bt { width: 28px; height: 28px; }
+.nt .w { font-size: 13px; font-weight: 600; padding: 0 5px; white-space: nowrap; }
+.nt .go { color: var(--lit); font-size: 13px; padding: 0 5px; }
+.nt .star { font-size: 20px; line-height: 1; padding: 0 3px; }
+.nt-title { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin: 4px 0 -2px; }
 
-/* Notation */
-.seq { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
-.key { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 8px; font-family: var(--mono); font-weight: 700; font-size: 14px; background: #1a2036; border: 1px solid var(--line); border-bottom: 3px solid var(--cyan); border-radius: 3px; color: var(--cyan); }
-.key.atk { border-bottom-color: var(--red); color: #fff; }
-.sep { color: var(--mute); font-family: var(--mono); padding: 0 1px; }
-
-/* Combos / replays */
-.vid { display: grid; gap: 10px; }
-.thumb { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; max-width: 100%; text-decoration: none; background: linear-gradient(135deg, #1c2442, #0c1020 70%); border: 1px solid var(--line); overflow: hidden; }
+/* Vidéos */
+.vid { display: grid; gap: 10px; min-width: 0; }
+.thumb { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 9; max-width: 100%; background: linear-gradient(135deg, #1c2442, #0c1020 70%); border: 1px solid var(--line); overflow: hidden; }
 .thumb::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(115deg, transparent 0 22px, rgba(255, 255, 255, .03) 22px 23px); }
-.thumb .play { width: 58px; height: 58px; border-radius: 50%; background: var(--red); display: grid; place-items: center; box-shadow: 0 0 24px rgba(224, 33, 63, .6); position: relative; }
-.thumb .play::after { content: ""; border-left: 16px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
-.thumb .src { position: absolute; left: 10px; bottom: 8px; font-family: var(--mono); font-size: 11px; color: var(--mute); letter-spacing: .06em; }
-.thumb:hover { border-color: var(--cyan); }
-.thumb .facade { position: absolute; inset: 0; border: 0; padding: 0; background: none; display: grid; place-items: center; }
-.thumb .facade img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .thumb iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-.thumb.ph .src { position: relative; left: auto; bottom: auto; text-align: center; padding: 0 16px; font-size: 12px; }
+.thumb .src { position: relative; font-family: var(--mono); font-size: 12px; color: var(--mute); text-align: center; padding: 0 16px; letter-spacing: .04em; }
 .entry { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 14px; background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--red); }
-.entry h3 { margin: 0; font-size: 18px; font-weight: 600; }
+.entry h3 { margin: 0; font-size: 17px; font-weight: 600; overflow-wrap: anywhere; }
 .entry p { margin: 0; color: var(--mute); font-size: 14px; }
-.entry .meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.btn { background: var(--red); border: 0; color: #fff; padding: 9px 18px; font-weight: 600; letter-spacing: .03em; text-decoration: none; display: inline-block; font-size: 14px; }
+.btn { background: var(--red); border: 0; color: #fff; padding: 9px 18px; font-weight: 600; letter-spacing: .03em; display: inline-block; font-size: 14px; }
 .btn.ghost { background: transparent; border: 1px solid var(--line); }
 .btn.sm { padding: 5px 12px; font-size: 12px; }
 .btn:hover { filter: brightness(1.12); }
 .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-form.add { display: grid; gap: 10px; }
+form.add { display: grid; gap: 10px; margin-top: 12px; }
 form.add label { display: grid; gap: 4px; font-size: 13px; color: var(--mute); }
 form.add input { background: rgba(255, 255, 255, .06); border: 1px solid var(--line); padding: 9px 10px; color: var(--fg); width: 100%; }
 form.add input::placeholder { color: var(--dim); }
@@ -130,20 +115,19 @@ details > summary::before { content: "+ "; color: var(--red); font-family: var(-
 details[open] > summary::before { content: "– "; }
 .err { color: #ff8095; font-size: 13px; min-height: 1em; }
 
+/* Filtres replays */
+.filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; align-items: end; }
+.field { display: grid; gap: 6px; }
+.field span { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+select { appearance: none; -webkit-appearance: none; background: #121830 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2398a1b8' stroke-width='2'/%3E%3C/svg%3E") no-repeat right 12px center; border: 1px solid var(--line); color: var(--fg); padding: 10px 34px 10px 12px; width: 100%; font-size: 15px; }
+select:focus-visible { border-color: var(--cyan); }
+option { background: #121830; color: var(--fg); }
+
 /* Stats */
 .bar { display: grid; grid-template-columns: 92px minmax(0, 1fr) 26px; gap: 10px; align-items: center; margin: 9px 0; font-size: 14px; }
 .track { height: 8px; background: rgba(255, 255, 255, .1); }
 .fill { height: 100%; background: linear-gradient(90deg, var(--red), var(--amber)); }
 .v { font-family: var(--mono); font-size: 13px; text-align: right; }
-.note { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .03em; }
-
-/* Perso / custo */
-.stage { background: radial-gradient(ellipse at 50% 90%, rgba(224, 33, 63, .28), transparent 62%), var(--panel); border: 1px solid var(--line); display: grid; place-items: center; padding: 10px; }
-.stage svg { width: 100%; max-width: 300px; height: auto; display: block; }
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
-.sw { height: 40px; border: 2px solid var(--line); background: none; padding: 0; position: relative; }
-.sw span { position: absolute; inset: 2px; }
-.sw[aria-pressed="true"] { border-color: #fff; box-shadow: 0 0 0 2px var(--red); }
 
 /* Visionneuse 3D */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
@@ -154,19 +138,11 @@ details[open] > summary::before { content: "– "; }
 .vcap { position: absolute; left: 12px; right: 12px; bottom: 8px; font-family: var(--mono); font-size: 11px; color: var(--mute); pointer-events: none; }
 .viewer-msg { padding: 24px; color: var(--mute); margin: 0; }
 .stack { display: grid; gap: 14px; min-width: 0; align-content: start; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { background: transparent; border: 1px solid var(--line); padding: 6px 14px; font-size: 14px; color: var(--mute); }
-.chip:hover { color: var(--fg); border-color: var(--mute); }
-.chip[aria-pressed="true"] { border-color: var(--red); color: #fff; background: rgba(224, 33, 63, .22); }
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
-.sw { height: 40px; border: 2px solid var(--line); background: none; padding: 0; position: relative; }
-.sw span { position: absolute; inset: 2px; }
-.sw[aria-pressed="true"] { border-color: #fff; box-shadow: 0 0 0 2px var(--red); }
 
 /* Bas d'écran */
 .bottom { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; padding-top: 6px; }
 .icons { display: flex; gap: 20px; flex-wrap: wrap; }
-.icon { display: grid; justify-items: center; gap: 6px; background: none; border: 0; text-decoration: none; font-size: 12px; font-weight: 600; width: 74px; color: var(--fg); }
+.icon { display: grid; justify-items: center; gap: 6px; background: none; border: 0; font-size: 12px; font-weight: 600; width: 74px; color: var(--fg); }
 .icon svg { width: 32px; height: 32px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .icon:hover { color: var(--cyan); }
 .hint { flex: 1 1 100%; color: var(--cyan); font-size: 14px; border-bottom: 1px solid rgba(111, 214, 255, .35); padding-bottom: 5px; min-height: 1.6em; }
@@ -181,7 +157,7 @@ body.hide-ui .wrap { visibility: hidden; }
 @media (max-width: 980px) {
   .main, .split { grid-template-columns: minmax(0, 1fr); }
   .viewer { height: 62vh; min-height: 340px; }
-  .list { max-height: 220px; grid-auto-flow: row; }
+  .list { max-height: 240px; }
   .title { font-size: 24px; }
   .tab { padding: 8px 14px 10px; }
 }
@@ -216,7 +192,7 @@ body.hide-ui .wrap { visibility: hidden; }
       <button id="b-tab"><span class="btnc">Q</span><span class="btnc">E</span>Changer d'onglet</button>
       <button id="b-hide"><span class="btnc">H</span>Masquer l'interface</button>
     </div>
-    <div class="foot">Site de fans. Vidéos de combos : RyzingSol. Replays : Tekken8Replays. Tekken est une marque de Bandai Namco. Les personnages 3D affichés sont des mannequins génériques.</div>
+    <div class="foot">Site de fans. Tekken est une marque de Bandai Namco. Les personnages 3D affichés sont des mannequins génériques.</div>
   </div>
 </div>
 <button class="btn restore" id="restore" hidden>Afficher l'interface</button>
@@ -229,126 +205,184 @@ body.hide-ui .wrap { visibility: hidden; }
   function add(parent) { for (var i = 1; i < arguments.length; i++) if (arguments[i]) parent.appendChild(arguments[i]); return parent; }
   function store(k, v) { try { if (v === undefined) return JSON.parse(localStorage.getItem(k) || 'null'); localStorage.setItem(k, JSON.stringify(v)); } catch (e) { return null; } }
   function ytOk(u) { try { var x = new URL(u); return x.protocol === 'https:' && ['www.youtube.com', 'youtube.com', 'm.youtube.com', 'youtu.be'].indexOf(x.hostname) >= 0; } catch (e) { return false; } }
-  /* EMBED = true sur un vrai site (GitHub Pages, etc.) : les vidéos se lisent dans la page, sans jamais renvoyer vers YouTube. */
-  var EMBED = true;
-  /* Vidéos récupérées par scripts/update_videos.py (data/videos.json) */
-  var vids = { combos: [], replays: [] };
-  function vidUrl(v) { return 'https://www.youtube.com/watch?v=' + v.id; }
   function ytId(u) { try { var x = new URL(u); var id = x.hostname === 'youtu.be' ? x.pathname.slice(1) : (x.searchParams.get('v') || ''); return /^[\w-]{11}$/.test(id) ? id : ''; } catch (e) { return ''; } }
+  /* EMBED = true sur un vrai site (GitHub Pages, etc.) : les vidéos se lisent dans la page. */
+  var EMBED = true;
+  function vidUrl(v) { return 'https://www.youtube.com/watch?v=' + v.id; }
 
-  function keyRow(str) {
-    var row = h('div', 'seq');
-    String(str).split(',').forEach(function (step, i) {
-      if (i) add(row, h('span', 'sep', '›'));
-      step.trim().split('+').forEach(function (k, j) {
-        k = k.trim(); if (!k) return;
-        if (j) add(row, h('span', 'sep', '+'));
-        add(row, h('span', 'key' + (/^[1-4]$/.test(k) ? ' atk' : ''), k));
-      });
-    });
-    return row;
-  }
   function thumb(url, label) {
     var vid = EMBED ? ytId(url) : '';
-    if (vid) {
-      var box = h('div', 'thumb');
-      var fr = document.createElement('iframe');
-      fr.src = 'https://www.youtube-nocookie.com/embed/' + vid;
-      fr.title = label; fr.loading = 'lazy'; fr.allowFullscreen = true;
-      fr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-      fr.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-      box.appendChild(fr); return box;
-    }
-    var ph = h('div', 'thumb ph');
-    add(ph, h('span', 'src', EMBED ? 'Vidéo à venir pour ce combo' : 'Le lecteur vidéo s\'active sur la version hébergée du site'));
-    return ph;
+    var box = h('div', 'thumb');
+    if (!vid) { add(box, h('span', 'src', 'Vidéo indisponible dans cet aperçu')); return box; }
+    var fr = document.createElement('iframe');
+    fr.src = 'https://www.youtube-nocookie.com/embed/' + vid;
+    fr.title = label; fr.loading = 'lazy'; fr.allowFullscreen = true;
+    fr.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    fr.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    box.appendChild(fr); return box;
   }
 
-  /* ---------- Données ---------- */
-  var fighters = [
-    ['Jin', 'Karaté Mishima', [8, 9, 6, 6, 9]], ['Kazuya', 'Karaté Mishima', [9, 8, 6, 6, 9]],
-    ['Paul', 'Judo', [10, 5, 6, 7, 5]], ['King', 'Catch', [8, 5, 5, 6, 9]],
-    ['Law', 'Kung-fu', [6, 9, 6, 5, 7]], ['Jun', 'Aïkido', [6, 7, 6, 7, 7]],
-    ['Reina', 'Mishima', [8, 8, 6, 6, 8]], ['Lars', 'Alliance', [6, 9, 6, 6, 7]],
-    ['Asuka', 'Kazama', [6, 7, 5, 8, 8]], ['Lili', 'Acrobate', [5, 9, 7, 5, 8]],
-    ['Nina', 'Assassin', [7, 7, 5, 7, 8]], ['Hwoarang', 'Taekwondo', [7, 9, 7, 5, 9]],
-    ['Xiaoyu', 'Piqua', [5, 9, 5, 6, 9]], ['Jack-8', 'Cyborg', [9, 4, 6, 8, 4]],
-    ['Bryan', 'Kickboxing', [8, 7, 7, 6, 9]], ['Yoshimitsu', 'Sabre', [6, 8, 5, 6, 10]],
-    ['Leroy', 'Maître de kung-fu', [7, 7, 7, 7, 8]], ['Zafina', 'Mystique', [6, 8, 6, 5, 9]],
-    ['Steve', 'Boxe', [6, 8, 5, 7, 6]], ['Dragunov', 'Sambo', [8, 6, 6, 7, 6]],
-    ['Azucena', 'Capoeira', [6, 8, 6, 6, 8]], ['Victor', 'Escrime', [7, 7, 8, 6, 7]]
+  /* ---------- Notation en icônes (flèches et boutons façon jeu) ---------- */
+  var ANG = { 'f': 0, 'd/f': 45, 'df': 45, 'd': 90, 'd/b': 135, 'db': 135, 'b': 180, 'u/b': 225, 'ub': 225, 'u': 270, 'u/f': 315, 'uf': 315 };
+  function svgEl(html, cls) { var s = h('span'); s.innerHTML = html; var e = s.firstChild; if (cls) e.setAttribute('class', cls); return e; }
+  function arrowIcon(code) {
+    var c = code.toLowerCase();
+    if (c === 'n') return h('span', 'w', 'N');
+    return svgEl('<svg viewBox="0 0 24 24" aria-label="' + code + '"><g transform="rotate(' + ANG[c] + ' 12 12)"><path d="M3 9h9V4l9 8-9 8v-5H3z" fill="#fff" stroke="#0a0d18" stroke-width="1" stroke-linejoin="round"/></g></svg>', 'ar');
+  }
+  function buttonIcon(set) {
+    var pos = { 1: [7, 7], 2: [17, 7], 3: [7, 17], 4: [17, 17] }, s = '';
+    [1, 2, 3, 4].forEach(function (n) {
+      var on = set.indexOf(n) >= 0;
+      s += '<circle cx="' + pos[n][0] + '" cy="' + pos[n][1] + '" r="4.3" fill="' + (on ? '#3de0b0' : 'rgba(255,255,255,.28)') + '"/>';
+    });
+    return svgEl('<svg viewBox="0 0 24 24" aria-label="Boutons ' + set.join('+') + '">' + s + '</svg>', 'bt');
+  }
+  function stepEl(step) {
+    var sp = h('span', 'step'), btns = [];
+    function flush() { if (btns.length) { add(sp, buttonIcon(btns)); btns = []; } }
+    step.split('+').forEach(function (p) {
+      if (!p) return;
+      if (/^[1-4]+$/.test(p)) { p.split('').forEach(function (d) { if (btns.indexOf(+d) < 0) btns.push(+d); }); return; }
+      flush();
+      if (/^(d\/f|d\/b|u\/f|u\/b|df|db|uf|ub|f|b|u|d|n)$/i.test(p)) add(sp, arrowIcon(p));
+      else if (p === '*' || p === '★') add(sp, h('span', 'star', '★'));
+      else add(sp, h('span', 'w', p.replace(/_/g, ' ')));
+    });
+    flush(); return sp;
+  }
+  /* Syntaxe : étapes séparées par des virgules, "+" pour simultané, ">" entre deux phases, mots libres (Heat, Hold…).
+     Exemple : "Heat f+1+2 > d/f+1, 2, 1 > *" */
+  function notation(str) {
+    var box = h('div', 'nt');
+    String(str).trim().split(/\s+/).forEach(function (tok) {
+      if (!tok) return;
+      if (/^(>|→|▶)$/.test(tok)) { add(box, h('span', 'go', '▶')); return; }
+      tok.split(',').forEach(function (st) { if (st) add(box, stepEl(st)); });
+    });
+    return box;
+  }
+  function notations(keys) {
+    var wrap = h('div', 'vid');
+    (Array.isArray(keys) ? keys : [keys]).forEach(function (k) {
+      if (!k) return;
+      var o = typeof k === 'string' ? { k: k } : k;
+      if (o.t) add(wrap, h('div', 'nt-title', o.t));
+      add(wrap, notation(o.k));
+    });
+    return wrap;
+  }
+
+  /* ---------- Personnages ---------- */
+  /* [nom court, nom complet, stats d'exemple ou null, alias] */
+  var R = [
+    ['Alisa', 'Alisa Bosconovitch'], ['Anna', 'Anna Williams'], ['Armor King', 'Armor King'],
+    ['Asuka', 'Asuka Kazama', [6, 7, 5, 8, 8]], ['Azucena', 'Azucena', [6, 8, 6, 6, 8]], ['Bob', 'Bob'],
+    ['Bryan', 'Bryan Fury', [8, 7, 7, 6, 9]], ['Claudio', 'Claudio Serafino'], ['Clive', 'Clive Rosfield'],
+    ['Devil Jin', 'Devil Jin'], ['Dragunov', 'Sergei Dragunov', [8, 6, 6, 7, 6]], ['Eddy', 'Eddy Gordo'],
+    ['Fahkumram', 'Fahkumram'], ['Feng', 'Feng Wei'], ['Heihachi', 'Heihachi Mishima'],
+    ['Hwoarang', 'Hwoarang', [7, 9, 7, 5, 9]], ['Jack-8', 'Jack-8', [9, 4, 6, 8, 4]],
+    ['Jin', 'Jin Kazama', [8, 9, 6, 6, 9]], ['Jun', 'Jun Kazama', [6, 7, 6, 7, 7]],
+    ['Kazuya', 'Kazuya Mishima', [9, 8, 6, 6, 9]], ['King', 'King', [8, 5, 5, 6, 9]],
+    ['Kuma / Panda', 'Kuma / Panda', null, ['kuma', 'panda', 'kuma/panda', 'kuma & panda']], ['Kunimitsu', 'Kunimitsu'],
+    ['Lars', 'Lars Alexandersson', [6, 9, 6, 6, 7]], ['Law', 'Marshall Law', [6, 9, 6, 5, 7]],
+    ['Lee', 'Lee Chaolan'], ['Leo', 'Leo Kliesen'], ['Leroy', 'Leroy Smith', [7, 7, 7, 7, 8]],
+    ['Lidia', 'Lidia Sobieska'], ['Lili', 'Lili', [5, 9, 7, 5, 8]], ['Miary Zo', 'Miary Zo'],
+    ['Nina', 'Nina Williams', [7, 7, 5, 7, 8]], ['Paul', 'Paul Phoenix', [10, 5, 6, 7, 5]],
+    ['Raven', 'Raven'], ['Reina', 'Reina', [8, 8, 6, 6, 8]], ['Shaheen', 'Shaheen'],
+    ['Steve', 'Steve Fox', [6, 8, 5, 7, 6]], ['Victor', 'Victor Chevalier', [7, 7, 8, 6, 7]],
+    ['Xiaoyu', 'Ling Xiaoyu', [5, 9, 5, 6, 9]], ['Yoshimitsu', 'Yoshimitsu', [6, 8, 5, 6, 10]],
+    ['Zafina', 'Zafina', [6, 8, 6, 5, 9]]
   ];
+  var IDX = {};
+  R.forEach(function (r, i) {
+    IDX[r[0].toLowerCase()] = i; IDX[r[1].toLowerCase()] = i;
+    (r[3] || []).forEach(function (a) { IDX[a] = i; });
+  });
+  function canon(s) {
+    s = String(s || '').replace(/#\d+\s*ranked\s*/i, '').replace(/\bbasic\b/i, '').replace(/\s+/g, ' ').trim().toLowerCase();
+    return s in IDX ? IDX[s] : -1;
+  }
   var statNames = ['Puissance', 'Vitesse', 'Portée', 'Défense', 'Difficulté'];
+
+  /* ---------- Données vidéo ---------- */
+  var vids = { combos: [], replays: [] };
+  var comboBy = {}, matches = [], models = {}, KEYS = {};
   var seedCombos = {
-    'Jin': [{ title: 'Combos de mur (9 enchaînements)', url: 'https://www.youtube.com/watch?v=03K8xEXeLww', keys: '', note: 'Vidéo de RyzingSol. Les touches sont affichées dans la vidéo : à saisir ici une fois relevées.' }, { title: 'Wavedash', keys: 'f, n, d, d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f, n, d, d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }],
-    'Kazuya': [{ title: 'Wavedash', keys: 'f, n, d, d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f, n, d, d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }]
+    'Jin': [{ title: 'Exemple de notation', keys: [{ t: 'Phase 1', k: 'Heat f+1+2 > d/f+1, 2, 1' }, { t: 'Phase 2', k: 'f n d d/f+2 > * d/f+3+4' }], note: 'Aperçu de l\'affichage des touches. Les vraies notations s\'ajoutent dans data/keys.json.' }, { title: 'Wavedash', keys: 'f n d d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f n d d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }],
+    'Kazuya': [{ title: 'Wavedash', keys: 'f n d d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f n d d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }]
   };
-  var news = [
-    ['Patch', 'Notes de patch : équilibrage', 'Le résumé des changements de chaque mise à jour, personnage par personnage.'],
-    ['Nouveau personnage', 'Un combattant rejoint le roster', 'Présentation du style, des coups signatures et d\'un premier guide.'],
-    ['Événement', 'Calendrier des tournois', 'Dates, lieux et formats des compétitions à suivre.'],
-    ['Communauté', 'Clips de la semaine', 'Une sélection de combos et de retournements envoyés par les joueurs.']
-  ];
-  var seedReplays = [
-    { title: 'Finale de tournoi', who: 'Joueur A (Jin) contre Joueur B (Paul)', score: '3 – 1', example: true },
-    { title: 'Demi-finale', who: 'Joueur C (Law) contre Joueur D (Bryan)', score: '2 – 3', example: true },
-    { title: 'Quart de finale', who: 'Joueur E (Reina) contre Joueur F (Lars)', score: '3 – 0', example: true }
-  ];
-  /* Pièces génériques (aucun objet officiel du jeu) : [slot, nom, [[id, nom], ...]] */
-  var slotsDef = [
-    ['jacket', 'Haut', [['basic', 'Veste'], ['long', 'Manteau long'], ['sleeveless', 'Débardeur']]],
-    ['pants', 'Bas', [['long', 'Pantalon'], ['shorts', 'Short']]],
-    ['gloves', 'Mains', [['boxing', 'Gants de boxe'], ['wraps', 'Bandages'], ['none', 'Aucun']]],
-    ['shoes', 'Chaussures', [['sneakers', 'Baskets'], ['boots', 'Bottes']]],
-    ['hair', 'Cheveux', [['short', 'Courts'], ['mohawk', 'Crête'], ['long', 'Longs'], ['bald', 'Aucun']]],
-    ['acc', 'Accessoire', [['none', 'Aucun'], ['headband', 'Bandeau'], ['shades', 'Lunettes']]],
-    ['aura', 'Aura', [['glow', 'Halo']]]
-  ];
-  var palette = ['#e0213f', '#ffb224', '#f4f4f0', '#1c1f2b', '#5ea9ff', '#3ddc97', '#a066ff', '#ff6fb1', '#7a4b2a', '#2b6b5e'];
-  var defaults = { jacket: '#e0213f', pants: '#1c1f2b', gloves: '#f4f4f0', shoes: '#ffb224', hair: '#1c1f2b', acc: '#ffb224', aura: '#5ea9ff' };
-  var defItems = { jacket: 'basic', pants: 'long', gloves: 'boxing', shoes: 'sneakers', hair: 'short', acc: 'none', aura: 'glow' };
+  function cleanTitle(t) { return t.replace(/\s*\|\s*TEKKEN 8.*$/i, '').replace(/^T8\s+\S+\s+/, ''); }
+  function parseMatch(v) {
+    var t = v.title.replace(/^T8\s+\S+\s+/, '');
+    var m = t.match(/^(.+?)\s*\(([^)]+)\)\s+vs\.?\s+(.+?)\s*\(([^)]+)\)/i);
+    if (!m) return null;
+    function ch(s) { return s.replace(/#\d+\s*ranked\s*/i, '').trim(); }
+    return { id: v.id, p1: m[1].trim(), p2: m[3].trim(), n1: ch(m[2]), n2: ch(m[4]), c1: canon(m[2]), c2: canon(m[4]),
+      label: m[1].trim() + ' (' + ch(m[2]) + ') vs ' + m[3].trim() + ' (' + ch(m[4]) + ')' };
+  }
+  function indexData() {
+    comboBy = {};
+    vids.combos.forEach(function (v) {
+      if (!/tekken 8/i.test(v.title)) return;
+      var m = v.title.match(/^(.+?)\s+(?:Basic\s+)?Combo\s+(?:Guide|Breakdown)/i); if (!m) return;
+      var i = canon(m[1]); if (i < 0) return;
+      (comboBy[i] = comboBy[i] || []).push(v);
+    });
+    matches = vids.replays.map(parseMatch).filter(Boolean);
+  }
 
   var tabs = [
     { id: 'home', label: '', icon: true },
     { id: 'combos', label: 'Guides combos' },
     { id: 'persos', label: 'Personnages' },
     { id: 'actus', label: 'Actus' },
-    { id: 'pro', label: 'Replays pro' },
-    { id: 'custo', label: 'Personnalisation' }
+    { id: 'pro', label: 'Replays pro' }
+  ];
+  var news = [
+    ['Patch', 'Notes de patch : équilibrage', 'Le résumé des changements de chaque mise à jour, personnage par personnage.'],
+    ['Nouveau personnage', 'Un combattant rejoint le roster', 'Présentation du style, des coups signatures et d\'un premier guide.'],
+    ['Événement', 'Calendrier des tournois', 'Dates, lieux et formats des compétitions à suivre.'],
+    ['Communauté', 'Clips de la semaine', 'Une sélection de combos et de retournements envoyés par les joueurs.']
+  ];
+  var homeItems = [
+    ['Guides combos', 'combos', 'Les vidéos de combos lues sur le site, avec les touches en dessous, personnage par personnage.'],
+    ['Personnages', 'persos', 'Choisis un combattant : modèle 3D à gauche, stats à droite.'],
+    ['Actus', 'actus', 'Patchs, nouveaux personnages et événements.'],
+    ['Replays pro', 'pro', 'Les matchs de haut niveau : filtre par personnage, un ou deux.']
   ];
   var state = {
     tab: 'home',
-    sel: { home: 0, combos: 0, persos: 0, actus: 0, pro: 0, custo: 0 },
+    sel: { home: 0, combos: 0, persos: 0, actus: 0, pro: 0 },
     favs: store('th-favs') || [],
     userCombos: store('th-combos') || {},
-    userReplays: store('th-replays') || [],
-    looks: store('th-looks') || {},
-    slot: 'jacket'
+    fa: '', fb: ''
   };
 
   /* ---------- Listes par onglet ---------- */
-  var homeItems = [
-    ['Guides combos', 'combos', 'Les vidéos de combos lues sur le site, avec les touches affichées en dessous, personnage par personnage.'],
-    ['Personnages', 'persos', 'Choisis un combattant : modèle 3D à gauche, stats et style de jeu à droite.'],
-    ['Actus', 'actus', 'Patchs, nouveaux personnages et événements.'],
-    ['Replays pro', 'pro', 'Les matchs de haut niveau, à regarder directement sur le site.'],
-    ['Personnalisation', 'custo', 'Choisis un personnage, puis habille son modèle 3D pièce par pièce.']
-  ];
-  function replays() {
-    var fetched = vids.replays.map(function (v) { return { title: v.title, who: 'Tekken8Replays', score: '', url: vidUrl(v), fetched: true }; });
-    return state.userReplays.concat(fetched.length ? fetched : seedReplays);
+  function filtered() {
+    var a = state.fa === '' ? -1 : +state.fa, b = state.fb === '' ? -1 : +state.fb;
+    return matches.filter(function (m) {
+      var cs = [m.c1, m.c2];
+      if (a >= 0 && cs.indexOf(a) < 0) return false;
+      if (b >= 0 && cs.indexOf(b) < 0) return false;
+      if (a >= 0 && a === b) return m.c1 === a && m.c2 === a;
+      return true;
+    });
+  }
+  function rosterItems(t) {
+    var arr = R.map(function (r, i) {
+      var n = t === 'combos' ? (comboBy[i] || []).length + (seedCombos[r[0]] || []).length + (state.userCombos[r[0]] || []).length : 0;
+      return { label: r[0], fav: state.favs.indexOf(r[0]) >= 0, sm: n ? String(n) : '', desc: (t === 'combos' ? 'Guides et combos de ' : 'Fiche de ') + r[1] + '.' };
+    });
+    return arr.filter(function (x) { return x.fav; }).concat(arr.filter(function (x) { return !x.fav; }));
   }
   function items() {
     var t = state.tab;
     if (t === 'home') return homeItems.map(function (x) { return { label: x[0], desc: x[2] }; });
-    if (t === 'combos' || t === 'persos' || t === 'custo') {
-      var arr = fighters.map(function (f) { return { label: f[0], fav: state.favs.indexOf(f[0]) >= 0, desc: t === 'combos' ? 'Combos de ' + f[0] + ' : vidéos et touches à saisir.' : t === 'custo' ? 'Personnaliser ' + f[0] + ' : ' + f[1] + '.' : 'Fiche de ' + f[0] + ' : ' + f[1] + '.' }; });
-      var favs = arr.filter(function (x) { return x.fav; }), rest = arr.filter(function (x) { return !x.fav; });
-      return favs.concat(rest);
-    }
+    if (t === 'combos' || t === 'persos') return rosterItems(t);
     if (t === 'actus') return news.map(function (n) { return { label: n[1], desc: n[0] + ' : ' + n[2] }; });
-    if (t === 'pro') return replays().map(function (r) { return { label: r.title, sm: r.score, desc: 'Replay : ' + r.who }; });
-    return [];
+    return filtered().map(function (m) { return { label: m.label, desc: 'Replay : ' + m.label }; });
   }
 
   /* ---------- Rendu ---------- */
@@ -368,6 +402,7 @@ body.hide-ui .wrap { visibility: hidden; }
   function renderList() {
     var box = $('#list'); box.innerHTML = '';
     var its = items(), s = state.sel[state.tab];
+    if (!its.length) add(box, h('div', 'item-empty', state.tab === 'pro' ? 'Aucun match avec ce choix.' : 'Rien à afficher.'));
     its.forEach(function (it, i) {
       var b = h('button', 'item'); b.setAttribute('role', 'option');
       b.setAttribute('aria-current', i === s ? 'true' : 'false');
@@ -384,80 +419,81 @@ body.hide-ui .wrap { visibility: hidden; }
     if (cur && cur.scrollIntoView) { try { cur.scrollIntoView({ block: 'nearest' }); } catch (e) {} }
     $('#hint').textContent = its[s] ? its[s].desc : '';
   }
-
-  function currentFighter() {
-    var it = items()[state.sel[state.tab]];
-    return fighters.filter(function (f) { return f[0] === it.label; })[0];
-  }
+  function currentIdx() { var it = items()[state.sel[state.tab]]; return R.map(function (r) { return r[0]; }).indexOf(it.label); }
 
   function centerHome() {
     var c = $('#center');
-    add(c, h('div', 'hero', 'TEKKEN'), h('div', 'kicker', 'Guides · Stats · Actus · Replays'),
+    var hero = h('div', 'hero'); hero.innerHTML = 'TEKKEN<br><b>HUB</b>';
+    add(c, hero, h('div', 'kicker', 'Guides · Personnages · Actus · Replays'),
       h('p', 'lead', 'Tout ce qu\'il faut pour progresser : les combos en vidéo avec les touches dessous, les fiches de personnages et les matchs de pros.'));
-    c.firstChild.innerHTML = 'TEKKEN<br><b>HUB</b>';
   }
 
-  function comboEntry(f, e, custom, idx) {
+  function comboEntry(name, e, userIdx) {
     var d = h('article', 'entry');
     add(d, h('h3', '', e.title));
+    var body = h('div', 'vid');
     var url = e.url && ytOk(e.url) ? e.url : '';
-    add(d, add(h('div', 'vid'), thumb(url, 'Lire la vidéo : ' + e.title), e.keys ? keyRow(e.keys) : null));
+    if (url) add(body, thumb(url, 'Lire la vidéo : ' + e.title));
+    var hasKeys = Array.isArray(e.keys) ? e.keys.length : e.keys;
+    if (hasKeys) add(body, notations(e.keys));
+    else if (url) add(body, h('p', 'note', 'Touches à venir pour ce combo.'));
+    add(d, body);
     if (e.note) add(d, h('p', '', e.note));
-    if (custom) {
-      var m = h('div', 'meta');
-      var del = h('button', 'btn ghost sm', 'Supprimer');
+    if (userIdx != null) {
+      var del = h('button', 'btn ghost sm', 'Supprimer'); del.style.justifySelf = 'start';
       del.addEventListener('click', function () {
-        var list = state.userCombos[f[0]] || []; list.splice(idx, 1); state.userCombos[f[0]] = list; store('th-combos', state.userCombos); render();
+        var list = state.userCombos[name] || []; list.splice(userIdx, 1); state.userCombos[name] = list; store('th-combos', state.userCombos); render();
       });
-      add(m, h('span', 'note', 'Ajouté par toi'), del); add(d, m);
+      add(d, del);
     }
     return d;
   }
   function centerCombos() {
-    var f = currentFighter(), c = $('#center');
-    add(c, h('div', 'kicker', f[1]), h('h2', '', f[0]));
-    var user = state.userCombos[f[0]] || [], seed = seedCombos[f[0]] || [];
-    user.forEach(function (e, i) { add(c, comboEntry(f, e, true, i)); });
-    var found = vids.combos.filter(function (v) { return v.title.toLowerCase().indexOf(f[0].toLowerCase()) >= 0; });
-    found.forEach(function (v) { add(c, comboEntry(f, { title: v.title, url: vidUrl(v), keys: v.keys || '' }, false)); });
-    seed.forEach(function (e) { add(c, comboEntry(f, e, false)); });
-    if (!user.length && !seed.length && !found.length) add(c, add(h('div', 'panel'), h('p', 'lead', 'Aucun combo enregistré pour ' + f[0] + '. Ajoute le premier ci-dessous avec le lien de la vidéo et les touches.')));
+    var i = currentIdx(), r = R[i], c = $('#center');
+    add(c, h('div', 'kicker', r[1]), h('h2', '', r[0]));
+    var user = state.userCombos[r[0]] || [], seed = seedCombos[r[0]] || [], found = comboBy[i] || [];
+    user.forEach(function (e, k) { add(c, comboEntry(r[0], e, k)); });
+    found.forEach(function (v) { add(c, comboEntry(r[0], { title: cleanTitle(v.title), url: vidUrl(v), keys: v.keys || KEYS[v.id] || '' })); });
+    seed.forEach(function (e) { add(c, comboEntry(r[0], e)); });
+    if (!user.length && !seed.length && !found.length) add(c, add(h('div', 'panel'), h('p', 'lead', 'Pas encore de guide pour ' + r[0] + '.')));
 
-    var det = h('details', 'panel'); det.id = 'add-combo';
+    var det = h('details', 'panel');
     add(det, h('summary', '', 'Ajouter un combo'));
     var form = h('form', 'add');
     form.innerHTML =
       '<label for="c-title">Nom du combo<input id="c-title" required maxlength="80" placeholder="Combo après un lance-air"></label>' +
-      '<label for="c-url">Lien de la vidéo YouTube<input id="c-url" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>' +
-      '<label for="c-keys">Touches (séparées par des virgules, « + » pour simultané)<input id="c-keys" required maxlength="120" placeholder="d/f+1, 2, f+3+4"></label>' +
+      '<label for="c-url">Lien de la vidéo (facultatif)<input id="c-url" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>' +
+      '<label for="c-keys">Touches : virgule entre les coups, « + » pour simultané, « > » entre deux phases<input id="c-keys" required maxlength="160" placeholder="d/f+1, 2, f+3+4 > 1+2"></label>' +
       '<div class="err" id="c-err"></div><div class="row"><button class="btn" type="submit">Enregistrer</button><span class="note">Enregistré dans ce navigateur uniquement.</span></div>';
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
       var url = $('#c-url').value.trim();
       if (url && !ytOk(url)) { $('#c-err').textContent = 'Le lien doit venir de youtube.com ou youtu.be.'; return; }
-      var list = state.userCombos[f[0]] || [];
+      var list = state.userCombos[r[0]] || [];
       list.unshift({ title: $('#c-title').value.trim(), url: url, keys: $('#c-keys').value.trim() });
-      state.userCombos[f[0]] = list; store('th-combos', state.userCombos); render();
+      state.userCombos[r[0]] = list; store('th-combos', state.userCombos); render();
     });
     add(det, form); add(c, det);
   }
 
   function centerPersos() {
-    var f = currentFighter(), c = $('#center');
-    add(c, h('div', 'kicker', f[1]), h('h2', '', f[0]));
+    var i = currentIdx(), r = R[i], c = $('#center');
+    add(c, h('div', 'kicker', r[1]), h('h2', '', r[0]));
     var split = h('div', 'split'), left = h('div', 'vwrap'), right = h('div', 'stack');
-    mountViewer(left); showModel(f, getLook(f[0]));
+    mountViewer(left); showModel(r);
     var p = h('div', 'panel');
     add(p, h('p', 'label', 'Stats'));
-    f[2].forEach(function (v, i) {
-      var r = h('div', 'bar');
-      var tr = h('div', 'track'), fl = h('div', 'fill'); fl.style.width = (v * 10) + '%'; add(tr, fl);
-      add(r, h('span', '', statNames[i]), tr, h('span', 'v', String(v))); add(p, r);
-    });
-    add(p, h('p', 'note', 'Notes sur 10 données à titre d\'exemple, à remplacer par les vraies stats.'));
-    var g = h('button', 'btn', 'Voir les combos'); g.addEventListener('click', function () { go('combos', f[0]); });
-    var k = h('button', 'btn ghost', 'Personnaliser'); k.addEventListener('click', function () { go('custo', f[0]); });
-    add(right, p, add(h('div', 'row'), g, k));
+    if (r[2]) {
+      r[2].forEach(function (v, k) {
+        var row = h('div', 'bar');
+        var tr = h('div', 'track'), fl = h('div', 'fill'); fl.style.width = (v * 10) + '%'; add(tr, fl);
+        add(row, h('span', '', statNames[k]), tr, h('span', 'v', String(v))); add(p, row);
+      });
+      add(p, h('p', 'note', 'Notes sur 10 données à titre d\'exemple, à remplacer par les vraies stats.'));
+    } else add(p, h('p', 'lead', 'Stats à venir pour ce personnage.'));
+    var g = h('button', 'btn', 'Voir les combos'); g.addEventListener('click', function () { go('combos', r[0]); });
+    var k2 = h('button', 'btn ghost', 'Voir ses replays'); k2.addEventListener('click', function () { state.fa = String(i); state.fb = ''; state.sel.pro = 0; go('pro'); });
+    add(right, p, add(h('div', 'row'), g, k2));
     add(split, left, right); add(c, split);
   }
 
@@ -467,49 +503,47 @@ body.hide-ui .wrap { visibility: hidden; }
       add(h('div', 'panel'), h('p', 'note', 'Actualité d\'exemple : la mise en page est prête, le contenu viendra du site officiel et de la communauté.')));
   }
 
-  function centerPro() {
-    var all = replays(), r = all[state.sel.pro] || all[0], c = $('#center');
-    add(c, h('div', 'kicker', r.example ? 'Exemple de présentation' : 'Replay'), h('h2', '', r.title));
-    add(c, h('p', 'lead', r.who + (r.score ? ' · ' + r.score : '')));
-    var url = r.url && ytOk(r.url) ? r.url : '';
-    add(c, thumb(url, 'Lire le replay : ' + r.title));
-    var row = h('div', 'row');
-    if (!r.example && !r.fetched) {
-      var del = h('button', 'btn ghost', 'Supprimer');
-      del.addEventListener('click', function () { state.userReplays.splice(state.sel.pro, 1); state.sel.pro = 0; store('th-replays', state.userReplays); render(); });
-      add(row, del);
-    }
-    add(c, row);
-    var det = h('details', 'panel');
-    add(det, h('summary', '', 'Ajouter un replay'));
-    var form = h('form', 'add');
-    form.innerHTML =
-      '<label for="r-title">Titre<input id="r-title" required maxlength="80" placeholder="Finale du tournoi"></label>' +
-      '<label for="r-who">Joueurs et personnages<input id="r-who" required maxlength="100" placeholder="Joueur A (Jin) contre Joueur B (Paul)"></label>' +
-      '<label for="r-score">Score<input id="r-score" maxlength="12" placeholder="3 – 1"></label>' +
-      '<label for="r-url">Lien de la vidéo YouTube<input id="r-url" type="url" placeholder="https://www.youtube.com/watch?v=..."></label>' +
-      '<div class="err" id="r-err"></div><div class="row"><button class="btn" type="submit">Enregistrer</button><span class="note">Enregistré dans ce navigateur uniquement.</span></div>';
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var url = $('#r-url').value.trim();
-      if (url && !ytOk(url)) { $('#r-err').textContent = 'Le lien doit venir de youtube.com ou youtu.be.'; return; }
-      state.userReplays.unshift({ title: $('#r-title').value.trim(), who: $('#r-who').value.trim(), score: $('#r-score').value.trim() || '–', url: url });
-      state.sel.pro = 0; store('th-replays', state.userReplays); render();
+  function selectField(label, id, value, allLabel, counts, onChange) {
+    var f = h('label', 'field'); f.htmlFor = id;
+    add(f, h('span', '', label));
+    var s = h('select'); s.id = id;
+    var o0 = h('option', '', allLabel); o0.value = ''; add(s, o0);
+    R.forEach(function (r, i) {
+      if (!counts[i]) return;
+      var o = h('option', '', r[0] + ' (' + counts[i] + ')'); o.value = String(i); add(s, o);
     });
-    add(det, form); add(c, det);
+    s.value = value;
+    s.addEventListener('change', function () { onChange(s.value); });
+    add(f, s); return f;
+  }
+  function centerPro() {
+    var c = $('#center'), list = filtered(), m = list[state.sel.pro] || list[0];
+    var counts = {}; matches.forEach(function (x) { [x.c1, x.c2].forEach(function (k, j) { if (k >= 0 && (j === 0 || x.c1 !== x.c2)) counts[k] = (counts[k] || 0) + 1; }); });
+    add(c, h('div', 'kicker', 'Replays pro'));
+    var fl = h('div', 'filters');
+    add(fl, selectField('Personnage 1', 'f-a', state.fa, 'Tous les personnages', counts, function (v) { state.fa = v; state.sel.pro = 0; render(); }));
+    add(fl, selectField('Personnage 2 (adversaire)', 'f-b', state.fb, 'Tous les adversaires', counts, function (v) { state.fb = v; state.sel.pro = 0; render(); }));
+    add(c, fl);
+    var info = h('div', 'row');
+    var txt = !matches.length ? 'Les replays arrivent.' : list.length + (list.length > 1 ? ' matchs' : ' match');
+    if (state.fa !== '' && state.fb !== '') txt += ' : ' + R[+state.fa][0] + ' contre ' + R[+state.fb][0];
+    else if (state.fa !== '') txt += ' avec ' + R[+state.fa][0];
+    else if (state.fb !== '') txt += ' avec ' + R[+state.fb][0];
+    add(info, h('span', 'note', txt));
+    if (state.fa !== '' || state.fb !== '') {
+      var rs = h('button', 'btn ghost sm', 'Tout afficher'); rs.addEventListener('click', function () { state.fa = ''; state.fb = ''; state.sel.pro = 0; render(); });
+      add(info, rs);
+    }
+    add(c, info);
+    if (!m) { add(c, add(h('div', 'panel'), h('p', 'lead', matches.length ? 'Aucun match ne réunit ces deux personnages. Essaie un autre adversaire ou « Tous les adversaires ».' : 'Pas encore de replays.'))); return; }
+    add(c, h('h2', '', m.label));
+    add(c, thumb(vidUrl({ id: m.id }), 'Lire le replay : ' + m.label));
   }
 
   /* ---------- Visionneuse 3D ---------- */
-  var models = {};
   var V = null;
-  function clone(o) { return JSON.parse(JSON.stringify(o)); }
-  function getLook(name) {
-    var l = state.looks[name] || {};
-    l.colors = Object.assign(clone(defaults), l.colors || {});
-    l.items = Object.assign(clone(defItems), l.items || {});
-    state.looks[name] = l;
-    return l;
-  }
+  var DEF = { colors: { jacket: '#e0213f', pants: '#1c1f2b', gloves: '#f4f4f0', shoes: '#ffb224', hair: '#1c1f2b', acc: '#ffb224', aura: '#e0213f' },
+              items: { jacket: 'basic', pants: 'long', gloves: 'boxing', shoes: 'sneakers', hair: 'short', acc: 'none' } };
   function mat(color, o) {
     var m = new THREE.MeshStandardMaterial(Object.assign({ roughness: .62, metalness: .05 }, o || {}));
     m.color = new THREE.Color(color).convertSRGBToLinear();
@@ -536,13 +570,13 @@ body.hide-ui .wrap { visibility: hidden; }
     controls.minDistance = 2.4; controls.maxDistance = 7; controls.maxPolarAngle = Math.PI * .52; controls.update();
     scene.add(new THREE.HemisphereLight(0xbfd2ff, 0x1a1020, .95));
     var key = new THREE.DirectionalLight(0xffffff, 1.15); key.position.set(2, 4, 3); scene.add(key);
-    var rim = new THREE.PointLight(0x5ea9ff, 1.4, 0); rim.position.set(-2, 2.2, -2.2); scene.add(rim);
+    var rim = new THREE.PointLight(0xe0213f, 1.4, 0); rim.position.set(-2, 2.2, -2.2); scene.add(rim);
     var floor = new THREE.Mesh(new THREE.CircleGeometry(1.15, 48), new THREE.MeshBasicMaterial({ color: 0x0b0e18, transparent: true, opacity: .9 }));
     floor.rotation.x = -Math.PI / 2; floor.position.y = -.002; scene.add(floor);
-    var ring = new THREE.Mesh(new THREE.RingGeometry(1.02, 1.1, 64), new THREE.MeshBasicMaterial({ color: 0x5ea9ff, side: THREE.DoubleSide }));
+    var ring = new THREE.Mesh(new THREE.RingGeometry(1.02, 1.1, 64), new THREE.MeshBasicMaterial({ color: 0xe0213f, side: THREE.DoubleSide }));
     ring.rotation.x = -Math.PI / 2; scene.add(ring);
     var holder = new THREE.Group(); scene.add(holder);
-    V = { el: el, ok: true, cap: cap, holder: holder, ring: ring, rim: rim, anim: null, tok: 0, w: 0, h: 0, t: 0 };
+    V = { el: el, ok: true, cap: cap, holder: holder, anim: null, tok: 0, w: 0, h: 0, t: 0 };
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, last = 0;
     function loop(ts) {
       requestAnimationFrame(loop);
@@ -561,65 +595,45 @@ body.hide-ui .wrap { visibility: hidden; }
   }
   function mountViewer(parent) { parent.appendChild(initViewer().el); }
 
-  /* Mannequin générique : proportions légèrement différentes selon le personnage, pièces interchangeables. */
-  function buildMannequin(look, f) {
-    var C = look.colors, I = look.items, T = THREE;
+  /* Mannequin générique : proportions légèrement différentes selon le personnage. */
+  function buildMannequin(r) {
+    var C = DEF.colors, T = THREE, st = r[2] || [6, 6, 6, 6, 6];
     var g = new T.Group(), body = new T.Group(); g.add(body);
-    var sx = .9 + f[2][0] * .026, sy = .97 + f[2][2] * .011;
+    var sx = .9 + st[0] * .026, sy = .97 + st[2] * .011;
     body.scale.set(sx, sy, sx);
     var skin = mat(0xd9a77c, { roughness: .8 }), dark = mat(0x15110e);
-    var jm = mat(C.jacket), pm = mat(C.pants), gm = mat(C.gloves), sm = mat(C.shoes), hm = mat(C.hair, { roughness: .9 }), am = mat(C.acc, { roughness: .35 });
+    var jm = mat(C.jacket), pm = mat(C.pants), gm = mat(C.gloves), sm = mat(C.shoes), hm = mat(C.hair, { roughness: .9 });
     function cyl(rt, rb, hh, m, y) { var o = new T.Mesh(new T.CylinderGeometry(rt, rb, hh, 22), m); o.position.y = y || 0; return o; }
-    function sph(r, m) { return new T.Mesh(new T.SphereGeometry(r, 24, 18), m); }
+    function sph(rad, m) { return new T.Mesh(new T.SphereGeometry(rad, 24, 18), m); }
     function box(w, hh, d, m) { return new T.Mesh(new T.BoxGeometry(w, hh, d), m); }
-
     var torso = cyl(.2, .165, .58, jm, 1.22); torso.scale.z = .64; body.add(torso);
-    if (I.jacket === 'long') { var coat = cyl(.19, .27, .56, jm, .78); coat.scale.z = .72; body.add(coat); }
     var pel = cyl(.165, .17, .18, pm, .93); pel.scale.z = .66; body.add(pel);
     body.add(cyl(.05, .055, .12, skin, 1.55));
     var head = sph(.115, skin); head.position.y = 1.7; head.scale.set(1, 1.12, 1.06); body.add(head);
     [-1, 1].forEach(function (s) { var e = sph(.013, dark); e.position.set(s * .04, 1.72, .112); body.add(e); });
-
-    if (I.hair === 'short' || I.hair === 'long') {
-      var cap = new T.Mesh(new T.SphereGeometry(.123, 24, 16, 0, Math.PI * 2, 0, Math.PI * .56), hm);
-      cap.position.set(0, 1.71, -.004); cap.scale.set(1, 1.12, 1.07); body.add(cap);
-      if (I.hair === 'long') { var back = cyl(.105, .085, .3, hm, 1.6); back.position.z = -.07; body.add(back); }
-    } else if (I.hair === 'mohawk') {
-      var mo = box(.045, .11, .24, hm); mo.position.set(0, 1.82, -.01); body.add(mo);
-    }
-    if (I.acc === 'headband') { var hb = new T.Mesh(new T.TorusGeometry(.121, .014, 8, 32), am); hb.rotation.x = Math.PI / 2; hb.position.y = 1.76; body.add(hb); }
-    if (I.acc === 'shades') { var sh0 = box(.2, .035, .04, am); sh0.position.set(0, 1.725, .108); body.add(sh0); }
-
+    var cap = new T.Mesh(new T.SphereGeometry(.123, 24, 16, 0, Math.PI * 2, 0, Math.PI * .56), hm);
+    cap.position.set(0, 1.71, -.004); cap.scale.set(1, 1.12, 1.07); body.add(cap);
     var arms = [];
     [-1, 1].forEach(function (s) {
       var sh = new T.Group(); sh.position.set(s * .265, 1.45, 0);
       sh.rotation.set(s < 0 ? -.95 : -.55, 0, -s * .18); sh.userData.r = sh.rotation.x;
-      var sl = I.jacket === 'sleeveless' ? skin : jm;
-      sh.add(sph(.062, sl)); sh.add(cyl(.052, .046, .3, sl, -.15));
+      sh.add(sph(.062, jm)); sh.add(cyl(.052, .046, .3, jm, -.15));
       var el = new T.Group(); el.position.y = -.3; el.rotation.x = -1.5;
-      el.add(sph(.046, sl)); el.add(cyl(.044, .037, .27, sl, -.135));
-      if (I.gloves === 'wraps') el.add(cyl(.048, .048, .13, gm, -.215));
-      var hand = I.gloves === 'boxing' ? sph(.088, gm) : sph(.05, skin);
-      hand.position.y = -.31; el.add(hand);
+      el.add(sph(.046, jm)); el.add(cyl(.044, .037, .27, jm, -.135));
+      var hand = sph(.088, gm); hand.position.y = -.31; el.add(hand);
       sh.add(el); body.add(sh); arms.push(sh);
     });
-
     [-1, 1].forEach(function (s) {
       var hip = new T.Group(); hip.position.set(s * .1, .93, 0);
       var hipRot = s < 0 ? -.32 : .3, kneeRot = s < 0 ? .25 : .5;
       hip.rotation.set(hipRot, 0, s * .08);
-      var plen = I.pants === 'shorts' ? .28 : .46;
-      hip.add(cyl(.074, .06, .46, skin, -.23));
-      hip.add(cyl(.083, I.pants === 'shorts' ? .077 : .067, plen, pm, -plen / 2));
+      hip.add(cyl(.074, .06, .46, skin, -.23)); hip.add(cyl(.083, .067, .46, pm, -.23));
       var knee = new T.Group(); knee.position.y = -.46; knee.rotation.x = kneeRot;
-      knee.add(cyl(.056, .04, .44, skin, -.22));
-      if (I.pants !== 'shorts') knee.add(cyl(.063, .047, .44, pm, -.22));
+      knee.add(cyl(.056, .04, .44, skin, -.22)); knee.add(cyl(.063, .047, .44, pm, -.22));
       var foot = new T.Group(); foot.position.y = -.44; foot.rotation.x = -(hipRot + kneeRot);
       var shoe = box(.11, .07, .27, sm); shoe.position.set(0, -.035, .06); foot.add(shoe);
-      if (I.shoes === 'boots') foot.add(cyl(.068, .064, .22, sm, .07));
       knee.add(foot); hip.add(knee); body.add(hip);
     });
-
     g.rotation.y = .35; g.updateMatrixWorld(true);
     var bb = new T.Box3().setFromObject(g); g.position.y = -bb.min.y;
     return {
@@ -630,17 +644,15 @@ body.hide-ui .wrap { visibility: hidden; }
       }
     };
   }
-
-  function showModel(f, look) {
+  function showModel(r) {
     var v = initViewer(); if (!v.ok) return;
     var tok = ++v.tok;
     while (v.holder.children.length) v.holder.remove(v.holder.children[0]);
-    v.ring.material.color.set(look.colors.aura); v.rim.color.set(look.colors.aura);
     function generic() {
-      var m = buildMannequin(look, f); v.holder.add(m.group); v.anim = m.anim;
+      var m = buildMannequin(r); v.holder.add(m.group); v.anim = m.anim;
       v.cap.textContent = 'Mannequin générique · glisse pour tourner, molette pour zoomer';
     }
-    var url = models[f[0]];
+    var url = models[r[0]];
     if (!url || !THREE.GLTFLoader) { generic(); return; }
     v.anim = null; v.cap.textContent = 'Chargement du modèle 3D…';
     new THREE.GLTFLoader().load(url, function (gl) {
@@ -648,92 +660,32 @@ body.hide-ui .wrap { visibility: hidden; }
       var m = gl.scene, b = new THREE.Box3().setFromObject(m);
       var size = b.getSize(new THREE.Vector3()), ctr = b.getCenter(new THREE.Vector3()), k = 1.8 / (size.y || 1);
       m.scale.setScalar(k); m.position.set(-ctr.x * k, -b.min.y * k, -ctr.z * k);
-      m.traverse(function (o) {
-        if (!o.isMesh) return;
-        var arr = Array.isArray(o.material) ? o.material : [o.material];
-        var out = arr.map(function (mt) {
-          var nm = (mt.name || '').toLowerCase();
-          var key = ['jacket', 'pants', 'gloves', 'shoes', 'hair'].filter(function (s) { return nm.indexOf(s) >= 0; })[0];
-          if (!key) return mt;
-          var c2 = mt.clone(); c2.color = new THREE.Color(look.colors[key]).convertSRGBToLinear(); return c2;
-        });
-        o.material = Array.isArray(o.material) ? out : out[0];
-      });
-      v.holder.add(m); v.cap.textContent = 'Modèle 3D de ' + f[0] + ' · glisse pour tourner, molette pour zoomer';
+      v.holder.add(m); v.cap.textContent = 'Modèle 3D de ' + r[0] + ' · glisse pour tourner, molette pour zoomer';
     }, undefined, function () { if (tok === v.tok) generic(); });
   }
 
-  /* ---------- Personnalisation ---------- */
-  function chip(parent, label, on, fn) {
-    var b = h('button', 'chip', label); b.type = 'button'; b.setAttribute('aria-pressed', on ? 'true' : 'false');
-    b.addEventListener('click', fn); add(parent, b);
-  }
-  function centerCusto() {
-    var f = currentFighter(), c = $('#center'), look = getLook(f[0]);
-    add(c, h('div', 'kicker', 'Personnalisation'), h('h2', '', f[0]));
-    var split = h('div', 'split'), left = h('div', 'vwrap'), right = h('div', 'stack');
-    mountViewer(left);
-    function refresh() { store('th-looks', state.looks); showModel(f, look); draw(); }
-    function draw() {
-      right.innerHTML = '';
-      var def = slotsDef.filter(function (x) { return x[0] === state.slot; })[0];
-      var p = h('div', 'panel');
-      add(p, h('p', 'label', 'Pièce'));
-      var row = h('div', 'chips');
-      slotsDef.forEach(function (s) { chip(row, s[1], state.slot === s[0], function () { state.slot = s[0]; draw(); }); });
-      add(p, row);
-      if (def[2].length > 1) {
-        var l2 = h('p', 'label', 'Modèle'); l2.style.marginTop = '16px'; add(p, l2);
-        var r2 = h('div', 'chips');
-        def[2].forEach(function (it) { chip(r2, it[1], look.items[def[0]] === it[0], function () { look.items[def[0]] = it[0]; refresh(); }); });
-        add(p, r2);
-      }
-      var l3 = h('p', 'label', 'Couleur'); l3.style.marginTop = '16px'; add(p, l3);
-      var grid = h('div', 'swatches');
-      palette.forEach(function (col) {
-        var b = h('button', 'sw'); b.type = 'button'; b.setAttribute('aria-label', 'Couleur ' + col);
-        b.setAttribute('aria-pressed', look.colors[def[0]] === col ? 'true' : 'false');
-        var sp = h('span'); sp.style.background = col; add(b, sp);
-        b.addEventListener('click', function () { look.colors[def[0]] = col; refresh(); });
-        add(grid, b);
-      });
-      add(p, grid);
-      var act = h('div', 'row'); act.style.marginTop = '16px';
-      var rnd = h('button', 'btn', 'Aléatoire'), rst = h('button', 'btn ghost', 'Réinitialiser');
-      rnd.addEventListener('click', function () {
-        slotsDef.forEach(function (s) {
-          look.colors[s[0]] = palette[Math.floor(Math.random() * palette.length)];
-          look.items[s[0]] = s[2][Math.floor(Math.random() * s[2].length)][0];
-        });
-        refresh();
-      });
-      rst.addEventListener('click', function () { look.colors = clone(defaults); look.items = clone(defItems); refresh(); });
-      add(act, rnd, rst); add(p, act);
-      add(right, p, h('p', 'note', 'Pièces génériques en attendant les objets du jeu. Ton look est enregistré dans ce navigateur.'));
-    }
-    showModel(f, look); draw();
-    add(split, left, right); add(c, split);
-  }
-
+  /* ---------- Navigation ---------- */
   function render() {
+    var n = items().length;
+    if (state.sel[state.tab] >= n) state.sel[state.tab] = 0;
     renderTabs(); renderList();
     var c = $('#center'); c.innerHTML = '';
     var t = state.tab;
     if (t === 'home') centerHome(); else if (t === 'combos') centerCombos(); else if (t === 'persos') centerPersos();
-    else if (t === 'actus') centerActus(); else if (t === 'pro') centerPro(); else centerCusto();
+    else if (t === 'actus') centerActus(); else centerPro();
     var cur = tabs.filter(function (x) { return x.id === t; })[0];
     $('#title').textContent = t === 'home' ? 'Menu principal' : cur.label;
   }
-  function go(tab, fighterName) {
+  function go(tab, name) {
     state.tab = tab;
-    if (fighterName) { var i = items().map(function (x) { return x.label; }).indexOf(fighterName); if (i >= 0) state.sel[tab] = i; }
+    if (name) { var i = items().map(function (x) { return x.label; }).indexOf(name); if (i >= 0) state.sel[tab] = i; }
     try { history.replaceState(null, '', '#' + tab); } catch (e) {}
     render();
   }
   function step(d) { var i = tabs.map(function (t) { return t.id; }).indexOf(state.tab); go(tabs[(i + d + tabs.length) % tabs.length].id); }
-  function move(d) { var n = items().length; state.sel[state.tab] = (state.sel[state.tab] + d + n) % n; render(); }
+  function move(d) { var n = items().length; if (!n) return; state.sel[state.tab] = (state.sel[state.tab] + d + n) % n; render(); }
   function fav() {
-    if (state.tab !== 'combos' && state.tab !== 'persos' && state.tab !== 'custo') return;
+    if (state.tab !== 'combos' && state.tab !== 'persos') return;
     var name = items()[state.sel[state.tab]].label, i = state.favs.indexOf(name);
     if (i >= 0) state.favs.splice(i, 1); else state.favs.push(name);
     store('th-favs', state.favs);
@@ -742,19 +694,16 @@ body.hide-ui .wrap { visibility: hidden; }
   }
   function hideUi(on) { document.body.classList.toggle('hide-ui', on); $('#restore').hidden = !on; }
 
-  /* ---------- Bas d'écran ---------- */
   var ic = {
     play: '<svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M13 11l8 5-8 5z"/></svg>',
     news: '<svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="20" rx="2"/><path d="M10 12h12M10 17h12M10 22h7"/></svg>',
-    palette: '<svg viewBox="0 0 32 32"><path d="M16 5a11 11 0 1 0 0 22c2 0 3-1 3-2.500 0-2-2-2-2-4s1.500-3 3.500-3H25a3 3 0 0 0 3-3C28 9 22.500 5 16 5z"/><circle cx="10.500" cy="14" r="1.200"/><circle cx="15" cy="10" r="1.200"/><circle cx="21" cy="11" r="1.200"/></svg>',
     users: '<svg viewBox="0 0 32 32"><circle cx="16" cy="12" r="4.500"/><path d="M7 26c1-5 4-8 9-8s8 3 9 8"/></svg>'
   };
-  [['Combos', ic.play, 'tab', 'combos'], ['Replays', ic.play, 'tab', 'pro'], ['Personnages', ic.users, 'tab', 'persos'], ['Actus', ic.news, 'tab', 'actus'], ['Custo', ic.palette, 'tab', 'custo']].forEach(function (x) {
-    var e = h('button', 'icon'); e.type = 'button'; e.addEventListener('click', function () { go(x[3]); });
+  [['Combos', ic.play, 'combos'], ['Replays', ic.play, 'pro'], ['Personnages', ic.users, 'persos'], ['Actus', ic.news, 'actus']].forEach(function (x) {
+    var e = h('button', 'icon'); e.type = 'button'; e.addEventListener('click', function () { go(x[2]); });
     e.innerHTML = x[1] + '<span>' + x[0] + '</span>';
     $('#icons').appendChild(e);
   });
-
   $('#prev').addEventListener('click', function () { step(-1); });
   $('#next').addEventListener('click', function () { step(1); });
   $('#b-ok').addEventListener('click', function () { if (state.tab === 'home') go(homeItems[state.sel.home][1]); else if (state.tab === 'persos') go('combos', items()[state.sel.persos].label); });
@@ -764,7 +713,7 @@ body.hide-ui .wrap { visibility: hidden; }
   $('#restore').addEventListener('click', function () { hideUi(false); });
   document.addEventListener('keydown', function (ev) {
     var t = ev.target && ev.target.tagName;
-    if (t === 'INPUT' || t === 'TEXTAREA' || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    if (t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT' || ev.ctrlKey || ev.metaKey || ev.altKey) return;
     if (document.body.classList.contains('hide-ui')) { hideUi(false); return; }
     var k = ev.key;
     if (k === 'ArrowDown') { ev.preventDefault(); move(1); }
@@ -782,10 +731,13 @@ body.hide-ui .wrap { visibility: hidden; }
   try {
     /* data/models.json : { "Jin": "models/jin.glb", ... } (modèles 3D autorisés que tu ajoutes) */
     fetch('data/models.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && typeof d === 'object') { models = d; render(); }
+      if (d && typeof d === 'object') { models = d; if (state.tab === 'persos') render(); }
+    }).catch(function () {});
+    fetch('data/keys.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && typeof d === 'object') { KEYS = d; if (state.tab === 'combos') render(); }
     }).catch(function () {});
     fetch('data/videos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && d.combos && d.replays) { vids = d; render(); }
+      if (d && d.combos && d.replays) { vids = d; indexData(); render(); }
     }).catch(function () {});
   } catch (e) {}
 })();

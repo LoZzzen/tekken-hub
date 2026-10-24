@@ -17,7 +17,7 @@ CHANNELS = {
     "combos": "https://www.youtube.com/@RyzingSol/videos",
     "replays": "https://www.youtube.com/@Tekken8Replays/videos",
 }
-LIMIT = {"combos": 400, "replays": 150}  # nombre maximum de vidéos par chaîne
+LIMIT = {"combos": 500, "replays": 1500}  # nombre maximum de vidéos par chaîne
 
 
 def fetch(url, limit):
@@ -61,13 +61,6 @@ def main():
         result[name] = vids
         print(f"{name}: {len(vids)} vidéos")
     OUT.write_text(json.dumps(result, ensure_ascii=False, indent=1), "utf-8")
-
-    # Descriptions des guides de combos Tekken 8 (cache dans data/desc.json, non chargé par le site)
-    dpath = OUT.parent / "desc.json"
-    cache = json.loads(dpath.read_text("utf-8")) if dpath.exists() else {}
-    ids = [v["id"] for v in result["combos"] if "combo guide" in v["title"].lower() and "tekken 8" in v["title"].lower()][:60]
-    fetch_descriptions(ids, cache)
-    dpath.write_text(json.dumps(cache, ensure_ascii=False, indent=1), "utf-8")
 
 
 if __name__ == "__main__":
