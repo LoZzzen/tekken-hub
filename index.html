@@ -81,14 +81,32 @@ h2 { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 3.6vw
 .note { font-family: var(--mono); font-size: 11px; color: var(--dim); letter-spacing: .03em; margin: 0; }
 
 /* Notation en icônes */
-.nt { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 5px; padding: 9px 12px; background: rgba(0, 0, 0, .38); border: 1px solid var(--line); min-width: 0; }
-.nt .step { display: inline-flex; align-items: center; gap: 2px; }
+.nt { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 6px; padding: 10px 12px; background: rgba(4, 14, 22, .55); border: 1px solid #1d4254; min-width: 0; }
+.nt .k { display: inline-flex; align-items: center; gap: 4px; padding: 4px 12px; background: linear-gradient(180deg, #245a6e, #143445); border-top: 1px solid #4aa3bd; transform: skewX(-16deg); }
+.nt .k > * { transform: skewX(16deg); }
 .nt svg { display: block; flex: none; }
-.nt svg.ar { width: 26px; height: 26px; }
-.nt svg.bt { width: 28px; height: 28px; }
-.nt .w { font-size: 13px; font-weight: 600; padding: 0 5px; white-space: nowrap; }
+.nt svg.ar { width: 24px; height: 24px; }
+.nt svg.bt { width: 26px; height: 26px; filter: drop-shadow(0 0 2px rgba(255, 255, 255, .6)); }
+.nt .w { font-size: 14px; font-weight: 600; padding: 0 4px; white-space: nowrap; }
+.nt .k .w { padding: 0 0 0 4px; }
+.nt .or { font-size: 13px; font-weight: 600; color: #4fc3e0; padding: 0 2px; }
 .nt .go { color: var(--lit); font-size: 13px; padding: 0 5px; }
-.nt .star { font-size: 20px; line-height: 1; padding: 0 3px; }
+.nt .star { font-size: 20px; line-height: 1; color: #fff; }
+.chart { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 14px; }
+.cg { min-width: 0; }
+.cg h4 { margin: 0 0 8px; padding-bottom: 6px; border-bottom: 2px solid #2d7f95; font-size: 15px; font-weight: 600; text-align: center; }
+.kr { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px; align-items: center; margin: 6px 0; }
+.kr .nt { padding: 6px 10px; background: none; border: 0; }
+.kr-l { font-size: 14px; font-weight: 600; }
+
+/* Portraits */
+.portrait { position: relative; aspect-ratio: 3 / 4; max-width: 100%; border: 1px solid var(--line); background: radial-gradient(ellipse at 50% 85%, rgba(224, 33, 63, .26), transparent 62%), var(--panel); overflow: hidden; }
+.portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .2s; }
+.portrait.has img { opacity: 1; }
+.portrait .ph { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 6px; padding: 16px; text-align: center; }
+.portrait.has .ph { display: none; }
+.portrait .ini { font-family: var(--display); font-weight: 800; font-size: clamp(90px, 14vw, 150px); line-height: 1; color: rgba(255, 255, 255, .09); }
+.portrait .nm { font-family: var(--display); font-weight: 800; font-size: 22px; text-transform: uppercase; letter-spacing: .04em; }
 .nt-title { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--mute); margin: 4px 0 -2px; }
 
 /* Vidéos */
@@ -132,11 +150,6 @@ option { background: #121830; color: var(--fg); }
 /* Visionneuse 3D */
 .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: start; }
 .vwrap { min-width: 0; }
-.viewer { position: relative; height: min(66vh, 580px); min-height: 380px; background: radial-gradient(ellipse at 50% 88%, rgba(224, 33, 63, .28), transparent 62%), var(--panel); border: 1px solid var(--line); overflow: hidden; }
-.viewer canvas { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
-.viewer canvas:active { cursor: grabbing; }
-.vcap { position: absolute; left: 12px; right: 12px; bottom: 8px; font-family: var(--mono); font-size: 11px; color: var(--mute); pointer-events: none; }
-.viewer-msg { padding: 24px; color: var(--mute); margin: 0; }
 .stack { display: grid; gap: 14px; min-width: 0; align-content: start; }
 
 /* Bas d'écran */
@@ -156,7 +169,6 @@ body.hide-ui .wrap { visibility: hidden; }
 
 @media (max-width: 980px) {
   .main, .split { grid-template-columns: minmax(0, 1fr); }
-  .viewer { height: 62vh; min-height: 340px; }
   .list { max-height: 240px; }
   .title { font-size: 24px; }
   .tab { padding: 8px 14px 10px; }
@@ -167,9 +179,6 @@ body.hide-ui .wrap { visibility: hidden; }
 }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
 <div class="wrap" id="app">
   <h1 class="title" id="title">Menu principal</h1>
   <div class="navrow">
@@ -192,7 +201,7 @@ body.hide-ui .wrap { visibility: hidden; }
       <button id="b-tab"><span class="btnc">Q</span><span class="btnc">E</span>Changer d'onglet</button>
       <button id="b-hide"><span class="btnc">H</span>Masquer l'interface</button>
     </div>
-    <div class="foot">Site de fans. Tekken est une marque de Bandai Namco. Les personnages 3D affichés sont des mannequins génériques.</div>
+    <div class="foot">Site de fans. Tekken est une marque de Bandai Namco.</div>
   </div>
 </div>
 <button class="btn restore" id="restore" hidden>Afficher l'interface</button>
@@ -222,42 +231,48 @@ body.hide-ui .wrap { visibility: hidden; }
     box.appendChild(fr); return box;
   }
 
-  /* ---------- Notation en icônes (flèches et boutons façon jeu) ---------- */
+  /* ---------- Notation en icônes (style des menus du jeu) ---------- */
   var ANG = { 'f': 0, 'd/f': 45, 'df': 45, 'd': 90, 'd/b': 135, 'db': 135, 'b': 180, 'u/b': 225, 'ub': 225, 'u': 270, 'u/f': 315, 'uf': 315 };
   function svgEl(html, cls) { var s = h('span'); s.innerHTML = html; var e = s.firstChild; if (cls) e.setAttribute('class', cls); return e; }
   function arrowIcon(code) {
     var c = code.toLowerCase();
     if (c === 'n') return h('span', 'w', 'N');
-    return svgEl('<svg viewBox="0 0 24 24" aria-label="' + code + '"><g transform="rotate(' + ANG[c] + ' 12 12)"><path d="M3 9h9V4l9 8-9 8v-5H3z" fill="#fff" stroke="#0a0d18" stroke-width="1" stroke-linejoin="round"/></g></svg>', 'ar');
+    return svgEl('<svg viewBox="0 0 24 24" aria-label="' + code + '"><g transform="rotate(' + ANG[c] + ' 12 12)"><path d="M3.500 9h8.500V4.500l8.500 7.500-8.500 7.500V15H3.500z" fill="none" stroke="#fff" stroke-width="1.700" stroke-linejoin="round"/></g></svg>', 'ar');
   }
   function buttonIcon(set) {
     var pos = { 1: [7, 7], 2: [17, 7], 3: [7, 17], 4: [17, 17] }, s = '';
     [1, 2, 3, 4].forEach(function (n) {
       var on = set.indexOf(n) >= 0;
-      s += '<circle cx="' + pos[n][0] + '" cy="' + pos[n][1] + '" r="4.3" fill="' + (on ? '#3de0b0' : 'rgba(255,255,255,.28)') + '"/>';
+      s += '<circle cx="' + pos[n][0] + '" cy="' + pos[n][1] + '" r="4.200" fill="' + (on ? '#fff' : 'rgba(255,255,255,.22)') + '"' + (on ? ' class="on"' : '') + '/>';
     });
     return svgEl('<svg viewBox="0 0 24 24" aria-label="Boutons ' + set.join('+') + '">' + s + '</svg>', 'bt');
   }
   function stepEl(step) {
-    var sp = h('span', 'step'), btns = [];
-    function flush() { if (btns.length) { add(sp, buttonIcon(btns)); btns = []; } }
+    var icons = [], btns = [], words = [];
+    function flush() { if (btns.length) { icons.push(buttonIcon(btns)); btns = []; } }
     step.split('+').forEach(function (p) {
       if (!p) return;
       if (/^[1-4]+$/.test(p)) { p.split('').forEach(function (d) { if (btns.indexOf(+d) < 0) btns.push(+d); }); return; }
       flush();
-      if (/^(d\/f|d\/b|u\/f|u\/b|df|db|uf|ub|f|b|u|d|n)$/i.test(p)) add(sp, arrowIcon(p));
-      else if (p === '*' || p === '★') add(sp, h('span', 'star', '★'));
-      else add(sp, h('span', 'w', p.replace(/_/g, ' ')));
+      if (/^(d\/f|d\/b|u\/f|u\/b|df|db|uf|ub|f|b|u|d|n)$/i.test(p)) icons.push(arrowIcon(p));
+      else if (p === '*' || p === '★') icons.push(h('span', 'star', '★'));
+      else words.push(p.replace(/_/g, ' '));
     });
-    flush(); return sp;
+    flush();
+    if (!icons.length) return h('span', 'w', words.join(' '));
+    var k = h('span', 'k');
+    icons.forEach(function (i) { add(k, i); });
+    words.forEach(function (w) { add(k, h('span', 'w', w)); });
+    return k;
   }
-  /* Syntaxe : étapes séparées par des virgules, "+" pour simultané, ">" entre deux phases, mots libres (Heat, Hold…).
-     Exemple : "Heat f+1+2 > d/f+1, 2, 1 > *" */
+  /* Syntaxe : étapes séparées par des virgules, "+" pour simultané, ">" entre deux phases, "or" pour une alternative,
+     mots libres (Heat, Hold…). Exemple : "Heat f+1+2 > d/f+1, 2, 1 > *" */
   function notation(str) {
     var box = h('div', 'nt');
     String(str).trim().split(/\s+/).forEach(function (tok) {
       if (!tok) return;
       if (/^(>|→|▶)$/.test(tok)) { add(box, h('span', 'go', '▶')); return; }
+      if (tok.toLowerCase() === 'or' || tok.toLowerCase() === 'ou') { add(box, h('span', 'or', 'ou')); return; }
       tok.split(',').forEach(function (st) { if (st) add(box, stepEl(st)); });
     });
     return box;
@@ -271,6 +286,30 @@ body.hide-ui .wrap { visibility: hidden; }
       add(wrap, notation(o.k));
     });
     return wrap;
+  }
+  /* Tableau des bases (déplacements et garde) */
+  function basics() {
+    var G = [
+      ['Sauter', [['u/b ou u ou u/f', '']]],
+      ['Reculer', [['b', 'Marcher'], ['b,b', 'Dash arrière']]],
+      ['Avancer', [['f', 'Marcher'], ['f,f', 'Dash'], ['f,f+Maintenu', 'Courir'], ['d/f', 'S\'accroupir']]],
+      ['Côté gauche', [['u', 'Pas de côté'], ['u,u', 'Marcher de côté']]],
+      ['Côté droit', [['d', 'Pas de côté'], ['d,d', 'Marcher de côté']]],
+      ['Garde', [['d/b ou d', 'Garde basse'], ['b ou *', 'Garde haute / moyenne']]],
+      ['Neutre', [['*', 'Aucune touche']]]
+    ];
+    var chart = h('div', 'chart');
+    G.forEach(function (g) {
+      var box = h('div', 'cg'); add(box, h('h4', '', g[0]));
+      g[1].forEach(function (row) {
+        var r = h('div', 'kr');
+        var n = notation(row[0].replace(/ ou /g, ' or ')); add(r, n);
+        if (row[1]) add(r, h('span', 'kr-l', row[1]));
+        add(box, r);
+      });
+      add(chart, box);
+    });
+    return chart;
   }
 
   /* ---------- Personnages ---------- */
@@ -307,7 +346,7 @@ body.hide-ui .wrap { visibility: hidden; }
 
   /* ---------- Données vidéo ---------- */
   var vids = { combos: [], replays: [] };
-  var comboBy = {}, matches = [], models = {}, KEYS = {};
+  var comboBy = {}, matches = [], KEYS = {};
   var seedCombos = {
     'Jin': [{ title: 'Exemple de notation', keys: [{ t: 'Phase 1', k: 'Heat f+1+2 > d/f+1, 2, 1' }, { t: 'Phase 2', k: 'f n d d/f+2 > * d/f+3+4' }], note: 'Aperçu de l\'affichage des touches. Les vraies notations s\'ajoutent dans data/keys.json.' }, { title: 'Wavedash', keys: 'f n d d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f n d d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }],
     'Kazuya': [{ title: 'Wavedash', keys: 'f n d d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f n d d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }]
@@ -347,7 +386,7 @@ body.hide-ui .wrap { visibility: hidden; }
   ];
   var homeItems = [
     ['Guides combos', 'combos', 'Les vidéos de combos lues sur le site, avec les touches en dessous, personnage par personnage.'],
-    ['Personnages', 'persos', 'Choisis un combattant : modèle 3D à gauche, stats à droite.'],
+    ['Personnages', 'persos', 'Choisis un combattant : portrait à gauche, stats à droite.'],
     ['Actus', 'actus', 'Patchs, nouveaux personnages et événements.'],
     ['Replays pro', 'pro', 'Les matchs de haut niveau : filtre par personnage, un ou deux.']
   ];
@@ -457,6 +496,9 @@ body.hide-ui .wrap { visibility: hidden; }
     seed.forEach(function (e) { add(c, comboEntry(r[0], e)); });
     if (!user.length && !seed.length && !found.length) add(c, add(h('div', 'panel'), h('p', 'lead', 'Pas encore de guide pour ' + r[0] + '.')));
 
+    var bd = h('details', 'panel'); bd.open = true;
+    add(bd, h('summary', '', 'Lire les touches')); add(bd, basics()); add(c, bd);
+
     var det = h('details', 'panel');
     add(det, h('summary', '', 'Ajouter un combo'));
     var form = h('form', 'add');
@@ -480,7 +522,7 @@ body.hide-ui .wrap { visibility: hidden; }
     var i = currentIdx(), r = R[i], c = $('#center');
     add(c, h('div', 'kicker', r[1]), h('h2', '', r[0]));
     var split = h('div', 'split'), left = h('div', 'vwrap'), right = h('div', 'stack');
-    mountViewer(left); showModel(r);
+    add(left, portrait(r));
     var p = h('div', 'panel');
     add(p, h('p', 'label', 'Stats'));
     if (r[2]) {
@@ -540,128 +582,19 @@ body.hide-ui .wrap { visibility: hidden; }
     add(c, thumb(vidUrl({ id: m.id }), 'Lire le replay : ' + m.label));
   }
 
-  /* ---------- Visionneuse 3D ---------- */
-  var V = null;
-  var DEF = { colors: { jacket: '#e0213f', pants: '#1c1f2b', gloves: '#f4f4f0', shoes: '#ffb224', hair: '#1c1f2b', acc: '#ffb224', aura: '#e0213f' },
-              items: { jacket: 'basic', pants: 'long', gloves: 'boxing', shoes: 'sneakers', hair: 'short', acc: 'none' } };
-  function mat(color, o) {
-    var m = new THREE.MeshStandardMaterial(Object.assign({ roughness: .62, metalness: .05 }, o || {}));
-    m.color = new THREE.Color(color).convertSRGBToLinear();
-    return m;
-  }
-  function initViewer() {
-    if (V) return V;
-    var el = h('div', 'viewer');
-    if (typeof THREE === 'undefined' || !THREE.OrbitControls) {
-      add(el, h('p', 'viewer-msg', 'Aperçu 3D indisponible : la bibliothèque 3D n\'a pas pu se charger.'));
-      V = { el: el, ok: false }; return V;
-    }
-    var renderer;
-    try { renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); }
-    catch (e) { add(el, h('p', 'viewer-msg', 'Aperçu 3D indisponible : WebGL n\'est pas activé sur cet appareil.')); V = { el: el, ok: false }; return V; }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    el.appendChild(renderer.domElement);
-    var cap = h('div', 'vcap'); el.appendChild(cap);
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(30, 1, .1, 50); camera.position.set(0, 1.25, 4.7);
-    var controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.target.set(0, .95, 0); controls.enablePan = false; controls.enableDamping = true;
-    controls.minDistance = 2.4; controls.maxDistance = 7; controls.maxPolarAngle = Math.PI * .52; controls.update();
-    scene.add(new THREE.HemisphereLight(0xbfd2ff, 0x1a1020, .95));
-    var key = new THREE.DirectionalLight(0xffffff, 1.15); key.position.set(2, 4, 3); scene.add(key);
-    var rim = new THREE.PointLight(0xe0213f, 1.4, 0); rim.position.set(-2, 2.2, -2.2); scene.add(rim);
-    var floor = new THREE.Mesh(new THREE.CircleGeometry(1.15, 48), new THREE.MeshBasicMaterial({ color: 0x0b0e18, transparent: true, opacity: .9 }));
-    floor.rotation.x = -Math.PI / 2; floor.position.y = -.002; scene.add(floor);
-    var ring = new THREE.Mesh(new THREE.RingGeometry(1.02, 1.1, 64), new THREE.MeshBasicMaterial({ color: 0xe0213f, side: THREE.DoubleSide }));
-    ring.rotation.x = -Math.PI / 2; scene.add(ring);
-    var holder = new THREE.Group(); scene.add(holder);
-    V = { el: el, ok: true, cap: cap, holder: holder, anim: null, tok: 0, w: 0, h: 0, t: 0 };
-    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, last = 0;
-    function loop(ts) {
-      requestAnimationFrame(loop);
-      var dt = Math.min((ts - last) / 1000, .1); last = ts;
-      if (!el.isConnected || document.hidden || !el.clientWidth) return;
-      if (el.clientWidth !== V.w || el.clientHeight !== V.h) {
-        V.w = el.clientWidth; V.h = el.clientHeight;
-        renderer.setSize(V.w, V.h, false); camera.aspect = V.w / V.h; camera.updateProjectionMatrix();
-      }
-      V.t += dt;
-      if (V.anim && !reduce) V.anim(V.t);
-      controls.update(); renderer.render(scene, camera);
-    }
-    requestAnimationFrame(loop);
-    return V;
-  }
-  function mountViewer(parent) { parent.appendChild(initViewer().el); }
-
-  /* Mannequin générique : proportions légèrement différentes selon le personnage. */
-  function buildMannequin(r) {
-    var C = DEF.colors, T = THREE, st = r[2] || [6, 6, 6, 6, 6];
-    var g = new T.Group(), body = new T.Group(); g.add(body);
-    var sx = .9 + st[0] * .026, sy = .97 + st[2] * .011;
-    body.scale.set(sx, sy, sx);
-    var skin = mat(0xd9a77c, { roughness: .8 }), dark = mat(0x15110e);
-    var jm = mat(C.jacket), pm = mat(C.pants), gm = mat(C.gloves), sm = mat(C.shoes), hm = mat(C.hair, { roughness: .9 });
-    function cyl(rt, rb, hh, m, y) { var o = new T.Mesh(new T.CylinderGeometry(rt, rb, hh, 22), m); o.position.y = y || 0; return o; }
-    function sph(rad, m) { return new T.Mesh(new T.SphereGeometry(rad, 24, 18), m); }
-    function box(w, hh, d, m) { return new T.Mesh(new T.BoxGeometry(w, hh, d), m); }
-    var torso = cyl(.2, .165, .58, jm, 1.22); torso.scale.z = .64; body.add(torso);
-    var pel = cyl(.165, .17, .18, pm, .93); pel.scale.z = .66; body.add(pel);
-    body.add(cyl(.05, .055, .12, skin, 1.55));
-    var head = sph(.115, skin); head.position.y = 1.7; head.scale.set(1, 1.12, 1.06); body.add(head);
-    [-1, 1].forEach(function (s) { var e = sph(.013, dark); e.position.set(s * .04, 1.72, .112); body.add(e); });
-    var cap = new T.Mesh(new T.SphereGeometry(.123, 24, 16, 0, Math.PI * 2, 0, Math.PI * .56), hm);
-    cap.position.set(0, 1.71, -.004); cap.scale.set(1, 1.12, 1.07); body.add(cap);
-    var arms = [];
-    [-1, 1].forEach(function (s) {
-      var sh = new T.Group(); sh.position.set(s * .265, 1.45, 0);
-      sh.rotation.set(s < 0 ? -.95 : -.55, 0, -s * .18); sh.userData.r = sh.rotation.x;
-      sh.add(sph(.062, jm)); sh.add(cyl(.052, .046, .3, jm, -.15));
-      var el = new T.Group(); el.position.y = -.3; el.rotation.x = -1.5;
-      el.add(sph(.046, jm)); el.add(cyl(.044, .037, .27, jm, -.135));
-      var hand = sph(.088, gm); hand.position.y = -.31; el.add(hand);
-      sh.add(el); body.add(sh); arms.push(sh);
-    });
-    [-1, 1].forEach(function (s) {
-      var hip = new T.Group(); hip.position.set(s * .1, .93, 0);
-      var hipRot = s < 0 ? -.32 : .3, kneeRot = s < 0 ? .25 : .5;
-      hip.rotation.set(hipRot, 0, s * .08);
-      hip.add(cyl(.074, .06, .46, skin, -.23)); hip.add(cyl(.083, .067, .46, pm, -.23));
-      var knee = new T.Group(); knee.position.y = -.46; knee.rotation.x = kneeRot;
-      knee.add(cyl(.056, .04, .44, skin, -.22)); knee.add(cyl(.063, .047, .44, pm, -.22));
-      var foot = new T.Group(); foot.position.y = -.44; foot.rotation.x = -(hipRot + kneeRot);
-      var shoe = box(.11, .07, .27, sm); shoe.position.set(0, -.035, .06); foot.add(shoe);
-      knee.add(foot); hip.add(knee); body.add(hip);
-    });
-    g.rotation.y = .35; g.updateMatrixWorld(true);
-    var bb = new T.Box3().setFromObject(g); g.position.y = -bb.min.y;
-    return {
-      group: g,
-      anim: function (t) {
-        body.position.y = Math.sin(t * 2.4) * .012; torso.scale.y = 1 + Math.sin(t * 2.4) * .012;
-        arms.forEach(function (a, i) { a.rotation.x = a.userData.r + Math.sin(t * 2.4 + i * 1.3) * .035; });
-      }
-    };
-  }
-  function showModel(r) {
-    var v = initViewer(); if (!v.ok) return;
-    var tok = ++v.tok;
-    while (v.holder.children.length) v.holder.remove(v.holder.children[0]);
-    function generic() {
-      var m = buildMannequin(r); v.holder.add(m.group); v.anim = m.anim;
-      v.cap.textContent = 'Mannequin générique · glisse pour tourner, molette pour zoomer';
-    }
-    var url = models[r[0]];
-    if (!url || !THREE.GLTFLoader) { generic(); return; }
-    v.anim = null; v.cap.textContent = 'Chargement du modèle 3D…';
-    new THREE.GLTFLoader().load(url, function (gl) {
-      if (tok !== v.tok) return;
-      var m = gl.scene, b = new THREE.Box3().setFromObject(m);
-      var size = b.getSize(new THREE.Vector3()), ctr = b.getCenter(new THREE.Vector3()), k = 1.8 / (size.y || 1);
-      m.scale.setScalar(k); m.position.set(-ctr.x * k, -b.min.y * k, -ctr.z * k);
-      v.holder.add(m); v.cap.textContent = 'Modèle 3D de ' + r[0] + ' · glisse pour tourner, molette pour zoomer';
-    }, undefined, function () { if (tok === v.tok) generic(); });
+  /* ---------- Portraits ---------- */
+  /* Dépose tes images dans images/characters/ : un fichier par personnage, nommé comme indiqué dans LISEZMOI.txt (png, webp ou jpg). */
+  function slug(n) { return n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function portrait(r) {
+    var box = h('div', 'portrait'), ph = h('div', 'ph');
+    add(ph, h('span', 'ini', r[0].charAt(0)), h('span', 'nm', r[1]), h('span', 'note', 'Portrait à ajouter : images/characters/' + slug(r[0]) + '.png'));
+    var img = h('img'); img.alt = r[1]; img.decoding = 'async';
+    var exts = ['png', 'webp', 'jpg'], k = 0;
+    function next() { if (k < exts.length) img.src = 'images/characters/' + slug(r[0]) + '.' + exts[k++]; }
+    img.addEventListener('load', function () { box.classList.add('has'); });
+    img.addEventListener('error', next);
+    add(box, ph, img); next();
+    return box;
   }
 
   /* ---------- Navigation ---------- */
@@ -729,10 +662,6 @@ body.hide-ui .wrap { visibility: hidden; }
   state.tab = tabs.some(function (x) { return x.id === start; }) ? start : 'home';
   render();
   try {
-    /* data/models.json : { "Jin": "models/jin.glb", ... } (modèles 3D autorisés que tu ajoutes) */
-    fetch('data/models.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && typeof d === 'object') { models = d; if (state.tab === 'persos') render(); }
-    }).catch(function () {});
     fetch('data/keys.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && typeof d === 'object') { KEYS = d; if (state.tab === 'combos') render(); }
     }).catch(function () {});
