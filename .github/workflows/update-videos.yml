@@ -15,11 +15,11 @@ jobs:
           python-version: "3.12"
       - run: pip install yt-dlp
       - run: python scripts/update_videos.py
-      - run: python scripts/fetch_wavu.py
+      - run: python scripts/fetch_wavu.py && python scripts/build_wavu_combos.py
         continue-on-error: true
       - name: Commit si changement
         run: |
           git config user.name "github-actions"
           git config user.email "actions@users.noreply.github.com"
-          git add data/videos.json data/wavu_raw.json
+          git add data/videos.json data/wavu_combos.json
           git diff --cached --quiet || (git commit -m "Mise à jour des vidéos" && git push)

@@ -99,6 +99,9 @@ h2 { font-family: var(--display); font-weight: 800; font-size: clamp(22px, 3.6vw
 .kr .nt { padding: 6px 10px; background: none; border: 0; }
 .kr-l { font-size: 14px; font-weight: 600; }
 
+.wc { display: grid; gap: 6px; padding: 14px 0 0; min-width: 0; }
+.wc .nt-title { margin: 0; text-transform: none; letter-spacing: .02em; overflow-wrap: anywhere; }
+
 /* Portraits */
 .portrait { position: relative; aspect-ratio: 3 / 4; max-width: 100%; border: 1px solid var(--line); background: radial-gradient(ellipse at 50% 85%, rgba(224, 33, 63, .26), transparent 62%), var(--panel); overflow: hidden; }
 .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; opacity: 0; transition: opacity .2s; }
@@ -283,7 +286,7 @@ body.hide-ui .wrap { visibility: hidden; }
       if (!k) return;
       var o = typeof k === 'string' ? { k: k } : k;
       if (o.t) add(wrap, h('div', 'nt-title', o.t));
-      add(wrap, notation(o.k));
+      var nb = notation(o.k); if (o.r) nb.title = o.r; add(wrap, nb);
     });
     return wrap;
   }
@@ -346,7 +349,7 @@ body.hide-ui .wrap { visibility: hidden; }
 
   /* ---------- Données vidéo ---------- */
   var vids = { combos: [], replays: [] };
-  var comboBy = {}, matches = [], KEYS = {};
+  var comboBy = {}, matches = [], KEYS = {}, WAVU = {};
   var seedCombos = {
     'Jin': [{ title: 'Exemple de notation', keys: [{ t: 'Phase 1', k: 'Heat f+1+2 > d/f+1, 2, 1' }, { t: 'Phase 2', k: 'f n d d/f+2 > * d/f+3+4' }], note: 'Aperçu de l\'affichage des touches. Les vraies notations s\'ajoutent dans data/keys.json.' }, { title: 'Wavedash', keys: 'f n d d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f n d d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }],
     'Kazuya': [{ title: 'Wavedash', keys: 'f n d d/f', note: 'Déplacement qui coupe la distance. Base du jeu des Mishima.' }, { title: 'Electric Wind God Fist', keys: 'f n d d/f+2', note: 'Coup signature des Mishima, exigeant à exécuter.' }]
@@ -495,6 +498,25 @@ body.hide-ui .wrap { visibility: hidden; }
     found.forEach(function (v) { add(c, comboEntry(r[0], { title: cleanTitle(v.title), url: vidUrl(v), keys: v.keys || KEYS[v.id] || '' })); });
     seed.forEach(function (e) { add(c, comboEntry(r[0], e)); });
     if (!user.length && !seed.length && !found.length) add(c, add(h('div', 'panel'), h('p', 'lead', 'Pas encore de guide pour ' + r[0] + '.')));
+
+    var wl = WAVU[r[0]] || [];
+    if (wl.length) {
+      var SEC = { "Bread n' butter": 'Combos de base', 'Mini-combos': 'Mini-combos', 'Staples': 'Combos optimaux', 'Wall': 'Contre le mur' };
+      var order = Object.keys(SEC), groups = {};
+      wl.forEach(function (x) { (groups[x.sec] = groups[x.sec] || []).push(x); });
+      add(c, h('div', 'kicker', 'Combos en texte'));
+      Object.keys(groups).sort(function (a, b) { var ia = order.indexOf(a), ib = order.indexOf(b); return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib); }).forEach(function (sec, gi) {
+        var gd = h('details', 'panel'); gd.open = gi === 0;
+        add(gd, h('summary', '', (SEC[sec] || sec) + ' (' + groups[sec].length + ')'));
+        groups[sec].forEach(function (x) {
+          var item = h('div', 'wc');
+          if (x.s || x.d) add(item, h('div', 'nt-title', (x.s || '') + (x.s && x.d ? '  ·  ' : '') + (x.d ? 'dégâts ' + x.d : '')));
+          add(item, notations({ k: x.k, r: x.r }));
+          add(gd, item);
+        });
+        add(c, gd);
+      });
+    }
 
     var bd = h('details', 'panel'); bd.open = true;
     add(bd, h('summary', '', 'Lire les touches')); add(bd, basics()); add(c, bd);
@@ -664,6 +686,9 @@ body.hide-ui .wrap { visibility: hidden; }
   try {
     fetch('data/keys.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && typeof d === 'object') { KEYS = d; if (state.tab === 'combos') render(); }
+    }).catch(function () {});
+    fetch('data/wavu_combos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && typeof d === 'object') { WAVU = d; if (state.tab === 'combos') render(); }
     }).catch(function () {});
     fetch('data/videos.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.combos && d.replays) { vids = d; indexData(); render(); }
